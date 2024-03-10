@@ -15,8 +15,12 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.3",
     "@sanity/icons": "^2.10.3",
     "@sanity/vision": "^3.32.0",
+    "@types/mdx": "^2.0.11",
     "@types/node": "^20.10.4",
     "@types/react": "^18.2.42",
     "@types/react-dom": "^18.2.17",
