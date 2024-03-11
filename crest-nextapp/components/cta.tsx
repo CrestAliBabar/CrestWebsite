@@ -15,8 +15,8 @@ export default function Cta() {
             </div>
 
             <div className="relative">
-              <h2 className="h2 font-playfair-display text-slate-800 mb-4">Say goodbye to long queues, big updates, and <span className="text-emerald-500">confusion</span>.</h2>
-              <p className="text-xl text-slate-500 mb-8">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.</p>
+              <h2 className="h2 font-playfair-display text-slate-800 mb-4">Pursue your passion and <span className="text-emerald-500">join CREST</span>.</h2>
+              <p className="text-xl text-slate-500 mb-8">Pursue your passion and work alongside world-recognized leaders in the field of software engineering. We invite you to view current employment opportunities, learn about benefits of working at the CREST, and apply for a position.</p>
               <div>
                 <Link className="btn text-white bg-blue-600 hover:bg-blue-700 group" href="/contact">
                 contact <span className="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>

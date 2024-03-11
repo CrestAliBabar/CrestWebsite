@@ -21,27 +21,26 @@ export default function Header({ mode = 'dark' }: {
 
             {/* Desktop menu links */}
             <ul className="flex grow justify-start flex-wrap items-center">
-              <li>
+              {/* <li>
                 <Link href="/pricing" className="font-medium text-slate-800 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Training</Link>
-              </li>
+              </li> */}
               <li>
-                <Link href="/about" className="font-medium text-slate-800 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Services</Link>
+                <Link href="/about" className="font-medium text-slate-800 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">About</Link>
               </li>
               <li>
                 <Link href="/blog" className="font-medium text-slate-800 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Consulting</Link>
               </li>
-              <li>
-                <Link href="/wall-of-love" className="font-medium text-slate-800 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Companies</Link>
-              </li>
-              
-              {/* <Dropdown title="Resources">
+              <Dropdown title="Technology">
                 <li>
-                  <Link href="/404" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">404</Link>
+                  <Link href="/Blockchain" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Blockchain</Link>
                 </li>
                 <li>
-                  <Link href="/support" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Support</Link>
+                  <Link href="/Software Security" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Software Security</Link>
                 </li>
-              </Dropdown> */}
+                <li>
+                  <Link href="/Distributed System" className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Distributed System</Link>
+                </li>
+              </Dropdown>
             </ul>
 
             {/* Desktop sign in links */}
