@@ -3,7 +3,10 @@
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Transition } from '@headlessui/react'
-import FeaturesImage from '@/public/images/features-home-01.jpg'
+import FeaturesImage_01 from '@/public/images/features-home_01.jpg'
+import FeaturesImage_02 from '@/public/images/features-home_02.jpg'
+import FeaturesImage_03 from '@/public/images/features-home_03.jpg'
+import FeaturesImage_04 from '@/public/images/features-home_04.jpg'
 
 export default function FeaturesHome() {
 
@@ -29,8 +32,8 @@ export default function FeaturesHome() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12">
-            <h2 className="h2 font-playfair-display text-slate-800 mb-4">Built exclusively for you</h2>
-            <p className="text-xl text-slate-768">Excepteur s474 occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.</p>
+            <h2 className="h2 font-playfair-display text-slate-800 mb-4">Keeping Building Our Work</h2>
+            <p className="text-xl text-slate-768">At CREST researchers are leveraging existing software engineering, analytical reasoning, natural language processing and machine learning tools and techniques to develop a secure and integrated platform. Our aim is to help build a secure and integrated platform that is easy to use and evolve with the changing threat landscape and increase the operation efficiency of the cybersecurity team.</p>
           </div>
 
           {/* Section content */}
@@ -49,7 +52,7 @@ export default function FeaturesHome() {
                       <path fillOpacity=".64" fill="#5091EE" d="M29 20h3v16h-3zM35 20h1v16h-1z" />
                     </svg>
                   </div>
-                  <div className="md:text-lg leading-tight font-semibold text-slate-800">Internal Feedback</div>
+                  <div className="md:text-lg leading-tight font-semibold text-slate-800">Big Data Analytic Framework</div>
                 </div>
               </button>
               <button
@@ -63,7 +66,7 @@ export default function FeaturesHome() {
                       <path fill="#2174EA" d="M20 25h11v11H20z" />
                     </svg>
                   </div>
-                  <div className="md:text-lg leading-tight font-semibold text-slate-800">Internal Feedback</div>
+                  <div className="md:text-lg leading-tight font-semibold text-slate-800">Security APIs</div>
                 </div>
               </button>
               <button
@@ -79,7 +82,7 @@ export default function FeaturesHome() {
                       <path fill="#2174EA" d="M27 36l-7-7v7z" />
                     </svg>
                   </div>
-                  <div className="md:text-lg leading-tight font-semibold text-slate-800">Internal Feedback</div>
+                  <div className="md:text-lg leading-tight font-semibold text-slate-800">Enhancing Security Data Quality</div>
                 </div>
               </button>
               <button
@@ -93,7 +96,7 @@ export default function FeaturesHome() {
                       <path d="M35 21h-8c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H33c1.7 0 3-1.3 3-3V22c0-.6-.4-1-1-1z" fill="#2174EA" />
                     </svg>
                   </div>
-                  <div className="md:text-lg leading-tight font-semibold text-slate-800">Internal Feedback</div>
+                  <div className="md:text-lg leading-tight font-semibold text-slate-800">Implementation of Fragmentedted Cloud</div>
                 </div>
               </button>
             </div>
@@ -113,7 +116,7 @@ export default function FeaturesHome() {
                   leaveTo="opacity-0 translate-y-16"
                   beforeEnter={() => heightFix()}
                 >
-                  <Image className="mx-auto shadow-2xl" src={FeaturesImage} width={768} height={474} alt="Features home 01" />
+                  <Image className="mx-auto shadow-2xl" src={FeaturesImage_01} width={768} height={474} alt="Features home 01" />
                 </Transition>
                 {/* Item 2 */}
                 <Transition
@@ -127,7 +130,7 @@ export default function FeaturesHome() {
                   leaveTo="opacity-0 translate-y-16"
                   beforeEnter={() => heightFix()}
                 >
-                  <Image className="mx-auto shadow-2xl" src={FeaturesImage} width={768} height={474} alt="Features home 02" />
+                  <Image className="mx-auto shadow-2xl" src={FeaturesImage_02} width={768} height={474} alt="Features home 02" />
                 </Transition>
                 {/* Item 3 */}
                 <Transition
@@ -141,7 +144,7 @@ export default function FeaturesHome() {
                   leaveTo="opacity-0 translate-y-16"
                   beforeEnter={() => heightFix()}
                 >
-                  <Image className="mx-auto shadow-2xl" src={FeaturesImage} width={768} height={474} alt="Features home 03" />
+                  <Image className="mx-auto shadow-2xl" src={FeaturesImage_03} width={768} height={474} alt="Features home 03" />
                 </Transition>
                 {/* Item 4 */}
                 <Transition
@@ -155,7 +158,7 @@ export default function FeaturesHome() {
                   leaveTo="opacity-0 translate-y-16"
                   beforeEnter={() => heightFix()}
                 >
-                  <Image className="mx-auto shadow-2xl" src={FeaturesImage} width={768} height={474} alt="Features home 04" />
+                  <Image className="mx-auto shadow-2xl" src={FeaturesImage_04} width={768} height={474} alt="Features home 04" />
                 </Transition>
               </div>
             </div>

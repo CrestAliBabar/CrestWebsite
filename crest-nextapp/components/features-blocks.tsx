@@ -43,8 +43,8 @@ export default function FeaturesBlocks() {
                 <use fill="#000" filter="url(#fb1-d)" xlinkHref="#fb1-e" />
                 <use fillOpacity=".64" fill="#E2EEFF" xlinkHref="#fb1-e" />
               </svg>
-              <h3 className="h4 font-playfair-display mb-2">Robust Workflow</h3>
-              <p className="text-lg text-slate-500">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <h3 className="h4 font-playfair-display mb-2">Blockchain</h3>
+              <p className="text-lg text-slate-500">We provide Blockchain development service.</p>
             </div>
 
             {/* 2nd item */}
@@ -80,8 +80,8 @@ export default function FeaturesBlocks() {
                 </g>
                 <path d="M32.5 36a3.5 3.5 0 110-7 3.5 3.5 0 010 7z" fillOpacity=".64" fill="#5091EE" />
               </svg>
-              <h3 className="h4 font-playfair-display mb-2">Robust Workflow</h3>
-              <p className="text-lg text-slate-500">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <h3 className="h4 font-playfair-display mb-2">Software Security</h3>
+              <p className="text-lg text-slate-500">We are experienced in helping protect software applications and digital solutions from attackers.</p>
             </div>
 
             {/* 3rd item */}
@@ -112,8 +112,8 @@ export default function FeaturesBlocks() {
                 <use fill="#000" filter="url(#fb3-c)" xlinkHref="#fb3-d" />
                 <use fill="url(#fb3-e)" xlinkHref="#fb3-d" />
               </svg>
-              <h3 className="h4 font-playfair-display mb-2">Robust Workflow</h3>
-              <p className="text-lg text-slate-500">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <h3 className="h4 font-playfair-display mb-2">Software Development</h3>
+              <p className="text-lg text-slate-500">We provide software development solutions.</p>
             </div>
 
             {/* 4th item */}
@@ -144,8 +144,8 @@ export default function FeaturesBlocks() {
                 <use fill="#000" filter="url(#fb4-d)" xlinkHref="#fb4-e" />
                 <use fillOpacity=".64" fill="#E2EEFF" xlinkHref="#fb4-e" />
               </svg>
-              <h3 className="h4 font-playfair-display mb-2">Robust Workflow</h3>
-              <p className="text-lg text-slate-500">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <h3 className="h4 font-playfair-display mb-2">Distributed System</h3>
+              <p className="text-lg text-slate-500">Want to utilize computational resources across multiple, separate computation nodes?</p>
             </div>
 
             {/* 5th item */}
@@ -176,8 +176,8 @@ export default function FeaturesBlocks() {
                 <use fill="#000" filter="url(#fb5-c)" xlinkHref="#fb5-d" />
                 <use fill="url(#fb5-e)" xlinkHref="#fb5-d" />
               </svg>
-              <h3 className="h4 font-playfair-display mb-2">Robust Workflow</h3>
-              <p className="text-lg text-slate-500">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <h3 className="h4 font-playfair-display mb-2">Business Analysis</h3>
+              <p className="text-lg text-slate-500">We are good at identifing and articulating the need for change in how your organizations work, and to facilitate that change.</p>
             </div>
 
             {/* 6th item */}
@@ -208,8 +208,8 @@ export default function FeaturesBlocks() {
                 <use fill="#000" filter="url(#fb6-d)" xlinkHref="#fb6-e" />
                 <use fillOpacity=".64" fill="#E2EEFF" xlinkHref="#fb6-e" />
               </svg>
-              <h3 className="h4 font-playfair-display mb-2">Robust Workflow</h3>
-              <p className="text-lg text-slate-500">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <h3 className="h4 font-playfair-display mb-2">Data Research</h3>
+              <p className="text-lg text-slate-500">We utilize the data to fit your business need.</p>
             </div>
 
           </div>
