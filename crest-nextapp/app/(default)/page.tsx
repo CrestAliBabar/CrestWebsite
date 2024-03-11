@@ -18,9 +18,9 @@ export default function Home() {
       <Hero />
       <FeaturesBlocks />
       <Features />
-      <Features02 />
-      <Features03 />
-      <Target />
+      {/* <Features02 /> */}
+      {/* <Features03 /> */}
+      {/* <Target /> */}
       <Cta />
     </>
   )
