@@ -22,7 +22,7 @@ const CommonPageComponent: React.FC<CommonComponentTypeProps> = ({
       <div className="container mx-auto mt-20 mb-10">
         <h1 className="text-3xl font-bold my-4">{pageInfo.heading}</h1>
         <p className="text-xl">
-          This is a description for the training page.
+          {pageInfo.description}
         </p>
       </div>
       {componentData.map((data, index) => (

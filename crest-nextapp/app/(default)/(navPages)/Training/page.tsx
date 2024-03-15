@@ -20,7 +20,7 @@ const dummyData = [
 ];
 const pageInfo = {
   heading:"Workshops and Training",
-  description:"This is a description for the training page."
+  description:"Best-in-class corporate strategy workshops and compliance training on open source."
 }
 
 const Training = () => {
