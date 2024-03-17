@@ -28,7 +28,7 @@ const Consulting = () => {
     tabPage: "Consulting",
   };
   return (
-    <div className="flex-col justify-center px-28">
+    <div className="px-28">
       <CommonPageComponent componentData={dummyData} pageInfo={pageInfo} />
     </div>
   );
