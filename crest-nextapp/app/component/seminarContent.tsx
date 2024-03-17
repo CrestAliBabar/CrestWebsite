@@ -2,6 +2,15 @@ import React from "react";
 import Section from "@/app/component/section";
 import DownloadLinks from "@/app/component/downloadLinks";
 
+type DownloadLinkProps = {
+  links: { language: string; url: string }[];
+};
+
+export type SectionProps = {
+  title: string;
+  items: string[];
+};
+
 type SeminarContentComponentProps = {
   sections: SectionProps[];
   downloadLinks: DownloadLinkProps["links"];

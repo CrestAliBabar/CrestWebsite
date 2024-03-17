@@ -2,7 +2,7 @@ import React from "react";
 // import localVideo from "@/public/Ory.mp4";
 
 type ReportSectionProps = {
-  exampleReportSummary: string;
+
   videoUrl?: string; // The video URL is optional and can be passed in later
 };
 
