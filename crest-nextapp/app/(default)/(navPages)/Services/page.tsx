@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ScaServices = () => {
-  return (
-    <div>ScaServices</div>
-  )
-}
+  return <div>hahaha</div>;
+};
 
-export default ScaServices
+export default ScaServices;
