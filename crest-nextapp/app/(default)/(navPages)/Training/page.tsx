@@ -26,7 +26,7 @@ const pageInfo = {
 
 const Training = () => {
   return (
-    <div>
+    <div className="flex-col justify-center px-28">
       <CommonPageComponent componentData={dummyData}  pageInfo={pageInfo} />
     </div>
   );
