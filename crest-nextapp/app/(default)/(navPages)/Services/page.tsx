@@ -27,7 +27,9 @@ const pageInfo = {
 
 const Services = () => {
   return (
+    <div className="px-28">
     <CommonPageComponent componentData={dummyData}  pageInfo={pageInfo} />
+    </div>
   )
 }
 
