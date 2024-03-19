@@ -1,39 +1,27 @@
-'use client'
+import Header from "../component/header";
+import Footer from "../component/footer";
 
-import { useEffect } from 'react'
-
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
-import Header from '@/components/ui/header'
-import Footer from '@/components/ui/footer'
-
-export default function DefaultLayout({
+export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
-}) {  
-
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      disable: 'phone',
-      duration: 600,
-      easing: 'ease-out-sine',
-    })
-  })
-
+  children: React.ReactNode;
+}) {
+  // return (
+  //   <html lang="en">
+  //     <body>
+  //       <Header />
+  //       <div className="container mx-auto">{children}</div>
+  //       <Footer />
+  //     </body>
+  //   </html>
+  // );
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className="flex flex-col min-h-screen">
       <Header />
-      
-      <main className="grow">
-
-        {children}
-
+      <main className="flex-grow">
+        <div className="container mx-auto">{children}</div>
       </main>
-
       <Footer />
     </div>
-  )
+  );
 }
