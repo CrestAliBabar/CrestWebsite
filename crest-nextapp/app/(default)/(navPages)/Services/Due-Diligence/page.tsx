@@ -1,6 +1,4 @@
-import React from "react";
-import TitleComponent from "@/app/component/titleComponent";
-import ReportSection from "@/app/component/reportSection";
+import ServicePagesComponent from "@/app/component/ServicePagesComponent";
 
 const seminarInfo = {
   title: "Open Source Due Diligence",
@@ -13,14 +11,10 @@ const ReportVideo = {
 };
 const DueDiligence = () => {
   return (
-    <div className="container mx-auto pl-10 md:pl-48">
-      <TitleComponent
-        title={seminarInfo.title}
-        tagline={seminarInfo.tagline}
-        taglineContent={seminarInfo.taglineContent}
-      />
-      <ReportSection videoUrl={ReportVideo.videoUrl} />
-    </div>
+    <ServicePagesComponent
+      seminarInfo={seminarInfo}
+      ReportVideo={ReportVideo}
+    />
   );
 };
 
