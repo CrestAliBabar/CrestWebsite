@@ -8,7 +8,7 @@ import {promotionType} from './promotionType'
 import {textWithIllustrationType} from './textWithIllustrationType'
 import {videoType} from './videoType'
 import {bulletPoint, consulting, simpleText} from './consulting'
-import {subtitle,pageTitle} from './consulting'
+import {description,pageTitle} from './consulting'
 
 
 export const schemaTypes = [
@@ -21,7 +21,7 @@ export const schemaTypes = [
   videoType,
   consulting,
   pageTitle,
-  subtitle,
+  description,
   bulletPoint,
   simpleText
 ]

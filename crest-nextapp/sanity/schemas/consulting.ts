@@ -7,15 +7,21 @@ export const bulletPoint = defineType({
   title: 'Bullet Point',
   fields: [
     {
-      name: 'items',
-      type: 'array',
-      title: 'Items',
-      of: [{ type: 'string' }],
+      title: 'Bullet Point', 
+      name: 'bulletPoint',
+      type: 'array', 
+      of: [{type: 'block'}]
     },
     // Any other fields related to bullet points
   ],
 });
 
+// export const bulletPoint = defineType({
+//   title: 'Bullet Point', 
+//   name: 'bulletPoint',
+//   type: 'array', 
+//   of: [{type: 'block'}]
+// });
 
 
 export const pageTitle = defineType({
@@ -32,10 +38,10 @@ export const pageTitle = defineType({
   ],
 });
 
-export const subtitle = defineType({
-  name: 'subtitle',
+export const description = defineType({
+  name: 'description',
   type: 'object',
-  title: 'Subtitle',
+  title: 'Description',
   fields: [
     defineField({
       name: 'text',
@@ -75,7 +81,7 @@ export const consulting = defineType({
       title: 'Page Builder',
       of: [
         { type: 'pageTitle' }, 
-        { type: 'subtitle' }, // Reference the subtitle type defined above
+        { type: 'description' }, // Reference the subtitle type defined above
         { type: 'bulletPoint' }, // Reference the bulletPoint type defined above
         { type: 'simpleText' }, // Reference the simpleText type defined above
 
