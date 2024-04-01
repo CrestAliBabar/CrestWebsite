@@ -1,21 +1,22 @@
 import React from "react";
 
-type ConsultingEngagementsProps = {
+type ConsultingPageProps = {
   listItems: JSX.Element[];
   contactUrl: string;
+  pageTitle: string;
+  description: string;
 };
 
-const ConsultingEngagementsComponent: React.FC<ConsultingEngagementsProps> = ({
+const ConsultingPageComponent: React.FC<ConsultingPageProps> = ({
   listItems,
   contactUrl,
+  pageTitle,
+  description,
 }) => {
   return (
     <div className="p-6">
-      <h2 className="text-3xl font-bold mb-6">Consulting Engagements</h2>
-      <p className="mb-6">
-        We are available for short to mid-term consulting engagements in our
-        domain of expertise and excellence of...
-      </p>
+      <h2 className="text-3xl font-bold mb-6">{pageTitle}</h2>
+      <p className="mb-6">{description}</p>
       <ul className="list-disc list-inside mb-6">
         {listItems.map((item, index) => (
           <li key={index}>{item}</li>
@@ -32,4 +33,4 @@ const ConsultingEngagementsComponent: React.FC<ConsultingEngagementsProps> = ({
   );
 };
 
-export default ConsultingEngagementsComponent;
+export default ConsultingPageComponent;
