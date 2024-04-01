@@ -7,6 +7,9 @@ import {pageType} from './pageType'
 import {promotionType} from './promotionType'
 import {textWithIllustrationType} from './textWithIllustrationType'
 import {videoType} from './videoType'
+import {bulletPoint, consulting, simpleText} from './consulting'
+import {subtitle,pageTitle} from './consulting'
+
 
 export const schemaTypes = [
   pageType,
@@ -16,4 +19,9 @@ export const schemaTypes = [
   imageGalleryType,
   formType,
   videoType,
+  consulting,
+  pageTitle,
+  subtitle,
+  bulletPoint,
+  simpleText
 ]
