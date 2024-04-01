@@ -1,13 +1,5 @@
-import React from "react";
-import TitleComponent from "@/app/component/titleComponent";
-import SummaryComponent from "@/app/component/summary";
+import TrainingPagesComponent from "@/app/component/TrainingPagesComponent";
 import summaryImage from "@/public/summaryImage.png";
-import Section from "@/app/component/section";
-// import DownloadLinks from "@/app/component/downloadLinks";
-import SeminarContentComponent from "@/app/component/seminarContent";
-import SeminarLeadersComponent from "@/app/component/seminarLeader";
-import PastSeminarComponent from "@/app/component/pastSeminar";
-import GetUpdatesComponent from "@/app/component/update";
 
 const seminarInfo = {
   title: "The License-Compliant Delivery (LCD) Seminar",
@@ -78,39 +70,19 @@ const seminarLeadersData = [
   },
 ];
 
-const pastSeminar = {
-  pastSeminarUrl: "",
+const seminarEvent = {
+  seminarEventUrl: "",
 };
 
-const LcdSeminarPage: React.FC = () => {
+const LCD_Seminar = () => {
   return (
-    <div>
-      {/* <div className="container mx-auto" style={{ paddingLeft: "200px" }}> */}
-
-      <div className="container mx-auto pl-10 md:pl-48">
-        <TitleComponent
-          title={seminarInfo.title}
-          tagline={seminarInfo.tagline}
-          taglineContent={seminarInfo.taglineContent}
-        />
-        <SummaryComponent
-          summaryText={seminarInfo.summaryText}
-          summaryImageSrc={seminarInfo.summaryImageSrc}
-          lincense={seminarInfo.lincense}
-          targetAudience={seminarInfo.targetAudience}
-          relatedSeminarsUrl={seminarInfo.relatedSeminarsUrl}
-        />
-        <SeminarContentComponent
-          sections={seminarContentData.sections}
-          downloadLinks={seminarContentData.downloadLinks}
-          contactUrl={seminarContentData.contactUrl}
-        />
-        <SeminarLeadersComponent leaders={seminarLeadersData} />
-        <PastSeminarComponent pastSeminarUrl={pastSeminar.pastSeminarUrl} />
-        <GetUpdatesComponent />
-      </div>
-    </div>
+    <TrainingPagesComponent
+      seminarInfo={seminarInfo}
+      seminarContentData={seminarContentData}
+      seminarLeadersData={seminarLeadersData}
+      seminarEvent={seminarEvent}
+    />
   );
 };
 
-export default LcdSeminarPage;
+export default LCD_Seminar;
