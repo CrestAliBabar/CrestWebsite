@@ -10,7 +10,7 @@ const dummyData = [
     imageUrl: "https://i0.wp.com/bayave.com/wp-content/uploads/2023/05/Image-LCD-Seminar.png?w=1728&ssl=1",
   },
   {
-    title: "Open source license compliance",
+    title: "Open source business strategy",
     pageName: "OSB-Seminar",
     description:
       "Learn how to streamline license compliance of projects and products that contain open-source code! Critical skills and knowledge for everyone involved with open-source software..",

@@ -9,6 +9,7 @@ import {textWithIllustrationType} from './textWithIllustrationType'
 import {videoType} from './videoType'
 import {bulletPoint, consulting, simpleText} from './consulting'
 import {description,pageTitle} from './consulting'
+import {trainCard} from './trainCard'
 
 
 export const schemaTypes = [
@@ -23,5 +24,6 @@ export const schemaTypes = [
   pageTitle,
   description,
   bulletPoint,
-  simpleText
+  simpleText,
+  trainCard
 ]
