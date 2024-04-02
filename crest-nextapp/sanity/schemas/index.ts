@@ -10,7 +10,8 @@ import {videoType} from './videoType'
 import {bulletPoint, consulting, simpleText} from './consulting'
 import {description,pageTitle} from './consulting'
 import {trainCard} from './trainCard'
-
+import {serviceCard} from './serviceCard'
+import {consultingCard} from './consultingCard'
 
 export const schemaTypes = [
   pageType,
@@ -25,5 +26,7 @@ export const schemaTypes = [
   description,
   bulletPoint,
   simpleText,
-  trainCard
+  trainCard,
+  serviceCard,
+  consultingCard
 ]
