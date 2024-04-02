@@ -42,8 +42,8 @@ const CommonPageComponent: React.FC<CommonComponentTypeProps> = ({
               <div className=" w-full md:h-48 lg:h-80 ">
                 <Link href={`/${pageInfo.tabPage}/${data.pageName}`}>
                   <img
-                    src={data.imageUrl}
-                    alt="description"
+                    src={data.imageUrl? data.imageUrl : data.imgUrl.alt}
+                    alt='description'
                     className=" w-full h-full object-cover"
                   />
                 </Link>
