@@ -25,7 +25,6 @@ const config = defineConfig({
             defaultColorList: [
               { label: 'Custom', value: 'custom' },
             ],
-            enableSearch: true,
           })
     
     ],
