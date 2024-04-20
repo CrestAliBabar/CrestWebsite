@@ -2,7 +2,6 @@
 import React from "react";
 import Link from "next/link";
 import Dropdown from "../clientComponent/utils/dropdown";
-import logo from "@/public/bavaye.png";
 import { getLayoutSettings } from "@/sanity/sanity-utils";
 
 
