@@ -1,9 +1,11 @@
 import React from "react";
+import { getLayoutSettings } from "@/sanity/sanity-utils";
 
-const Footer = () => {
+export default async function  Footer () {
+  const layoutSetting = await getLayoutSettings();
   return (
     <footer
-      style={{ backgroundColor: "#69488E" }}
+      style={{ backgroundColor: layoutSetting[0].backgroundColor.value }}
       className="text-white p-5 w-full"
     >
       <div className="container mx-auto flex flex-wrap p-1.5 flex-col md:flex-row justify-between items-center">
@@ -23,4 +25,3 @@ const Footer = () => {
   );
 };
 
-export default Footer;
