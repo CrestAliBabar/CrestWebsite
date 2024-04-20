@@ -42,6 +42,8 @@ export async function getLayoutSettings(): Promise<LayoutType[]> {
     }
     }
   }`);
+}
+
 export async function getTrainingPage(): Promise<TrainingPageType[]> {
   return client.fetch(
     groq`*[_id == "066d2e06-ab1f-4ee7-882f-4f97d045664a"]{title, pageBuilder}`
