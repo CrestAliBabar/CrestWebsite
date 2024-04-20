@@ -43,6 +43,14 @@ export default async function Header (){
                   OSB Seminar
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/Training/PageContent"
+                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                >
+                  Page Content
+                </Link>
+              </li>
             </Dropdown>
             <Dropdown title="Services">
               <li>

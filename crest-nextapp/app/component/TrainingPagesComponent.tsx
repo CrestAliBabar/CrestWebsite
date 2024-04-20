@@ -1,79 +1,61 @@
-import PastSeminarComponent from "./pastSeminar";
-import SeminarContentComponent from "./seminarContent";
-import SeminarLeadersComponent from "./seminarLeader";
-import SummaryComponent from "./summary";
-import TitleComponent from "./titleComponent";
-import GetUpdatesComponent from "./update";
-
-type SeminarInfoType = {
-  title: string;
-  tagline: string;
-  taglineContent: string;
-  summaryText: string;
-  summaryImageSrc: string;
-  lincense: string;
-  targetAudience: string[];
-  relatedSeminarsUrl: string;
-};
-
-type SeminarContentDataType = {
-  sections: {
-    title: string;
-    items: string[];
-  }[];
-  downloadLinks: {
-    language: string;
-    url: string;
-  }[];
-  contactUrl: string;
-};
-
-type SeminarLeadersDataType = {
-  name: string;
-  imageSrc: string;
-}[];
-
-type SeminarEventType = {
-  seminarEventUrl: string;
-};
+import { TrainingPageType } from "@/types/TrainingPageType";
+import { Image } from "next-sanity/image";
 
 type TrainingPagesComponentTypeProps = {
-  seminarInfo: SeminarInfoType;
-  seminarContentData: SeminarContentDataType;
-  seminarLeadersData: SeminarLeadersDataType;
-  seminarEvent: SeminarEventType;
+  pageContent: TrainingPageType[];
 };
 
 const TrainingPagesComponent: React.FC<TrainingPagesComponentTypeProps> = ({
-  seminarInfo,
-  seminarContentData,
-  seminarLeadersData,
-  seminarEvent,
+  pageContent,
 }) => {
+  // map through the pageContent array and render the appropriate component based on the _type property
   return (
-    <div>
-      <div className="container mx-auto pl-10 md:pl-48">
-        <TitleComponent
-          title={seminarInfo.title}
-          tagline={seminarInfo.tagline}
-          taglineContent={seminarInfo.taglineContent}
-        />
-        <SummaryComponent
-          summaryText={seminarInfo.summaryText}
-          summaryImageSrc={seminarInfo.summaryImageSrc}
-          lincense={seminarInfo.lincense}
-          targetAudience={seminarInfo.targetAudience}
-          relatedSeminarsUrl={seminarInfo.relatedSeminarsUrl}
-        />
-        <SeminarContentComponent
-          sections={seminarContentData.sections}
-          downloadLinks={seminarContentData.downloadLinks}
-          contactUrl={seminarContentData.contactUrl}
-        />
-        <SeminarLeadersComponent leaders={seminarLeadersData} />
-        <PastSeminarComponent pastSeminarUrl={seminarEvent.seminarEventUrl} />
-        <GetUpdatesComponent />
-      </div>
+    <div className="container mx-auto mt-20 mb-10">
+      {pageContent[0].pageBuilder.map((content, index) => {
+        switch (content._type) {
+          case "pageTitle":
+            return (
+              <h1 key={index} className="text-3xl font-bold mb-6">
+                {content.text}
+              </h1>
+            );
+          case "pageSubtitle":
+            return (
+              <h2 key={index} className="text-xl font-bold mb-6">
+                {content.text}
+              </h2>
+            );
+          case "pageHeading":
+            return (
+              <h3 key={index} className="text-l font-bold mb-6">
+                {content.text}
+              </h3>
+            );
+          case "paragraph":
+            return (
+              <p key={index} className="text-l mb-6">
+                {content.text}
+              </p>
+            );
+          case "imgUrl":
+            return (
+              <Image
+                key={index}
+                src={content.text}
+                alt=""
+                className="w-3/4 h-auto"
+              />
+            );
+          case "bulletPoint":
+            return (
+              <p key={index} className="text-l mb-6">
+                {content.text}
+              </p>
+            );
+          default:
+            return null;
+        }
+      })}
     </div>
   );
 };
