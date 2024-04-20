@@ -12,6 +12,9 @@ import {description,pageTitle} from './consulting'
 import {trainCard} from './trainCard'
 import {serviceCard} from './serviceCard'
 import {consultingCard} from './consultingCard'
+import layoutChange from './layout-change'
+
+
 
 export const schemaTypes = [
   pageType,
@@ -28,5 +31,6 @@ export const schemaTypes = [
   simpleText,
   trainCard,
   serviceCard,
-  consultingCard
+  consultingCard,
+  layoutChange
 ]

@@ -1,4 +1,4 @@
-import { DocumentIcon } from '@sanity/icons';
+
 import { defineType, defineField } from 'sanity';
 
 export const trainCard = defineType({

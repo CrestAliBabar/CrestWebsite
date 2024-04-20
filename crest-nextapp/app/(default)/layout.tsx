@@ -6,19 +6,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // return (
-  //   <html lang="en">
-  //     <body>
-  //       <Header />
-  //       <div className="container mx-auto">{children}</div>
-  //       <Footer />
-  //     </body>
-  //   </html>
-  // );
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow" 
+      
+      style={{ backgroundImage:'url("")' }}
+      >
         <div className="container mx-auto">{children}</div>
       </main>
       <Footer />
