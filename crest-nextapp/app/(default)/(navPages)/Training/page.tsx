@@ -20,7 +20,7 @@ type TrainCard = {
 export default async function Training () {
   
   const trainingCard = await getTrainingCard();
-  console.log(trainingCard);
+
 
   return (
     <div className="px-28">

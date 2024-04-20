@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import { schemaTypes } from './sanity/schemas';
+import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 
 
 
@@ -17,7 +18,17 @@ const config = defineConfig({
 
     basePath : "/sanityadmin",
     
-    plugins: [structureTool(),visionTool()],
+    plugins: [structureTool(),visionTool(),
+    
+        simplerColorInput({
+            defaultColorFormat: 'rgba',
+            defaultColorList: [
+              { label: 'Custom', value: 'custom' },
+            ],
+            enableSearch: true,
+          })
+    
+    ],
 
     schema: {types: schemaTypes },
 })

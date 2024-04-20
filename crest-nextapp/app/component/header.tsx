@@ -1,12 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
 import Dropdown from "../clientComponent/utils/dropdown";
 import logo from "@/public/bavaye.png";
+import { getLayoutSettings } from "@/sanity/sanity-utils";
 
-export const Header = () => {
+
+export default async function Header (){
+  const layoutSetting = await getLayoutSettings();
+
   return (
     <header
-      style={{ backgroundColor: "#69488E" }}
+      style={{ backgroundColor: layoutSetting[0].backgroundColor.value }}
       className="text-black body-font w-full"
     >
       <div className="container mx-auto flex flex-wrap p-1.5 flex-col md:flex-row justify-center items-center">
@@ -15,7 +20,7 @@ export const Header = () => {
           className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 md:justify-start "
         >
           <img
-            src={logo.src}
+            src={layoutSetting[0].image.asset.url}
             alt="Bayave Logo"
             className="h-16 sm:h-24 mx-40"
           />
@@ -102,4 +107,4 @@ export const Header = () => {
   );
 };
 
-export default Header;
+
