@@ -11,7 +11,7 @@ const TrainingPagesComponent: React.FC<TrainingPagesComponentTypeProps> = ({
   // map through the pageContent array and render the appropriate component based on the _type property
   return (
     <div className="container mx-auto mt-20 mb-10">
-      {pageContent[0].pageBuilder.map((content, index) => {
+      {pageContent[1].pageBuilder.map((content, index) => {
         switch (content._type) {
           case "pageTitle":
             return (
@@ -37,11 +37,13 @@ const TrainingPagesComponent: React.FC<TrainingPagesComponentTypeProps> = ({
                 {content.text}
               </p>
             );
-          case "imgUrl":
+          case "image":
             return (
               <Image
                 key={index}
-                src={content.text}
+                src={content.asset.url}
+                width={2000}
+                height={1000}
                 alt=""
                 className="w-3/4 h-auto"
               />
