@@ -21,6 +21,7 @@ export type pageTitle = {
     _id: string;
     url: string;
   };
+  bulletPoint: string[];
 };
 
 export type pageSubtitle = {
@@ -31,6 +32,7 @@ export type pageSubtitle = {
     _id: string;
     url: string;
   };
+  bulletPoint: string[];
 };
 
 export type pageHeading = {
@@ -41,6 +43,7 @@ export type pageHeading = {
     _id: string;
     url: string;
   };
+  bulletPoint: string[];
 };
 
 export type paragraph = {
@@ -51,6 +54,7 @@ export type paragraph = {
     _id: string;
     url: string;
   };
+  bulletPoint: string[];
 };
 
 export type imgUrl = {
@@ -61,6 +65,7 @@ export type imgUrl = {
     _id: string;
     url: string;
   };
+  bulletPoint: string[];
 };
 
 export type bulletPoint = {
@@ -71,4 +76,5 @@ export type bulletPoint = {
     _id: string;
     url: string;
   };
+  bulletPoint: string[];
 };

@@ -11,7 +11,7 @@ const TrainingPagesComponent: React.FC<TrainingPagesComponentTypeProps> = ({
   // map through the pageContent array and render the appropriate component based on the _type property
   return (
     <div className="container mx-auto mt-20 mb-10">
-      {pageContent[1].pageBuilder.map((content, index) => {
+      {pageContent[0].pageBuilder.map((content, index) => {
         switch (content._type) {
           case "pageTitle":
             return (
@@ -49,10 +49,14 @@ const TrainingPagesComponent: React.FC<TrainingPagesComponentTypeProps> = ({
               />
             );
           case "bulletPoint":
+            if (!content.bulletPoint || content.bulletPoint.length == 0)
+              return <></>;
             return (
-              <p key={index} className="text-l mb-6">
-                {content.text}
-              </p>
+              <ul className="text-l mb-6 list-disc pl-8">
+                {content.bulletPoint.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
             );
           default:
             return null;
