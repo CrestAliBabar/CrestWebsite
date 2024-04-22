@@ -13,7 +13,13 @@ import {trainCard} from './trainCard'
 import {serviceCard} from './serviceCard'
 import {consultingCard} from './consultingCard'
 import layoutChange from './layout-change'
-
+import {
+  imgUrl,
+  pageHeading,
+  pageSubtitle,
+  paragraph,
+  trainingPageSchema,
+} from "./trainingPageSchema";
 
 
 export const schemaTypes = [
@@ -32,5 +38,10 @@ export const schemaTypes = [
   trainCard,
   serviceCard,
   consultingCard,
-  layoutChange
+  layoutChange,
+  trainingPageSchema,
+  pageSubtitle,
+  pageHeading,
+  paragraph,
+  imgUrl,
 ]
