@@ -3,10 +3,11 @@ import React from "react";
 import Link from "next/link";
 import Dropdown from "../clientComponent/utils/dropdown";
 import { getLayoutSettings } from "@/sanity/sanity-utils";
+import { getServicePage } from "@/sanity/sanity-utils";
 
 export default async function Header() {
   const layoutSetting = await getLayoutSettings();
-
+  const servicePage = await getServicePage();
   return (
     <header
       style={{ backgroundColor: layoutSetting[0].backgroundColor.value }}
@@ -25,51 +26,22 @@ export default async function Header() {
         </Link>
         <nav className="flex flex-wrap items-center text-base justify-center mx-auto">
           <ul className="flex grow justify-start flex-wrap items-center ml-30 md:ml-25">
-            <Dropdown title="Training">
-              <li>
-                <Link
-                  href="/Training/LCD-Seminar"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  LCD Seminar
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/Training/OSB-Seminar"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  OSB Seminar
-                </Link>
-              </li>
-            </Dropdown>
             <Dropdown title="Services">
-              <li>
-                <Link
-                  // href="/Service/PageContent/"
-                  href="/Services/SCA-Services"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  Page Content
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/Services/SCA-Services"
-                  Due-Diligence
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  SCA Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/Services/Due-Diligence"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  Due Diligence
-                </Link>
-              </li>
+              {servicePage.map((page) => {
+                console.log(page.title);
+                return (
+                  <li key={page._id}>
+                    <Link
+                      href={{
+                        pathname: `/Services/PageContent/${page._id}`,
+                      }}
+                      className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                    >
+                      {page.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </Dropdown>
             <Dropdown title="Consulting">
               <li>

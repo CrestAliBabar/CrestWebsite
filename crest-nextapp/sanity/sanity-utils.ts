@@ -44,36 +44,26 @@ export async function getLayoutSettings(): Promise<LayoutType[]> {
   }`);
 }
 
-// export async function getServicePage(): Promise<servicePageType[]> {
-//   try {
-//     return client.fetch(groq`*[_type == "servicesPageSchema"] {
-//       title,
-//       "pageBuilder": pageBuilder[]{
-//         ...,  // Spread operator to include all fields by default
-//         _type == 'videoType' => {
-//           "url": url  // Directly use 'url' if it's a string, or use 'asset->url' if 'url' is an asset reference
-//         }
-//       }
-//     }`);
-//   } catch (error) {
-//     console.error("Failed to fetch service pages:", error);
-//     return []; // Return an empty array or handle the error as appropriate
-//   }
-// }
-// export async function getServicePage(): Promise<servicePageType[]> {
-//   return client.fetch(
-//     groq`*[_id == "29ccca11-d0c2-4524-bb5b-fa3597a337be"]{title, pageBuilder}`
-//   );
-// }
-export async function getServicePage(): Promise<servicePageType[]> {
-  try {
-    const data = await client.fetch(
-      groq`*[_type == "servicesPageSchema"]{title, pageBuilder[]{_key, _type, text}}`
+export async function getServicePage(
+  pageId?: string
+): Promise<servicePageType[]> {
+  if (pageId) {
+    try {
+      const data = await client.fetch(
+        groq`*[_type == "servicesPageSchema"&&_id=="${pageId}"]{_id, pageBuilder[]{_key,_type, text, url, videoLabel}}`
+      );
+      console.log("Fetched data:", data[0]);
+      return data;
+    } catch (error) {
+      console.error(
+        "There has been a problem with your fetch operation:",
+        error
+      );
+      return []; // Return an empty array or handle the error as appropriate
+    }
+  } else {
+    return client.fetch(
+      groq`*[_type == "servicesPageSchema"] | order(_createdAt){_id, title}`
     );
-    console.log("Fetched data:", data);
-    return data;
-  } catch (error) {
-    console.error("There has been a problem with your fetch operation:", error);
-    return []; // Return an empty array or handle the error as appropriate
   }
 }

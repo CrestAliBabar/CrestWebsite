@@ -44,7 +44,7 @@ export const servicesPageSchema = defineType({
         { type: "pageTitle" },
         { type: "pageSubtitle" },
         { type: "paragraph" },
-        // { type: "video" },
+        { type: "video" },
       ],
     }),
   ],
