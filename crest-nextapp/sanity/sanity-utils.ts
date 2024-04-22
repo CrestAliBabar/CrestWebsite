@@ -40,7 +40,17 @@ export async function getLayoutSettings(): Promise<LayoutType[]> {
       _id,
       url,
     }
-    }
+    },
+  backgroundGradient{
+      transitionDirection,
+  startColor{
+    value
+  },
+  endColor{
+    value
+  }
+  }
+
   }`);
 }
 
