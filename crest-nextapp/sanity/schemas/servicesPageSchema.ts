@@ -1,4 +1,4 @@
-import { defineArrayMember, defineField, defineType } from "sanity";
+import { defineField, defineType } from "sanity";
 
 export const pageSubtitle = defineType({
   name: "pageSubtitle",
@@ -44,7 +44,7 @@ export const servicesPageSchema = defineType({
         { type: "pageTitle" },
         { type: "pageSubtitle" },
         { type: "paragraph" },
-        { type: "videoType" },
+        // { type: "video" },
       ],
     }),
   ],

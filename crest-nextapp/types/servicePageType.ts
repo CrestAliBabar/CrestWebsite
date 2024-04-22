@@ -1,4 +1,5 @@
 import { pageTitle } from "@/sanity/schemas/consulting";
+import { videoType } from "@/sanity/schemas/videoType";
 
 export type servicePageType = {
   title: string;
@@ -6,6 +7,7 @@ export type servicePageType = {
 };
 
 export type pageBuilderSection = pageTitle | pageSubtitle | paragraph;
+// | videoType;
 
 export type pageTitle = {
   _key: string;
@@ -25,8 +27,8 @@ export type paragraph = {
   text: string;
 };
 
-export type videoType = {
-  _key: string;
-  _type: string;
-  text: string;
-};
+// export type videoType = {
+//   _key: string;
+//   _type: string;
+//   text: string;
+// };

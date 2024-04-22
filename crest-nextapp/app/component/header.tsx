@@ -4,8 +4,7 @@ import Link from "next/link";
 import Dropdown from "../clientComponent/utils/dropdown";
 import { getLayoutSettings } from "@/sanity/sanity-utils";
 
-
-export default async function Header (){
+export default async function Header() {
   const layoutSetting = await getLayoutSettings();
 
   return (
@@ -45,6 +44,15 @@ export default async function Header (){
               </li>
             </Dropdown>
             <Dropdown title="Services">
+              <li>
+                <Link
+                  // href="/Service/PageContent/"
+                  href="/Services/SCA-Services"
+                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                >
+                  Page Content
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/Services/SCA-Services"
@@ -104,6 +112,4 @@ export default async function Header (){
       </div>
     </header>
   );
-};
-
-
+}
