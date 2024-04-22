@@ -1,6 +1,4 @@
-import React from "react";
-import TitleComponent from "@/app/component/titleComponent";
-import ReportSection from "@/app/component/reportSection";
+import ServicePagesComponent from "@/app/component/ServicePagesComponent";
 
 const seminarInfo = {
   title: "Software Composition Analysis(SCA)",
@@ -12,17 +10,13 @@ const ReportVideo = {
   videoUrl: "https://www.youtube.com/watch?v=0DkVA3X0lhQ&ab_channel=OryNetwork",
 };
 
-const Services: React.FC = () => {
+const SCA_Services: React.FC = () => {
   return (
-    <div className="container mx-auto pl-10 md:pl-48">
-      <TitleComponent
-        title={seminarInfo.title}
-        tagline={seminarInfo.tagline}
-        taglineContent={seminarInfo.taglineContent}
-      />
-      <ReportSection videoUrl={ReportVideo.videoUrl} />
-    </div>
+    <ServicePagesComponent
+      seminarInfo={seminarInfo}
+      ReportVideo={ReportVideo}
+    />
   );
 };
 
-export default Services;
+export default SCA_Services;

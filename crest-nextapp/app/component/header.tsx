@@ -1,12 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
 import Dropdown from "../clientComponent/utils/dropdown";
-import logo from "@/public/bavaye.png";
+import { getLayoutSettings, getTrainingPage } from "@/sanity/sanity-utils";
 
-export const Header = () => {
+export default async function Header() {
+  const layoutSetting = await getLayoutSettings();
+  const trainingPage = await getTrainingPage();
+
   return (
     <header
-      style={{ backgroundColor: "#69488E" }}
+      style={{ backgroundColor: layoutSetting[0].backgroundColor.value }}
       className="text-black body-font w-full"
     >
       <div className="container mx-auto flex flex-wrap p-1.5 flex-col md:flex-row justify-center items-center">
@@ -15,7 +19,7 @@ export const Header = () => {
           className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 md:justify-start "
         >
           <img
-            src={logo.src}
+            src={layoutSetting[0].image.asset.url}
             alt="Bayave Logo"
             className="h-16 sm:h-24 mx-40"
           />
@@ -23,22 +27,20 @@ export const Header = () => {
         <nav className="flex flex-wrap items-center text-base justify-center mx-auto">
           <ul className="flex grow justify-start flex-wrap items-center ml-30 md:ml-25">
             <Dropdown title="Training">
-              <li>
-                <Link
-                  href="/Training/LCD-Seminar"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  LCD Seminar
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/Training/OSB-Seminar"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  OSB Seminar
-                </Link>
-              </li>
+              {trainingPage.map((page) => {
+                return (
+                  <li key={page._id}>
+                    <Link
+                      href={{
+                        pathname: `/Training/PageContent/${page._id}`,
+                      }}
+                      className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                    >
+                      {page.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </Dropdown>
             <Dropdown title="Services">
               <li>
@@ -100,6 +102,4 @@ export const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

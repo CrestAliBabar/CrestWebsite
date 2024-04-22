@@ -26,7 +26,7 @@ export default function Dropdown({
     >
       <Link
         className="font-medium text-slate-800 dark:text-white px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
-        href={title}
+        href={`/${title}`}
         aria-expanded={dropdownOpen}
       >
         {title}
