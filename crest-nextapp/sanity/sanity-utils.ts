@@ -44,8 +44,16 @@ export async function getLayoutSettings(): Promise<LayoutType[]> {
   }`);
 }
 
-export async function getTrainingPage(): Promise<TrainingPageType[]> {
-  return client.fetch(
-    groq`*[_type == "trainingPageSchema"]{_id, title, pageBuilder[]{_type, text, asset->{_id, url}}}`
-  );
+export async function getTrainingPage(
+  pageId?: string
+): Promise<TrainingPageType[]> {
+  if (pageId) {
+    return client.fetch(
+      groq`*[_type == "trainingPageSchema" && _id == "${pageId}" ]{_id, pageBuilder[]{_type, text, asset->{_id, url}, bulletPoint[]}}`
+    );
+  } else {
+    return client.fetch(
+      groq`*[_type == "trainingPageSchema"]| order(_createdAt){_id, title}`
+    );
+  }
 }

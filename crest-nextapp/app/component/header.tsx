@@ -32,8 +32,7 @@ export default async function Header() {
                   <li key={page._id}>
                     <Link
                       href={{
-                        pathname: "/Training/PageContent",
-                        query: { pageId: page._id },
+                        pathname: `/Training/PageContent/${page._id}`,
                       }}
                       className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
                     >
