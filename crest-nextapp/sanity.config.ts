@@ -13,8 +13,6 @@ const config = defineConfig({
 
   apiVersion: "03-07-2024",
 
-  apiVersion: "03-07-2024",
-
   basePath: "/sanityadmin",
 
   plugins: [
