@@ -14,10 +14,14 @@ import { serviceCard } from "./serviceCard";
 import { consultingCard } from "./consultingCard";
 import layoutChange from "./layout-change";
 import {
-  servicesPageSchema,
+  imgUrl,
+  pageHeading,
   pageSubtitle,
   paragraph,
-} from "./servicesPageSchema";
+  trainingPageSchema,
+} from "./trainingPageSchema";
+
+import { servicesPageSchema } from "./servicesPageSchema";
 
 export const schemaTypes = [
   pageType,
@@ -37,6 +41,9 @@ export const schemaTypes = [
   consultingCard,
   layoutChange,
   servicesPageSchema,
+  trainingPageSchema,
   pageSubtitle,
+  pageHeading,
   paragraph,
+  imgUrl,
 ];

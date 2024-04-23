@@ -13,6 +13,8 @@ const config = defineConfig({
 
   apiVersion: "03-07-2024",
 
+  apiVersion: "03-07-2024",
+
   basePath: "/sanityadmin",
 
   plugins: [
@@ -22,7 +24,6 @@ const config = defineConfig({
     simplerColorInput({
       defaultColorFormat: "rgba",
       defaultColorList: [{ label: "Custom", value: "custom" }],
-      enableSearch: true,
     }),
   ],
 
