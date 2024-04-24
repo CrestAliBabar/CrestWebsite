@@ -1,6 +1,6 @@
 import { LayoutType } from "@/types/layoutType";
 import { TrainingPageType } from "@/types/TrainingPageType";
-import { TrainCard } from "@/types/TrainingCardType";
+import { TrainCard, ServiceCard, ConsultingCard } from "@/types/CardType";
 import { createClient } from "@sanity/client";
 import { groq } from "next-sanity";
 
@@ -16,12 +16,14 @@ const client = createClient({
 
 export async function getTrainingCard(): Promise<TrainCard[]> {
   return client.fetch(groq`*[_type == "trainCard"]`);
-  // return client.fetch(groq `*[_type == "trainCard"] {
-  //   pageName,
-  //   imgUrl,
-  //   description,
-  //   title
-  // }`)
+}
+
+export async function getConsultingCard(): Promise<ConsultingCard[]> {
+  return client.fetch(groq`*[_type == "consultingCard"]`);
+}
+
+export async function getServiceCard(): Promise<ServiceCard[]> {
+  return client.fetch(groq`*[_type == "serviceCard"]`);
 }
 
 export async function getLayoutSettings(): Promise<LayoutType[]> {

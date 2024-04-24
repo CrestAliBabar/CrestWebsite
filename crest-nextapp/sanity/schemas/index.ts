@@ -12,6 +12,7 @@ import {description,pageTitle} from './consulting'
 import {trainCard} from './trainCard'
 import {serviceCard} from './serviceCard'
 import {consultingCard} from './consultingCard'
+import {PageInfo} from './pageInfo'
 import layoutChange from './layout-change'
 import {
   imgUrl,
@@ -38,6 +39,7 @@ export const schemaTypes = [
   trainCard,
   serviceCard,
   consultingCard,
+  PageInfo,
   layoutChange,
   trainingPageSchema,
   pageSubtitle,
