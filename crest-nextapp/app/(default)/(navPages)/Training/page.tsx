@@ -9,12 +9,6 @@ const pageInfo = {
   tabPage: "Training",
 };
 
-type TrainCard = {
-  title: string;
-  pageName: string;
-  description: string;
-  imgUrl: string;
-};
 
 export default async function Training() {
   const trainingCard = await getTrainingCard();
