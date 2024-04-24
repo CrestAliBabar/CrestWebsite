@@ -1,6 +1,7 @@
 import { LayoutType } from "@/types/layoutType";
 import { TrainingPageType } from "@/types/TrainingPageType";
 import { TrainCard, ServiceCard, ConsultingCard } from "@/types/CardType";
+import { PageInfoType } from "@/types/PageInfoType";
 import { createClient } from "@sanity/client";
 import { groq } from "next-sanity";
 
@@ -24,6 +25,12 @@ export async function getConsultingCard(): Promise<ConsultingCard[]> {
 
 export async function getServiceCard(): Promise<ServiceCard[]> {
   return client.fetch(groq`*[_type == "serviceCard"]`);
+}
+
+export async function getPageInfo(selectedTabName: string): Promise<PageInfoType[]> {
+  const query = groq`*[_type == "PageInfo" && tabName == $selectedTabName]{heading, description, tabName}`;
+  const params = { selectedTabName };
+  return client.fetch(query, params);
 }
 
 export async function getLayoutSettings(): Promise<LayoutType[]> {
