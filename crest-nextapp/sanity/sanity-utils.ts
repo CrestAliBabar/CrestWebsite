@@ -1,5 +1,6 @@
 import { LayoutType } from "@/types/layoutType";
 import { TrainingPageType } from "@/types/TrainingPageType";
+import { servicePageType } from "@/types/servicePageType";
 import { createClient } from "@sanity/client";
 import { groq } from "next-sanity";
 
@@ -64,6 +65,30 @@ export async function getTrainingPage(
   } else {
     return client.fetch(
       groq`*[_type == "trainingPageSchema"]| order(_createdAt){_id, title}`
+    );
+  }
+}
+
+export async function getServicePage(
+  pageId?: string
+): Promise<servicePageType[]> {
+  if (pageId) {
+    try {
+      const data = await client.fetch(
+        groq`*[_type == "servicesPageSchema"&&_id=="${pageId}"]{_id, pageBuilder[]{_key,_type, text, url, videoLabel}}`
+      );
+      console.log("Fetched data:", data[0]);
+      return data;
+    } catch (error) {
+      console.error(
+        "There has been a problem with your fetch operation:",
+        error
+      );
+      return []; // Return an empty array or handle the error as appropriate
+    }
+  } else {
+    return client.fetch(
+      groq`*[_type == "servicesPageSchema"] | order(_createdAt){_id, title}`
     );
   }
 }

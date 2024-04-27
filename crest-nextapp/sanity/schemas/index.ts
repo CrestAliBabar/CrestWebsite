@@ -1,18 +1,18 @@
 // ./schemas/index.ts
 
-import {formType} from './formType'
-import {heroType} from './heroType'
-import {imageGalleryType} from './imageGalleryType'
-import {pageType} from './pageType'
-import {promotionType} from './promotionType'
-import {textWithIllustrationType} from './textWithIllustrationType'
-import {videoType} from './videoType'
-import {bulletPoint, consulting, simpleText} from './consulting'
-import {description,pageTitle} from './consulting'
-import {trainCard} from './trainCard'
-import {serviceCard} from './serviceCard'
-import {consultingCard} from './consultingCard'
-import layoutChange from './layout-change'
+import { formType } from "./formType";
+import { heroType } from "./heroType";
+import { imageGalleryType } from "./imageGalleryType";
+import { pageType } from "./pageType";
+import { promotionType } from "./promotionType";
+import { textWithIllustrationType } from "./textWithIllustrationType";
+import { videoType } from "./videoType";
+import { bulletPoint, consulting, simpleText } from "./consulting";
+import { description, pageTitle } from "./consulting";
+import { trainCard } from "./trainCard";
+import { serviceCard } from "./serviceCard";
+import { consultingCard } from "./consultingCard";
+import layoutChange from "./layout-change";
 import {
   imgUrl,
   pageHeading,
@@ -21,6 +21,7 @@ import {
   trainingPageSchema,
 } from "./trainingPageSchema";
 
+import { servicesPageSchema } from "./servicesPageSchema";
 
 export const schemaTypes = [
   pageType,
@@ -39,9 +40,10 @@ export const schemaTypes = [
   serviceCard,
   consultingCard,
   layoutChange,
+  servicesPageSchema,
   trainingPageSchema,
   pageSubtitle,
   pageHeading,
   paragraph,
   imgUrl,
-]
+];
