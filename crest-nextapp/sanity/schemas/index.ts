@@ -22,6 +22,7 @@ import {
   trainingPageSchema,
 } from "./trainingPageSchema";
 
+import { servicesPageSchema } from "./servicesPageSchema";
 
 export const schemaTypes = [
   pageType,
@@ -41,9 +42,10 @@ export const schemaTypes = [
   consultingCard,
   PageInfo,
   layoutChange,
+  servicesPageSchema,
   trainingPageSchema,
   pageSubtitle,
   pageHeading,
   paragraph,
   imgUrl,
-]
+];
