@@ -49,7 +49,7 @@ export default async function Header() {
             </Dropdown>
             <Dropdown title="Services">
               {servicePage.map((page) => {
-                console.log(page.title);
+                // console.log(page.title);
                 return (
                   <li key={page._id}>
                     <Link

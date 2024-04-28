@@ -82,7 +82,7 @@ export async function getServicePage(
       const data = await client.fetch(
         groq`*[_type == "servicesPageSchema"&&_id=="${pageId}"]{_id, pageBuilder[]{_key,_type, text, url, videoLabel}}`
       );
-      console.log("Fetched data:", data[0]);
+      // console.log("Fetched data:", data[0]);
       return data;
     } catch (error) {
       console.error(
