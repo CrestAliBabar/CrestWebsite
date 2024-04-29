@@ -2,6 +2,7 @@ import React from 'react'
 import CommonPageComponent from "@/app/component/commonPageComponent";
 import { getServiceCard } from "@/sanity/sanity-utils";
 import { getPageInfo } from "@/sanity/sanity-utils";
+import { getServicePage } from "@/sanity/sanity-utils";
 const pageInfo = {
   heading:"Structured Services",
   description:"Competitively priced open source license clearing and due diligence services.",
@@ -17,9 +18,14 @@ const pageInfo = {
   // console.log(pageInfoArray);
   const pageInfo = pageInfoArray[0] ?? {}; 
 
+  const servicePage = await getServicePage();
+  // console.log(servicePage);
+ 
+
+
   return (
     <div className="px-28">
-    <CommonPageComponent componentData={serviceCard}  pageInfo={pageInfo} />
+    <CommonPageComponent componentData={serviceCard}  pageInfo={pageInfo} pageDynamicId = {servicePage}/>
     </div>
   )
 }

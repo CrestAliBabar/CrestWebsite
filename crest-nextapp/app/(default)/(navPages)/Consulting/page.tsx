@@ -18,9 +18,10 @@ async function Consulting () {
   // console.log(pageInfoArray);
   const pageInfo = pageInfoArray[0] ?? {}; 
   
+  const pageId = ['consultingPageSchema']; // temporary
   return (
     <div className="px-28">
-      <CommonPageComponent componentData={consultingCard} pageInfo={pageInfo} />
+      <CommonPageComponent componentData={consultingCard} pageInfo={pageInfo} pageDynamicId = {pageId}/>
     </div>
   );
 };
