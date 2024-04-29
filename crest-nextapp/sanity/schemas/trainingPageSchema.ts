@@ -73,6 +73,7 @@ export const trainingPageSchema = defineType({
         { type: "paragraph" },
         { type: "image" },
         { type: "bulletPoint" },
+        { type: "video" },
       ],
     }),
   ],

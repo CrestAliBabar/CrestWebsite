@@ -22,6 +22,8 @@ import {
 } from "./trainingPageSchema";
 
 import { servicesPageSchema } from "./servicesPageSchema";
+import { consultingPageSchema } from "./consultingPageSchema";
+import { companyPageSchema } from "./companyPageSchema";
 
 export const schemaTypes = [
   pageType,
@@ -42,6 +44,8 @@ export const schemaTypes = [
   layoutChange,
   servicesPageSchema,
   trainingPageSchema,
+  consultingPageSchema,
+  companyPageSchema,
   pageSubtitle,
   pageHeading,
   paragraph,

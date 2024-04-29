@@ -1,9 +1,9 @@
 import { defineField, defineType } from "sanity";
 
-export const servicesPageSchema = defineType({
-  name: "servicesPageSchema",
+export const consultingPageSchema = defineType({
+  name: "consultingPageSchema",
   type: "document",
-  title: "Services Page Content",
+  title: "Consulting Page Content",
   fields: [
     defineField({
       name: "title",

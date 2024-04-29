@@ -1,8 +1,7 @@
 import { LayoutType } from "@/types/layoutType";
-import { TrainingPageType } from "@/types/TrainingPageType";
-import { servicePageType } from "@/types/servicePageType";
 import { createClient } from "@sanity/client";
 import { groq } from "next-sanity";
+import { PageContentType } from "@/types/PageContentType";
 
 const client = createClient({
   projectId: "7xkjaifb",
@@ -57,10 +56,10 @@ export async function getLayoutSettings(): Promise<LayoutType[]> {
 
 export async function getTrainingPage(
   pageId?: string
-): Promise<TrainingPageType[]> {
+): Promise<PageContentType[]> {
   if (pageId) {
     return client.fetch(
-      groq`*[_type == "trainingPageSchema" && _id == "${pageId}" ]{_id, pageBuilder[]{_type, text, asset->{_id, url}, bulletPoint[]}}`
+      groq`*[_type == "trainingPageSchema" && _id == "${pageId}" ]{_id, pageBuilder[]{_key, _type, text, asset->{_id, url}, bulletPoint[], url, videoLabel}}`
     );
   } else {
     return client.fetch(
@@ -71,13 +70,12 @@ export async function getTrainingPage(
 
 export async function getServicePage(
   pageId?: string
-): Promise<servicePageType[]> {
+): Promise<PageContentType[]> {
   if (pageId) {
     try {
       const data = await client.fetch(
-        groq`*[_type == "servicesPageSchema"&&_id=="${pageId}"]{_id, pageBuilder[]{_key,_type, text, url, videoLabel}}`
+        groq`*[_type == "servicesPageSchema"&&_id=="${pageId}"]{_id, pageBuilder[]{_key, _type, text, asset->{_id, url}, bulletPoint[], url, videoLabel}}`
       );
-      console.log("Fetched data:", data[0]);
       return data;
     } catch (error) {
       console.error(
@@ -89,6 +87,34 @@ export async function getServicePage(
   } else {
     return client.fetch(
       groq`*[_type == "servicesPageSchema"] | order(_createdAt){_id, title}`
+    );
+  }
+}
+
+export async function getConsultingPage(
+  pageId?: string
+): Promise<PageContentType[]> {
+  if (pageId) {
+    return client.fetch(
+      groq`*[_type == "consultingPageSchema" && _id == "${pageId}" ]{_id, pageBuilder[]{_key, _type, text, asset->{_id, url}, bulletPoint[], url, videoLabel}}`
+    );
+  } else {
+    return client.fetch(
+      groq`*[_type == "consultingPageSchema"]| order(_createdAt){_id, title}`
+    );
+  }
+}
+
+export async function getCompanyPage(
+  pageId?: string
+): Promise<PageContentType[]> {
+  if (pageId) {
+    return client.fetch(
+      groq`*[_type == "companyPageSchema" && _id == "${pageId}" ]{_id, pageBuilder[]{_key, _type, text, asset->{_id, url}, bulletPoint[], url, videoLabel}}`
+    );
+  } else {
+    return client.fetch(
+      groq`*[_type == "companyPageSchema"]| order(_createdAt){_id, title}`
     );
   }
 }
