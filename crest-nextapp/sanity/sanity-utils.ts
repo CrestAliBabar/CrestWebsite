@@ -1,5 +1,7 @@
 import { LayoutType } from "@/types/layoutType";
 import { TrainingPageType } from "@/types/TrainingPageType";
+import { TrainCard, ServiceCard, ConsultingCard } from "@/types/CardType";
+import { PageInfoType } from "@/types/PageInfoType";
 import { servicePageType } from "@/types/servicePageType";
 import { createClient } from "@sanity/client";
 import { groq } from "next-sanity";
@@ -12,21 +14,24 @@ const client = createClient({
   apiVersion: "2024-03-07",
 });
 
-type TrainCard = {
-  title: string;
-  pageName: string;
-  description: string;
-  imgUrl: string;
-};
+
 
 export async function getTrainingCard(): Promise<TrainCard[]> {
   return client.fetch(groq`*[_type == "trainCard"]`);
-  // return client.fetch(groq `*[_type == "trainCard"] {
-  //   pageName,
-  //   imgUrl,
-  //   description,
-  //   title
-  // }`)
+}
+
+export async function getConsultingCard(): Promise<ConsultingCard[]> {
+  return client.fetch(groq`*[_type == "consultingCard"]`);
+}
+
+export async function getServiceCard(): Promise<ServiceCard[]> {
+  return client.fetch(groq`*[_type == "serviceCard"]`);
+}
+
+export async function getPageInfo(selectedTabName: string): Promise<PageInfoType[]> {
+  const query = groq`*[_type == "PageInfo" && tabName == $selectedTabName]{heading, description, tabName}`;
+  const params = { selectedTabName };
+  return client.fetch(query, params);
 }
 
 export async function getLayoutSettings(): Promise<LayoutType[]> {
@@ -77,7 +82,7 @@ export async function getServicePage(
       const data = await client.fetch(
         groq`*[_type == "servicesPageSchema"&&_id=="${pageId}"]{_id, pageBuilder[]{_key,_type, text, url, videoLabel}}`
       );
-      console.log("Fetched data:", data[0]);
+      // console.log("Fetched data:", data[0]);
       return data;
     } catch (error) {
       console.error(

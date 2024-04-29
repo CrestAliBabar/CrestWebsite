@@ -1,18 +1,19 @@
 // ./schemas/index.ts
 
-import { formType } from "./formType";
-import { heroType } from "./heroType";
-import { imageGalleryType } from "./imageGalleryType";
-import { pageType } from "./pageType";
-import { promotionType } from "./promotionType";
-import { textWithIllustrationType } from "./textWithIllustrationType";
-import { videoType } from "./videoType";
-import { bulletPoint, consulting, simpleText } from "./consulting";
-import { description, pageTitle } from "./consulting";
-import { trainCard } from "./trainCard";
-import { serviceCard } from "./serviceCard";
-import { consultingCard } from "./consultingCard";
-import layoutChange from "./layout-change";
+import {formType} from './formType'
+import {heroType} from './heroType'
+import {imageGalleryType} from './imageGalleryType'
+import {pageType} from './pageType'
+import {promotionType} from './promotionType'
+import {textWithIllustrationType} from './textWithIllustrationType'
+import {videoType} from './videoType'
+import {bulletPoint, consulting, simpleText} from './consulting'
+import {description,pageTitle} from './consulting'
+import {trainCard} from './trainCard'
+import {serviceCard} from './serviceCard'
+import {consultingCard} from './consultingCard'
+import {PageInfo} from './pageInfo'
+import layoutChange from './layout-change'
 import {
   imgUrl,
   pageHeading,
@@ -39,6 +40,7 @@ export const schemaTypes = [
   trainCard,
   serviceCard,
   consultingCard,
+  PageInfo,
   layoutChange,
   servicesPageSchema,
   trainingPageSchema,

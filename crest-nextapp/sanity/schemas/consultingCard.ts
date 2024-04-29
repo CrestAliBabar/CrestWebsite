@@ -10,7 +10,7 @@ export const consultingCard = defineType({
       name: 'title',
       type: 'string',
       title: 'Title',
-      description: 'The title of the train card',
+      description: 'The title of the consulting card',
     },
     {
       name: 'pageName',
@@ -22,13 +22,13 @@ export const consultingCard = defineType({
       name: 'description',
       type: 'text',
       title: 'Description',
-      description: 'A brief description of the train card',
+      description: 'A brief description of the consulting card',
     },
     {
       name: 'imgUrl',
       type: 'image',
       title: 'Image URL',
-      description: 'The image associated with the train card',
+      description: 'The image associated with the consulting card',
       // If you want to have fields for alt text or captions, you can add them like this:
       fields: [
         {
