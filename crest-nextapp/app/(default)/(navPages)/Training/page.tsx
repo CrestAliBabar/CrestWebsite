@@ -10,21 +10,21 @@ import { getTrainingPage } from "@/sanity/sanity-utils";
 //   tabPage: "Training",
 // };
 
-
 export default async function Training() {
   const tabName = "Training";
+
   const trainingCard = await getTrainingCard();
   const pageInfoArray = await getPageInfo(tabName);
-  // console.log(pageInfoArray);
-  const pageInfo = pageInfoArray[0] ?? {}; 
-  
+  const pageInfo = pageInfoArray[0] ?? {};
   const trainingPage = await getTrainingPage();
-  // // console.log(trainingPage);
-
 
   return (
     <div className="px-28">
-      <CommonPageComponent componentData={trainingCard} pageInfo={pageInfo} pageDynamicId = {trainingPage}/>
+      <CommonPageComponent
+        componentData={trainingCard}
+        pageInfo={pageInfo}
+        pageDynamicId={trainingPage}
+      />
     </div>
   );
 }

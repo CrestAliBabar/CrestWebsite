@@ -1,7 +1,10 @@
 import React from "react";
 import CommonPageComponent from "@/app/component/commonPageComponent";
-import { getConsultingCard } from "@/sanity/sanity-utils";
-import { getPageInfo } from "@/sanity/sanity-utils";
+import {
+  getConsultingCard,
+  getConsultingPage,
+  getPageInfo,
+} from "@/sanity/sanity-utils";
 
 // const pageInfo = {
 //   heading: "Consulting and Advisory",
@@ -10,20 +13,23 @@ import { getPageInfo } from "@/sanity/sanity-utils";
 //   tabPage: "Consulting",
 // };
 
-async function Consulting () {
+async function Consulting() {
   const tabName = "Consulting";
 
   const consultingCard = await getConsultingCard();
   const pageInfoArray = await getPageInfo(tabName);
-  // console.log(pageInfoArray);
-  const pageInfo = pageInfoArray[0] ?? {}; 
-  
-  const pageId = ['consultingPageSchema']; // temporary
+  const pageInfo = pageInfoArray[0] ?? {};
+  const consultingPage = await getConsultingPage();
+
   return (
     <div className="px-28">
-      <CommonPageComponent componentData={consultingCard} pageInfo={pageInfo} pageDynamicId = {pageId}/>
+      <CommonPageComponent
+        componentData={consultingCard}
+        pageInfo={pageInfo}
+        pageDynamicId={consultingPage}
+      />
     </div>
   );
-};
+}
 
 export default Consulting;

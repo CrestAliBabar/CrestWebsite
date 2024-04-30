@@ -6,13 +6,17 @@ import {
   getLayoutSettings,
   getTrainingPage,
   getServicePage,
+  getConsultingPage,
+  getCompanyPage,
 } from "@/sanity/sanity-utils";
 
 export default async function Header() {
   const layoutSetting = await getLayoutSettings();
   const trainingPage = await getTrainingPage();
-
   const servicePage = await getServicePage();
+  const consultingPage = await getConsultingPage();
+  const companyPage = await getCompanyPage();
+
   return (
     <header
       style={{ backgroundColor: layoutSetting[0].backgroundColor.value }}
@@ -49,7 +53,6 @@ export default async function Header() {
             </Dropdown>
             <Dropdown title="Services">
               {servicePage.map((page) => {
-                // console.log(page.title);
                 return (
                   <li key={page._id}>
                     <Link
@@ -65,40 +68,36 @@ export default async function Header() {
               })}
             </Dropdown>
             <Dropdown title="Consulting">
-              <li>
-                <Link
-                  href="/Consulting/Project"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  Project
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/Consulting/Advisory"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  Advisory
-                </Link>
-              </li>
+              {consultingPage.map((page) => {
+                return (
+                  <li key={page._id}>
+                    <Link
+                      href={{
+                        pathname: `/Consulting/PageContent/${page._id}`,
+                      }}
+                      className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                    >
+                      {page.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </Dropdown>
             <Dropdown title="Company">
-              <li>
-                <Link
-                  href="/Company/Customer"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  Customer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/Company/Prof"
-                  className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                >
-                  Prof. Riehle
-                </Link>
-              </li>
+              {companyPage.map((page) => {
+                return (
+                  <li key={page._id}>
+                    <Link
+                      href={{
+                        pathname: `/Company/PageContent/${page._id}`,
+                      }}
+                      className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                    >
+                      {page.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </Dropdown>
           </ul>
         </nav>
