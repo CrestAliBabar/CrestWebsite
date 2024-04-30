@@ -12,6 +12,7 @@ import {description,pageTitle} from './consulting'
 import {trainCard} from './trainCard'
 import {serviceCard} from './serviceCard'
 import {consultingCard} from './consultingCard'
+import {PageInfo} from './pageInfo'
 import layoutChange from './layout-change'
 import {
   imgUrl,
@@ -21,6 +22,9 @@ import {
   trainingPageSchema,
 } from "./trainingPageSchema";
 
+import { servicesPageSchema } from "./servicesPageSchema";
+import { consultingPageSchema } from "./consultingPageSchema";
+import { companyPageSchema } from "./companyPageSchema";
 
 export const schemaTypes = [
   pageType,
@@ -38,10 +42,14 @@ export const schemaTypes = [
   trainCard,
   serviceCard,
   consultingCard,
+  PageInfo,
   layoutChange,
+  servicesPageSchema,
   trainingPageSchema,
+  consultingPageSchema,
+  companyPageSchema,
   pageSubtitle,
   pageHeading,
   paragraph,
   imgUrl,
-]
+];

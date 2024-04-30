@@ -1,6 +1,4 @@
-import { pageTitle } from "@/sanity/schemas/consulting";
-
-export type TrainingPageType = {
+export type PageContentType = {
   _id: string;
   title: string;
   pageBuilder: pageBuilderSection[];
@@ -11,7 +9,9 @@ export type pageBuilderSection =
   | pageSubtitle
   | pageHeading
   | paragraph
-  | imgUrl;
+  | imgUrl
+  | bulletPoint
+  | video;
 
 export type pageTitle = {
   _key: string;
@@ -22,6 +22,8 @@ export type pageTitle = {
     url: string;
   };
   bulletPoint: string[];
+  videoLabel: string;
+  url: string;
 };
 
 export type pageSubtitle = {
@@ -33,6 +35,8 @@ export type pageSubtitle = {
     url: string;
   };
   bulletPoint: string[];
+  videoLabel: string;
+  url: string;
 };
 
 export type pageHeading = {
@@ -44,6 +48,8 @@ export type pageHeading = {
     url: string;
   };
   bulletPoint: string[];
+  videoLabel: string;
+  url: string;
 };
 
 export type paragraph = {
@@ -55,6 +61,8 @@ export type paragraph = {
     url: string;
   };
   bulletPoint: string[];
+  videoLabel: string;
+  url: string;
 };
 
 export type imgUrl = {
@@ -66,6 +74,8 @@ export type imgUrl = {
     url: string;
   };
   bulletPoint: string[];
+  videoLabel: string;
+  url: string;
 };
 
 export type bulletPoint = {
@@ -77,4 +87,19 @@ export type bulletPoint = {
     url: string;
   };
   bulletPoint: string[];
+  videoLabel: string;
+  url: string;
+};
+
+export type video = {
+  _key: string;
+  _type: string;
+  text: string;
+  asset: {
+    _id: string;
+    url: string;
+  };
+  bulletPoint: string[];
+  videoLabel: string;
+  url: string;
 };

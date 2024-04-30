@@ -1,5 +1,5 @@
 import PageContentComponent from "@/app/component/PageContentComponent";
-import { getTrainingPage } from "@/sanity/sanity-utils";
+import { getConsultingPage } from "@/sanity/sanity-utils";
 
 interface PageContentProps {
   params: {
@@ -10,7 +10,7 @@ interface PageContentProps {
 export default async function PageContent({
   params: { pageId },
 }: PageContentProps) {
-  const pageData = await getTrainingPage(pageId);
+  const pageData = await getConsultingPage(pageId);
 
   return (
     <>

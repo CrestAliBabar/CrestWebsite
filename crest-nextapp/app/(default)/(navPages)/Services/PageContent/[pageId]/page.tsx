@@ -1,5 +1,5 @@
 import PageContentComponent from "@/app/component/PageContentComponent";
-import { getTrainingPage } from "@/sanity/sanity-utils";
+import { getServicePage } from "@/sanity/sanity-utils";
 
 interface PageContentProps {
   params: {
@@ -7,11 +7,10 @@ interface PageContentProps {
   };
 }
 
-export default async function PageContent({
+export default async function pageContent({
   params: { pageId },
 }: PageContentProps) {
-  const pageData = await getTrainingPage(pageId);
-
+  const pageData = await getServicePage(pageId);
   return (
     <>
       <PageContentComponent pageContent={pageData} />

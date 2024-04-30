@@ -1,11 +1,11 @@
-import { TrainingPageType } from "@/types/TrainingPageType";
+import { PageContentType } from "@/types/PageContentType";
 import { Image } from "next-sanity/image";
 
-type TrainingPagesComponentTypeProps = {
-  pageContent: TrainingPageType[];
+type PageContentComponentTypeProps = {
+  pageContent: PageContentType[];
 };
 
-const TrainingPagesComponent: React.FC<TrainingPagesComponentTypeProps> = ({
+const PageContentComponent: React.FC<PageContentComponentTypeProps> = ({
   pageContent,
 }) => {
   // map through the pageContent array and render the appropriate component based on the _type property
@@ -45,7 +45,7 @@ const TrainingPagesComponent: React.FC<TrainingPagesComponentTypeProps> = ({
                 width={2000}
                 height={1000}
                 alt=""
-                className="w-3/4 h-auto"
+                className="w-1/2 h-auto"
               />
             );
           case "bulletPoint":
@@ -58,6 +58,22 @@ const TrainingPagesComponent: React.FC<TrainingPagesComponentTypeProps> = ({
                 ))}
               </ul>
             );
+          case "video":
+            const videoId = content.url.split("watch?v=")[1].split("&")[0];
+            const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            return (
+              <div key={content._key} className="video-container mb-6">
+                <iframe
+                  width="660"
+                  height="415"
+                  loading="lazy"
+                  src={embedUrl}
+                  title="YouTube video player"
+                  allowFullScreen
+                ></iframe>
+                <p>{content.text}</p>
+              </div>
+            );
           default:
             return null;
         }
@@ -66,4 +82,4 @@ const TrainingPagesComponent: React.FC<TrainingPagesComponentTypeProps> = ({
   );
 };
 
-export default TrainingPagesComponent;
+export default PageContentComponent;
