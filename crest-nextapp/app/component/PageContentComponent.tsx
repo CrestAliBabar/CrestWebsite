@@ -11,7 +11,7 @@ const PageContentComponent: React.FC<PageContentComponentTypeProps> = ({
   // map through the pageContent array and render the appropriate component based on the _type property
   return (
     <div className="container mx-auto mt-20 mb-10">
-      {pageContent[0].pageBuilder.map((content, index) => {
+      {pageContent[0].pages[0].pageBuilder.map((content, index) => {
         switch (content._type) {
           case "pageTitle":
             return (

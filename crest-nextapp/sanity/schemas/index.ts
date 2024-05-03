@@ -1,19 +1,19 @@
 // ./schemas/index.ts
 
-import {formType} from './formType'
-import {heroType} from './heroType'
-import {imageGalleryType} from './imageGalleryType'
-import {pageType} from './pageType'
-import {promotionType} from './promotionType'
-import {textWithIllustrationType} from './textWithIllustrationType'
-import {videoType} from './videoType'
-import {bulletPoint, consulting, simpleText} from './consulting'
-import {description,pageTitle} from './consulting'
-import {trainCard} from './trainCard'
-import {serviceCard} from './serviceCard'
-import {consultingCard} from './consultingCard'
-import {PageInfo} from './pageInfo'
-import layoutChange from './layout-change'
+import { formType } from "./formType";
+import { heroType } from "./heroType";
+import { imageGalleryType } from "./imageGalleryType";
+import { pageType } from "./pageType";
+import { promotionType } from "./promotionType";
+import { textWithIllustrationType } from "./textWithIllustrationType";
+import { videoType } from "./videoType";
+import { bulletPoint, consulting, simpleText } from "./consulting";
+import { description, pageTitle } from "./consulting";
+import { trainCard } from "./trainCard";
+import { serviceCard } from "./serviceCard";
+import { consultingCard } from "./consultingCard";
+import { PageInfo } from "./pageInfo";
+import layoutChange from "./layout-change";
 import {
   imgUrl,
   pageHeading,
@@ -25,6 +25,8 @@ import {
 import { servicesPageSchema } from "./servicesPageSchema";
 import { consultingPageSchema } from "./consultingPageSchema";
 import { companyPageSchema } from "./companyPageSchema";
+import { navigationTitleSchema } from "./navigationTitleSchema";
+import { pageContent } from "./pageContentSchema";
 
 export const schemaTypes = [
   pageType,
@@ -52,4 +54,6 @@ export const schemaTypes = [
   pageHeading,
   paragraph,
   imgUrl,
+  navigationTitleSchema,
+  pageContent,
 ];

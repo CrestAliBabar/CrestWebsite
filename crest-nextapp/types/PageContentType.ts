@@ -1,6 +1,13 @@
 export type PageContentType = {
   _id: string;
   title: string;
+  pages: page[];
+};
+
+type page = {
+  _key: string;
+  _type: string;
+  text: string;
   pageBuilder: pageBuilderSection[];
 };
 
