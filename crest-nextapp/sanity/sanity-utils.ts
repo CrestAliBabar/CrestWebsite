@@ -135,7 +135,7 @@ export async function getNavigationTitle(
     );
   } else {
     return client.fetch(
-      groq`*[_type == "navigationTitleSchema" && isDisplayed == true] | order(_createdAt){_id, slug, title, pages[]}`
+      groq`*[_type == "navigationTitleSchema" && isDisplayed == true] | order(_createdAt){_id, slug, title, pages[isDisplayed == true]}`
     );
   }
 }

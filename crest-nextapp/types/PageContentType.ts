@@ -4,7 +4,7 @@ export type PageContentType = {
   pages: page[];
 };
 
-type page = {
+export type page = {
   _key: string;
   _type: string;
   text: string;

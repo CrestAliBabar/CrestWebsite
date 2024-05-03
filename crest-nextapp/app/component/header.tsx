@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Dropdown from "../clientComponent/utils/dropdown";
 import { getLayoutSettings, getNavigationTitle } from "@/sanity/sanity-utils";
+import { page } from "@/types/PageContentType";
 
 export default async function Header() {
   const layoutSetting = await getLayoutSettings();
@@ -30,7 +31,7 @@ export default async function Header() {
               return (
                 <Dropdown key={title._id} title={title.title}>
                   <li>
-                    {title.pages.map((page: any) => {
+                    {title.pages.map((page: page) => {
                       return (
                         <Link
                           key={page._key}

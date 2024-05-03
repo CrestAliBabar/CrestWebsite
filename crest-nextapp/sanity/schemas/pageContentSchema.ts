@@ -11,6 +11,14 @@ export const pageContent = defineType({
       title: "Page Title",
     }),
     defineField({
+      title: "Display on Navigation Dropdown Menu",
+      name: "isDisplayed",
+      type: "boolean",
+      initialValue: false,
+      description:
+        "Check this box if you want this page to be displayed on the navigation dropdown menu.",
+    }),
+    defineField({
       name: "pageBuilder",
       type: "array",
       title: "Page Builder",
