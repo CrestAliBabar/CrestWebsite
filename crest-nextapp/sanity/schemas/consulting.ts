@@ -1,38 +1,6 @@
 import { DocumentIcon } from "@sanity/icons";
 import { defineType, defineField } from "sanity";
 
-export const bulletPoint = defineType({
-  name: "bulletPoint",
-  type: "document",
-  title: "Bullet Point",
-  fields: [
-    {
-      title: "Bullet Point",
-      name: "bulletPoint",
-      type: "array",
-      of: [{ type: "string" }],
-      options: {
-        layout: "list",
-      },
-    },
-    // Any other fields related to bullet points
-  ],
-});
-
-export const pageTitle = defineType({
-  name: "pageTitle",
-  type: "object",
-  title: "PageTitle",
-  fields: [
-    defineField({
-      name: "text",
-      type: "string",
-      title: "Text",
-    }),
-    // Additional subtitle fields if needed
-  ],
-});
-
 export const description = defineType({
   name: "description",
   type: "object",

@@ -3,7 +3,7 @@ import { defineField, defineType } from "sanity";
 export const navigationTitleSchema = defineType({
   name: "navigationTitleSchema",
   type: "document",
-  title: "Navigation Pages",
+  title: "Navigation Titles and Pages",
 
   fields: [
     defineField({
