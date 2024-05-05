@@ -12,6 +12,7 @@ import { description } from "./consulting";
 import { trainCard } from "./trainCard";
 import { serviceCard } from "./serviceCard";
 import { consultingCard } from "./consultingCard";
+import {Card} from "./cardSchema";
 import { PageInfo } from "./pageInfo";
 import layoutChange from "./layout-change";
 import { navigationTitleSchema } from "./navigationTitleSchema";
@@ -49,4 +50,5 @@ export const schemaTypes = [
   imgUrl,
   navigationTitleSchema,
   pageContent,
+  Card
 ];
