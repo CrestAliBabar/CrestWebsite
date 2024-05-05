@@ -16,6 +16,7 @@ import {Card} from "./cardSchema";
 import { PageInfo } from "./pageInfo";
 import layoutChange from "./layout-change";
 import { navigationTitleSchema } from "./navigationTitleSchema";
+import { PageInfomation } from "./navbarPageSchema";
 import {
   bulletPoint,
   imgUrl,
@@ -50,5 +51,6 @@ export const schemaTypes = [
   imgUrl,
   navigationTitleSchema,
   pageContent,
-  Card
+  Card,
+  PageInfomation
 ];

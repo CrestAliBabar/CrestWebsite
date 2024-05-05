@@ -12,6 +12,13 @@ export const Card = defineType({
       title: 'Title',
       description: 'The title of the card',
     },
+    // {
+    //   name: 'pageName',
+    //   type: 'reference',
+    //   title: 'Page Name',
+    //   description: 'Select a page from the navigation titles defined',
+    //   to: [{ type: 'pageContent' }],
+    // },
     {
       name: 'pageName',
       type: 'string',
@@ -52,7 +59,14 @@ export const Card = defineType({
       description: 'Select a title from the navigation titles defined',
       to: [{ type: 'navigationTitleSchema' }],
       validation: (Rule) => Rule.required()
-    }
+    },
+    {
+      name: 'isVisible',
+      type: 'boolean',
+      title: 'Visible on Page',
+      description: 'Toggle to show or hide this card on the page',
+      initialValue: true, // Default value set to true, meaning the card will be visible unless explicitly turned off
+    },
   ],
 });
 
