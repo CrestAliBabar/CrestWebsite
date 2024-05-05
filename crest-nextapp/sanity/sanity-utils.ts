@@ -139,3 +139,14 @@ export async function getNavigationTitle(
     );
   }
 }
+
+
+
+export async function getHomePageContent(): Promise<any[]> {
+  return client.fetch(groq`*[_type == "page"] {
+    _id,
+    title,
+    _type,
+    pageBuilder[]
+  }`);
+}

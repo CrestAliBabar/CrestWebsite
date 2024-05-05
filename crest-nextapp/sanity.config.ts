@@ -22,6 +22,7 @@ const config = defineConfig({
     simplerColorInput({
       defaultColorFormat: "rgba",
       defaultColorList: [{ label: "Custom", value: "custom" }],
+      enableSearch: true
     }),
   ],
 

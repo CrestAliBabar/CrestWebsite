@@ -1,15 +1,16 @@
 import HomePageComponent from "@/app/component/homePageComponent";
-import Company from "../(navPages)/Company/page";
-import Consulting from "../(navPages)/Consulting/page";
-import Services from "../(navPages)/Services/page";
-import Training from "../(navPages)/Training/page";
+import { getHomePageContent } from "@/sanity/sanity-utils";
 
 
 
-export default function Home() {
+export default async function Home() {
+
+  const homePageContent = await getHomePageContent()
+
+
   return (
     <>
-    <HomePageComponent/>
+    <HomePageComponent pageBuilder ={homePageContent[0].pageBuilder} />
     </>
 
   );

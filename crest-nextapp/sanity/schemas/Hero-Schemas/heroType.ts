@@ -29,7 +29,7 @@ export const heroType = defineType({
   icon: DocumentTextIcon,
   preview: {
     select: {
-      title: "heroSections[0].heading",
+      title: "heroSections[0]._type",
       image: "heroSections[0].image",
     },
     prepare({ title, image }) {

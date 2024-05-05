@@ -1,11 +1,28 @@
 import React from "react";
-import Image from "next/image";
-import HeroComponent from "./heroComponent";
+import HeroComponent from "./heroComponents/heroComponent";
 
-const HomePageComponent = () => {
+type HomePageComponentProps = {
+  pageBuilder: any[];
+};
+
+const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) => {
+  if (pageBuilder === null) {
+    // Render default content when pageBuilder is empty
+    return <div>No content available</div>;
+  }
+
   return (
-    <HeroComponent/>
-
+    <>
+      {pageBuilder.map((content: any, index: number) => {
+        switch (content._type) {
+          case "hero":
+            return <HeroComponent heroContent={content.heroSections} key={index} />;
+          // Add more cases for other component types as needed
+          default:
+            return null; // Default case if component type is not recognized
+        }
+      })}
+    </>
   );
 };
 

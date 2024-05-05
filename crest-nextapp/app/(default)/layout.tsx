@@ -13,7 +13,8 @@ export default async function  RootLayout({
     const linearGradient = `linear-gradient(${layoutSetting[0].backgroundGradient.transitionDirection}, ${layoutSetting[0].backgroundGradient.startColor.value}, ${layoutSetting[0].backgroundGradient.endColor.value})`;
     return (
     <div className="">
-      <Header />
+    <Header />
+      
       <main className="" 
       
       style={{ backgroundImage: linearGradient }}
