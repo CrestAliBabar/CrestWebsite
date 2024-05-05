@@ -34,11 +34,6 @@ export const pageType = defineType({
           name: 'video',
           type: 'video',
         }),
-        {
-          name: 'callToAction',
-          type: 'reference',
-          to: [{type: 'promotion'}],
-        },
         // etc...
       ],
     },

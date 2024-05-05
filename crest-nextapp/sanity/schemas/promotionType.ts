@@ -1,7 +1,7 @@
-// ./schemas/promotionType.ts
 
-import {StarIcon} from '@sanity/icons'
+
 import {defineField, defineType} from 'sanity'
+import colorList from "@/app/utils/colors";
 
 export const promotionType = defineType({
   name: 'promotion',
@@ -16,18 +16,15 @@ export const promotionType = defineType({
       name: 'link',
       type: 'url',
     }),
+
+    {
+      name: 'buttonBackgroundColor',
+      title: 'Button Background Color',
+      type: 'simplerColor',
+      options: {
+        colorList: colorList
+      },
+    },
+
   ],
-  icon: StarIcon,
-  preview: {
-    select: {
-      title: 'title',
-    },
-    prepare({title}) {
-      return {
-        title: title || 'Untitled',
-        subtitle: 'Promotion',
-        media: StarIcon,
-      }
-    },
-  },
 })

@@ -12,7 +12,7 @@ export default async function Header() {
   return (
     <header
       style={{ backgroundColor: layoutSetting[0].backgroundColor.value }}
-      className="text-black body-font w-full"
+      className="text-black body-font "
     >
       <div className="container mx-auto flex flex-wrap p-1.5 flex-col md:flex-row justify-center items-center">
         <Link
