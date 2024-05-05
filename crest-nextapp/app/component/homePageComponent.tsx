@@ -9,7 +9,7 @@ type HomePageComponentProps = {
 const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) => {
   if (pageBuilder === null) {
     // Render default content when pageBuilder is empty
-    return <FeatureComponent/>;
+    return <div>No Content</div>;
   }
 
   return (
