@@ -1,5 +1,6 @@
 import React from "react";
 import HeroComponent from "./heroComponents/heroComponent";
+import FeatureComponent from "./featureComponents/featureComponent";
 
 type HomePageComponentProps = {
   pageBuilder: any[];
@@ -8,7 +9,7 @@ type HomePageComponentProps = {
 const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) => {
   if (pageBuilder === null) {
     // Render default content when pageBuilder is empty
-    return <div>No content available</div>;
+    return <FeatureComponent/>;
   }
 
   return (

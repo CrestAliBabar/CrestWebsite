@@ -9,19 +9,21 @@ export const heroWithImage = defineType({
     defineField({
       name: "Hero_Heading",
       type: "Hero_Heading",
+      validation: (rule) => rule.required(), // Required
     }),
     {
-      name: "backgroundColor",
-      title: "Hero Background Color",
-      type: "simplerColor",
+      name: 'backgroundColor',
+      title: 'Hero Background Color',
+      type: 'simplerColor',
       options: {
         colorList: colorList,
       },
+      validation: (rule) => rule.required(), // Required
     },
-
     defineField({
       name: "promotion",
       type: "promotion",
+      validation: (rule) => rule.required(), // Required
     }),
     {
       name: "image",
@@ -30,6 +32,7 @@ export const heroWithImage = defineType({
       options: {
         hotspot: true,
       },
+      validation: (rule) => rule.required(), // Required
     },
     {
       name: "imageDirection",
@@ -43,6 +46,7 @@ export const heroWithImage = defineType({
         layout: "radio",
         direction: "horizontal",
       },
+      validation: (rule) => rule.required(), // Required
     },
   ],
 });

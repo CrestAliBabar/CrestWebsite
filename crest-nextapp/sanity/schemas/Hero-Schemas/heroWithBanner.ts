@@ -9,8 +9,8 @@ export const heroWithBanner = defineType({
     defineField({
       name: "Hero_Heading",
       type: "Hero_Heading",
+      validation: (rule) => rule.required(), // Required
     }),
-
     {
       name: "image",
       title: "Banner Image",
@@ -18,11 +18,12 @@ export const heroWithBanner = defineType({
       options: {
         hotspot: true,
       },
+      validation: (rule) => rule.required(), // Required
     },
-
     defineField({
       name: "promotion",
       type: "promotion",
+      validation: (rule) => rule.required(), // Required
     }),
   ],
 });

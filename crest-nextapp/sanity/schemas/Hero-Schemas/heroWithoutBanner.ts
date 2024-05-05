@@ -1,4 +1,3 @@
-
 import { defineField, defineType } from "sanity";
 import colorList from "@/app/utils/colors";
 
@@ -10,20 +9,21 @@ export const heroWithoutBanner = defineType({
     defineField({
       name: "Hero_Heading",
       type: "Hero_Heading",
+      validation: (rule) => rule.required(), // Required
     }),
-
     {
       name: 'backgroundColor',
       title: 'Hero Background Color',
       type: 'simplerColor',
       options: {
-        colorList: colorList
-      }
+        colorList: colorList,
+      },
+      validation: (rule) => rule.required(), // Required
     },
-
     defineField({
       name: "promotion",
       type: "promotion",
+      validation: (rule) => rule.required(), // Required
     }),
   ],
 });

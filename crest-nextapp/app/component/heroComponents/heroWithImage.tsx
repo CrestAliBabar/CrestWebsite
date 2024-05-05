@@ -52,14 +52,18 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
               <div className="mt-12 lg:mt-0">
                 <h1
                   style={headingStyle}
-                  className="mt-2 mb-16 font-bold tracking-tight md:text-6xl xl:text-7xl"
+                  className="mt-2 mb-10 font-bold tracking-tight md:text-6xl xl:text-7xl"
                 >
-                  {heroWithImageContent.Hero_Heading.headingProp.heading}{" "}
-                  <br />
-                  <span style={subHeadingStyle}>
-                    {heroWithImageContent.Hero_Heading.subHeadingProp.subHeading}
-                  </span>
+                  {heroWithImageContent.Hero_Heading.headingProp.heading} <br />
                 </h1>
+                <h5 className="mb-10 tracking-tight md:text-1xl xl:text-2xl">
+                  <span style={subHeadingStyle}>
+                    {
+                      heroWithImageContent.Hero_Heading.subHeadingProp
+                        .subHeading
+                    }
+                  </span>
+                </h5>
                 <a
                   style={buttonStyleOffHover}
                   className="mb-2 inline-block rounded px-12 pt-4 pb-3.5 text-sm font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transform transition-transform duration-300 hover:scale-110"
@@ -96,12 +100,16 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
                   style={headingStyle}
                   className="mt-2 mb-16 font-bold tracking-tight md:text-6xl xl:text-7xl"
                 >
-                  {heroWithImageContent.Hero_Heading.headingProp.heading}{" "}
-                  <br />
-                  <span style={subHeadingStyle}>
-                    {heroWithImageContent.Hero_Heading.subHeadingProp.subHeading}
-                  </span>
+                  {heroWithImageContent.Hero_Heading.headingProp.heading} <br />
                 </h1>
+                <h5 className="mb-10 tracking-tight md:text-1xl xl:text-2xl">
+                  <span style={subHeadingStyle}>
+                    {
+                      heroWithImageContent.Hero_Heading.subHeadingProp
+                        .subHeading
+                    }
+                  </span>
+                </h5>
                 <a
                   style={buttonStyleOffHover}
                   className="mb-2 inline-block rounded px-12 pt-4 pb-3.5 text-sm font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transform transition-transform duration-300 hover:scale-110"
