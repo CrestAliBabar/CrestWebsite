@@ -34,7 +34,7 @@ const PageContentComponent: React.FC<PageContentComponentTypeProps> = ({
               return (
                 <h2
                   key={index}
-                  className="font-opensans text-[1.5rem] font-bold leading-tight uppercase"
+                  className="font-opensans text-[1.5rem] font-bold leading-tight uppercase  ml-40 mr-40"
                 >
                   {content.text}
                 </h2>
