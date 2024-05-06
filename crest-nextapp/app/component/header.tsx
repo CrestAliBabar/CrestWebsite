@@ -25,7 +25,7 @@ export default async function Header() {
             className="h-16 sm:h-24 mx-40"
           />
         </Link>
-        <nav className="flex flex-wrap items-center text-base justify-center mx-auto">
+        <nav className="flex flex-wrap items-center text-base justify-center mx-auto z-50">
           <ul className="flex grow justify-start flex-wrap items-center ml-30 md:ml-25">
             {navTitles.map((title) => {
               return (

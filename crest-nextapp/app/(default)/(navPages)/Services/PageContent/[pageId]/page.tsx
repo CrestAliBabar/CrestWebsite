@@ -1,5 +1,6 @@
 import PageContentComponent from "@/app/component/PageContentComponent";
 import { getServicePage } from "@/sanity/sanity-utils";
+import HeroWithBanner from "@/app/component/heroComponents/heroWithBanner";
 
 interface PageContentProps {
   params: {
@@ -13,6 +14,7 @@ export default async function pageContent({
   const pageData = await getServicePage(pageId);
   return (
     <>
+      {/* <HeroWithBanner ></HeroWithBanner> */}
       <PageContentComponent pageContent={pageData} />
     </>
   );
