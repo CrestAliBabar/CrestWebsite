@@ -17,6 +17,9 @@ const config: Config = {
   // colors: {
   //   "custom-purple": "#69488E", // Your custom color
   // },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    // ...
+  ],
 };
 export default config;
