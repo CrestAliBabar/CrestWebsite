@@ -204,3 +204,12 @@ export async function getNavPageInformation(slug: string): Promise<any[]> {
     throw error; // 重新抛出错误或按需要处理错误
   }
 }
+
+export async function getHomePageContent(): Promise<any[]> {
+  return client.fetch(groq`*[_type == "page"] {
+    _id,
+    title,
+    _type,
+    pageBuilder[]
+  }`);
+}
