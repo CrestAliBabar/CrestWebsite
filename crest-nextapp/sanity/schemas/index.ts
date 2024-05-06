@@ -28,6 +28,7 @@ import { heroWithoutBanner } from "./Hero-Schemas/heroWithoutBanner";
 import { heroWithBanner } from "./Hero-Schemas/heroWithBanner";
 import { heroWithImage } from "./Hero-Schemas/heroWithImage";
 import { heroHeading } from "./Hero-Schemas/heroHeading";
+import { heroWithoutButton } from "./Hero-Schemas/heroWithoutButton";
 import { featureHeading } from "./Feature-Schemas/featureHeading";
 import {  featureGridLayout } from "./Feature-Schemas/featureGridLayout";
 import { featureHeroFacts } from "./Feature-Schemas/featureHeroFacts";
@@ -47,6 +48,7 @@ export const schemaTypes = [
   heroWithoutBanner,
   heroWithBanner,
   heroWithImage,
+  heroWithoutButton,
   heroHeading,
 
   //Feature

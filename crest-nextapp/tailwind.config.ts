@@ -7,7 +7,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        opensans: ["Open Sans", "sans-serif"],
+        mono: ["Menlo"],
+      },
+    },
   },
   // colors: {
   //   "custom-purple": "#69488E", // Your custom color

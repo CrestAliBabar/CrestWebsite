@@ -23,6 +23,7 @@ export const pageContent = defineType({
       type: "array",
       title: "Page Builder",
       of: [
+        { type: "Hero_without_Button" },
         { type: "pageTitle" },
         { type: "pageSubtitle" },
         { type: "pageHeading" },
