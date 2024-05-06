@@ -205,6 +205,7 @@ export async function getNavPageInformation(slug: string): Promise<any[]> {
   }
 }
 
+
 export async function getHomePageContent(): Promise<any[]> {
   return client.fetch(groq`*[_type == "page"] {
     _id,
