@@ -1,6 +1,13 @@
 export type PageContentType = {
   _id: string;
   title: string;
+  pages: page[];
+};
+
+export type page = {
+  _key: string;
+  _type: string;
+  text: string;
   pageBuilder: pageBuilderSection[];
 };
 
@@ -13,6 +20,43 @@ export type pageBuilderSection =
   | bulletPoint
   | video;
 
+export type heroBannerContent = {
+  _key: string;
+  _type: string;
+  text: string;
+  asset: {
+    _id: string;
+    url: string;
+  };
+  bulletPoint: string[];
+  videoLabel: string;
+  url: string;
+  image: {
+    _type: string;
+    asset: {
+      _id: string;
+      url: string;
+      _ref: string;
+    };
+  };
+  Hero_Heading: {
+    headingProp: {
+      heading: string;
+      headingColor: {
+        label: string;
+        value: string;
+      };
+    };
+    subHeadingProp: {
+      subHeading: string;
+      subHeadingColor: {
+        label: string;
+        value: string;
+      };
+    };
+  };
+};
+
 export type pageTitle = {
   _key: string;
   _type: string;
@@ -24,6 +68,30 @@ export type pageTitle = {
   bulletPoint: string[];
   videoLabel: string;
   url: string;
+  image: {
+    _type: string;
+    asset: {
+      _id: string;
+      url: string;
+      _ref: string;
+    };
+  };
+  Hero_Heading: {
+    headingProp: {
+      heading: string;
+      headingColor: {
+        label: string;
+        value: string;
+      };
+    };
+    subHeadingProp: {
+      subHeading: string;
+      subHeadingColor: {
+        label: string;
+        value: string;
+      };
+    };
+  };
 };
 
 export type pageSubtitle = {
@@ -37,6 +105,30 @@ export type pageSubtitle = {
   bulletPoint: string[];
   videoLabel: string;
   url: string;
+  image: {
+    _type: string;
+    asset: {
+      _id: string;
+      url: string;
+      _ref: string;
+    };
+  };
+  Hero_Heading: {
+    headingProp: {
+      heading: string;
+      headingColor: {
+        label: string;
+        value: string;
+      };
+    };
+    subHeadingProp: {
+      subHeading: string;
+      subHeadingColor: {
+        label: string;
+        value: string;
+      };
+    };
+  };
 };
 
 export type pageHeading = {
@@ -50,6 +142,30 @@ export type pageHeading = {
   bulletPoint: string[];
   videoLabel: string;
   url: string;
+  image: {
+    _type: string;
+    asset: {
+      _id: string;
+      url: string;
+      _ref: string;
+    };
+  };
+  Hero_Heading: {
+    headingProp: {
+      heading: string;
+      headingColor: {
+        label: string;
+        value: string;
+      };
+    };
+    subHeadingProp: {
+      subHeading: string;
+      subHeadingColor: {
+        label: string;
+        value: string;
+      };
+    };
+  };
 };
 
 export type paragraph = {
@@ -63,6 +179,30 @@ export type paragraph = {
   bulletPoint: string[];
   videoLabel: string;
   url: string;
+  image: {
+    _type: string;
+    asset: {
+      _id: string;
+      url: string;
+      _ref: string;
+    };
+  };
+  Hero_Heading: {
+    headingProp: {
+      heading: string;
+      headingColor: {
+        label: string;
+        value: string;
+      };
+    };
+    subHeadingProp: {
+      subHeading: string;
+      subHeadingColor: {
+        label: string;
+        value: string;
+      };
+    };
+  };
 };
 
 export type imgUrl = {
@@ -76,6 +216,30 @@ export type imgUrl = {
   bulletPoint: string[];
   videoLabel: string;
   url: string;
+  image: {
+    _type: string;
+    asset: {
+      _id: string;
+      url: string;
+      _ref: string;
+    };
+  };
+  Hero_Heading: {
+    headingProp: {
+      heading: string;
+      headingColor: {
+        label: string;
+        value: string;
+      };
+    };
+    subHeadingProp: {
+      subHeading: string;
+      subHeadingColor: {
+        label: string;
+        value: string;
+      };
+    };
+  };
 };
 
 export type bulletPoint = {
@@ -89,6 +253,30 @@ export type bulletPoint = {
   bulletPoint: string[];
   videoLabel: string;
   url: string;
+  image: {
+    _type: string;
+    asset: {
+      _id: string;
+      url: string;
+      _ref: string;
+    };
+  };
+  Hero_Heading: {
+    headingProp: {
+      heading: string;
+      headingColor: {
+        label: string;
+        value: string;
+      };
+    };
+    subHeadingProp: {
+      subHeading: string;
+      subHeadingColor: {
+        label: string;
+        value: string;
+      };
+    };
+  };
 };
 
 export type video = {
@@ -102,4 +290,28 @@ export type video = {
   bulletPoint: string[];
   videoLabel: string;
   url: string;
+  image: {
+    _type: string;
+    asset: {
+      _id: string;
+      url: string;
+      _ref: string;
+    };
+  };
+  Hero_Heading: {
+    headingProp: {
+      heading: string;
+      headingColor: {
+        label: string;
+        value: string;
+      };
+    };
+    subHeadingProp: {
+      subHeading: string;
+      subHeadingColor: {
+        label: string;
+        value: string;
+      };
+    };
+  };
 };

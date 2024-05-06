@@ -2,25 +2,17 @@
 import React from "react";
 import Link from "next/link";
 import Dropdown from "../clientComponent/utils/dropdown";
-import {
-  getLayoutSettings,
-  getTrainingPage,
-  getServicePage,
-  getConsultingPage,
-  getCompanyPage,
-} from "@/sanity/sanity-utils";
+import { getLayoutSettings, getNavigationTitle } from "@/sanity/sanity-utils";
+import { page } from "@/types/PageContentType";
 
 export default async function Header() {
   const layoutSetting = await getLayoutSettings();
-  const trainingPage = await getTrainingPage();
-  const servicePage = await getServicePage();
-  const consultingPage = await getConsultingPage();
-  const companyPage = await getCompanyPage();
+  const navTitles = await getNavigationTitle();
 
   return (
     <header
       style={{ backgroundColor: layoutSetting[0].backgroundColor.value }}
-      className="text-black body-font w-full"
+      className="text-black body-font "
     >
       <div className="container mx-auto flex flex-wrap p-1.5 flex-col md:flex-row justify-center items-center">
         <Link
@@ -33,72 +25,29 @@ export default async function Header() {
             className="h-16 sm:h-24 mx-40"
           />
         </Link>
-        <nav className="flex flex-wrap items-center text-base justify-center mx-auto">
+        <nav className="flex flex-wrap items-center text-base justify-center mx-auto z-50">
           <ul className="flex grow justify-start flex-wrap items-center ml-30 md:ml-25">
-            <Dropdown title="Training">
-              {trainingPage.map((page) => {
-                return (
-                  <li key={page._id}>
-                    <Link
-                      href={{
-                        pathname: `/Training/PageContent/${page._id}`,
-                      }}
-                      className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                    >
-                      {page.title}
-                    </Link>
+            {navTitles.map((title) => {
+              return (
+                <Dropdown key={title._id} title={title.title}>
+                  <li>
+                    {title.pages.map((page: page) => {
+                      return (
+                        <Link
+                          key={page._key}
+                          href={{
+                            pathname: `/${title.slug.current}/PageContent/${page._key}`,
+                          }}
+                          className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
+                        >
+                          {page.text}
+                        </Link>
+                      );
+                    })}
                   </li>
-                );
-              })}
-            </Dropdown>
-            <Dropdown title="Services">
-              {servicePage.map((page) => {
-                return (
-                  <li key={page._id}>
-                    <Link
-                      href={{
-                        pathname: `/Services/PageContent/${page._id}`,
-                      }}
-                      className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                    >
-                      {page.title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </Dropdown>
-            <Dropdown title="Consulting">
-              {consultingPage.map((page) => {
-                return (
-                  <li key={page._id}>
-                    <Link
-                      href={{
-                        pathname: `/Consulting/PageContent/${page._id}`,
-                      }}
-                      className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                    >
-                      {page.title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </Dropdown>
-            <Dropdown title="Company">
-              {companyPage.map((page) => {
-                return (
-                  <li key={page._id}>
-                    <Link
-                      href={{
-                        pathname: `/Company/PageContent/${page._id}`,
-                      }}
-                      className="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight"
-                    >
-                      {page.title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </Dropdown>
+                </Dropdown>
+              );
+            })}
           </ul>
         </nav>
       </div>

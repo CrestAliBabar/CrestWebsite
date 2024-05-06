@@ -19,12 +19,12 @@ export const pageType = defineType({
           type: 'hero',
         }),
         defineArrayMember({
-          name: 'textWithIllustration',
-          type: 'textWithIllustration',
+          name: 'feature',
+          type: 'feature',
         }),
         defineArrayMember({
-          name: 'gallery',
-          type: 'gallery',
+          name: 'content',
+          type: 'content',
         }),
         defineArrayMember({
           name: 'form',
@@ -34,11 +34,6 @@ export const pageType = defineType({
           name: 'video',
           type: 'video',
         }),
-        {
-          name: 'callToAction',
-          type: 'reference',
-          to: [{type: 'promotion'}],
-        },
         // etc...
       ],
     },

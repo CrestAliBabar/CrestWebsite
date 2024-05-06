@@ -124,3 +124,29 @@ export async function getCompanyPage(
     );
   }
 }
+
+export async function getNavigationTitle(
+  slug?: string,
+  pageId?: string
+): Promise<any[]> {
+  if (pageId) {
+    return client.fetch(
+      groq`*[_type == "navigationTitleSchema" && slug.current == "${slug}"]{_id, slug, title, pages[_key=="${pageId}"]}`
+    );
+  } else {
+    return client.fetch(
+      groq`*[_type == "navigationTitleSchema" && isDisplayed == true] | order(_createdAt){_id, slug, title, pages[isDisplayed == true]}`
+    );
+  }
+}
+
+
+
+export async function getHomePageContent(): Promise<any[]> {
+  return client.fetch(groq`*[_type == "page"] {
+    _id,
+    title,
+    _type,
+    pageBuilder[]
+  }`);
+}

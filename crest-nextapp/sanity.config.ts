@@ -3,6 +3,7 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
 import { simplerColorInput } from "sanity-plugin-simpler-color-input";
+import { iconPicker } from 'sanity-plugin-icon-picker';
 
 const config = defineConfig({
   projectId: "7xkjaifb",
@@ -22,7 +23,11 @@ const config = defineConfig({
     simplerColorInput({
       defaultColorFormat: "rgba",
       defaultColorList: [{ label: "Custom", value: "custom" }],
+      enableSearch: true
     }),
+
+    iconPicker(),
+
   ],
 
   schema: { types: schemaTypes },
