@@ -68,7 +68,7 @@ const FeatureGridLayout : React.FC<FeatureGridLayoutProps> = ({featureGridLayout
           {/* Features Div */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 lg:gap-12">
             {/* Feature Item */}
-            {featureGridLayoutContent.featureCards.map((featureItem, index) => (
+            {featureGridLayoutContent.featureCards.map((featureItem: { icon: { name: any; }; Feature_Heading: { headingProp: { heading: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | Iterable<React.ReactNode> | null | undefined; }; subHeadingProp: { subHeading: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | Iterable<React.ReactNode> | null | undefined; }; }; }, index: React.Key | null | undefined) => (
               <div
                 key={index}
                 className="relative mb-8 flex flex-col rounded-2xl border border-solid border-black p-8 lg:mb-4" style={featureCardColorrStyle}
@@ -76,7 +76,9 @@ const FeatureGridLayout : React.FC<FeatureGridLayoutProps> = ({featureGridLayout
                 <div className="absolute -top-8 bottom-auto left-auto right-4 flex h-16 w-16 flex-col items-center justify-center rounded-full border border-solid border-[#9b9b9b] bg-white [box-shadow:rgb(0,_0,_0)_0px_5px] lg:right-8">
                  <div  className="relative z-10 inline-block">
                  <DynamicFontAwesomeIcon
-                      name={featureItem.icon.name}/>
+                      name={featureItem.icon.name}
+                      
+                    />
                  </div>
 
                   <div className="absolute z-0 h-8 w-8 rounded-full border border-[#c0d1ff] bg-[#c0d1ff]"></div>
