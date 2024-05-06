@@ -29,9 +29,10 @@ export default async function Header() {
           <ul className="flex grow justify-start flex-wrap items-center ml-30 md:ml-25">
             {navTitles.map((title) => {
               return (
-                <Dropdown key={title._id} title={title.title}>
+                <Dropdown key={title._id} title={title.slug.current}>
                   <li>
                     {title.pages.map((page: page) => {
+                      // console.log("page:", page);
                       return (
                         <Link
                           key={page._key}
