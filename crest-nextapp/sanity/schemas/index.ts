@@ -5,7 +5,7 @@ import { heroType } from "./Hero-Schemas/heroType";
 import { imageGalleryType } from "./imageGalleryType";
 import { pageType } from "./pageType";
 import { promotionType } from "./promotionType";
-import { textWithIllustrationType } from "./textWithIllustrationType";
+import { featureType } from "./Feature-Schemas/featureType";
 import { videoType } from "./videoType";
 import { consulting, simpleText } from "./consulting";
 import { description } from "./consulting";
@@ -28,16 +28,33 @@ import { heroWithoutBanner } from "./Hero-Schemas/heroWithoutBanner";
 import { heroWithBanner } from "./Hero-Schemas/heroWithBanner";
 import { heroWithImage } from "./Hero-Schemas/heroWithImage";
 import { heroHeading } from "./Hero-Schemas/heroHeading";
+import { featureHeading } from "./Feature-Schemas/featureHeading";
+import {  featureGridLayout } from "./Feature-Schemas/featureGridLayout";
+import { featureHeroFacts } from "./Feature-Schemas/featureHeroFacts";
+import { featureCard } from "./Feature-Schemas/featureCard";
+import { featureFact } from "./Feature-Schemas/featureFacts";
 
 export const schemaTypes = [
   pageType,
+  //CTA
   promotionType,
+
+  //Hero
   heroType,
   heroWithoutBanner,
   heroWithBanner,
   heroWithImage,
   heroHeading,
-  textWithIllustrationType,
+
+  //Feature
+  featureType,
+  featureHeading,
+  featureGridLayout,
+  featureHeroFacts,
+  featureCard,
+  featureFact,
+
+
   imageGalleryType,
   formType,
   videoType,

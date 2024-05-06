@@ -19,8 +19,8 @@ export const pageType = defineType({
           type: 'hero',
         }),
         defineArrayMember({
-          name: 'textWithIllustration',
-          type: 'textWithIllustration',
+          name: 'feature',
+          type: 'feature',
         }),
         defineArrayMember({
           name: 'gallery',

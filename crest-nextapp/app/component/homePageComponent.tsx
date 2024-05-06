@@ -9,7 +9,7 @@ type HomePageComponentProps = {
 const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) => {
   if (pageBuilder === null) {
     // Render default content when pageBuilder is empty
-    return <div>No Content</div>;
+    return ;
   }
 
   return (
@@ -18,7 +18,8 @@ const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) =>
         switch (content._type) {
           case "hero":
             return <HeroComponent heroContent={content.heroSections} key={index} />;
-          // Add more cases for other component types as needed
+          case "feature":
+            return <FeatureComponent featureContent={content.featureSections}        key={index}  />
           default:
             return null; // Default case if component type is not recognized
         }
