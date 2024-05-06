@@ -23,8 +23,8 @@ export const pageType = defineType({
           type: 'feature',
         }),
         defineArrayMember({
-          name: 'gallery',
-          type: 'gallery',
+          name: 'content',
+          type: 'content',
         }),
         defineArrayMember({
           name: 'form',
