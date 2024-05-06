@@ -56,7 +56,7 @@ const CommonPageComponent: React.FC<CommonComponentTypeProps> = ({
                     <img
                       src={data.imageUrl ? data.imageUrl : data.imgUrl.alt}
                       alt="description"
-                      className=" w-full h-full object-cover"
+                      className=" w-full h-full object-fit"
                     />
                   </Link>
                 </div>
