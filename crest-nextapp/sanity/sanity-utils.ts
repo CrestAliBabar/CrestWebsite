@@ -139,3 +139,68 @@ export async function getNavigationTitle(
     );
   }
 }
+
+
+// export async function getNavPageInformation():Promise<any[]> {
+//   const query = `
+//   *[_type == "PageInfomation"]{
+//     _id,
+//     "tabName": tabName->{
+//       _id,
+//       title,
+//       slug
+//     },
+//     heading,
+//     description,
+//     "associatedCards": associatedCards[]->{
+//       _id,
+//       title,
+//       description,
+//       link,
+//       "imgUrl": imgUrl.asset->url // Assuming 'imgUrl' is a field in 'Card' that references an image asset
+//     }
+//   }
+  
+//   `;
+
+//   try {
+//     const results = await client.fetch(query);
+//     return results;  // Return the fetched data
+//   } catch (error) {
+//     console.error('Error fetching page information:', error);
+//     throw error;  // Rethrow or handle error as needed
+//   }
+// }
+
+export async function getNavPageInformation(slug: string): Promise<any[]> {
+  // 使用参数化查询以防止注入并优化查询
+  const query = `
+    *[_type == "PageInfomation" && tabName->slug.current == $slug]{
+      _id,
+      "tabName": tabName->{
+        _id,
+        title,
+        slug
+      },
+      heading,
+      description,
+      "associatedCards": associatedCards[]->{
+        _id,
+        title,
+        description,
+        link,
+        "imgUrl": imgUrl.asset->url,
+        "altText": imgUrl.alt,
+      }
+    }
+  `;
+
+  try {
+    // 使用{slug}传递参数到查询中
+    const results = await client.fetch(query, { slug });
+    return results; // 返回过滤后的数据
+  } catch (error) {
+    console.error("Error fetching page information based on slug:", error);
+    throw error; // 重新抛出错误或按需要处理错误
+  }
+}

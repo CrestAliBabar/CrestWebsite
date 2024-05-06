@@ -67,6 +67,12 @@ export const Card = defineType({
       description: 'Toggle to show or hide this card on the page',
       initialValue: true, // Default value set to true, meaning the card will be visible unless explicitly turned off
     },
+    {
+      name: 'link',
+      type: 'string',
+      title: 'Link',
+      description: 'Enter the linked page URL of the Card'
+    },
   ],
 });
 
