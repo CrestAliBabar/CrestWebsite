@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         opensans: ["Open Sans", "sans-serif"],
+        mono: ["Menlo"],
       },
     },
   },
