@@ -37,6 +37,8 @@ import { featureFact } from "./Feature-Schemas/featureFacts";
 import { contentType } from "./Content-Schemas/contentType";
 import { contentImageDescription } from "./Content-Schemas/contentImageDescription";
 import { contentHeading } from "./Content-Schemas/contentHeading";
+import { featureFactsHyperlink } from "./Feature-Schemas/featureFactsHyperlink";
+import { featureHyperlink } from "./Feature-Schemas/featureHyperlinks";
 
 export const schemaTypes = [
   pageType,
@@ -56,8 +58,10 @@ export const schemaTypes = [
   featureHeading,
   featureGridLayout,
   featureHeroFacts,
+  featureFactsHyperlink,
   featureCard,
   featureFact,
+  featureHyperlink,
 
   //Content
   contentType,
