@@ -85,13 +85,13 @@ const FeatureFactsHyperlink : React.FC<FeatureFactsHyperlinkProps> = ({featureFa
                     />
                   </div>
                   <div className="flex-grow">
-                    <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
+                    <h2 className="text-gray-900 text-lg title-font font-bold mb-3">
                       {featureItem.Fact}
                     </h2>
-                    <p className="leading-relaxed text-base">
+                    <p className="leading-relaxed text-base ">
                       {featureItem.FactSubtitle}
                     </p>
-                    <a href={featureItem.promotion.link} className="mt-3 inline-flex items-center" style={{ color: featureItem.promotion.buttonBackgroundColor.value}}>
+                    <a href={featureItem.promotion.link} className="inline-flex items-center justify-center mt-5 py-3 text-base font-bold text-center border border-transparent rounded-md px-7 bg-primary hover:bg-opacity-90" style={{ backgroundColor: featureItem.promotion.buttonBackgroundColor.value}}>
                       {featureItem.promotion.title}
                       <svg
                         fill="none"
