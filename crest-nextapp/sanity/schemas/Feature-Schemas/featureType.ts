@@ -19,6 +19,10 @@ export const featureType = defineType({
           name: "Feature_Hero_Facts",
           type: "Feature_Hero_Facts",
         }),
+        defineArrayMember({
+          name: "Feature_Facts_Hyperlink",
+          type: "Feature_Facts_Hyperlink",
+        }),
       ],
     }),
   ],
