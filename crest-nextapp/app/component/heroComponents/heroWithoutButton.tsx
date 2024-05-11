@@ -30,7 +30,7 @@ const HeroWithoutButton: React.FC<HeroWithoutButtonProps> = ({
 
   return (
     <div
-      className="relative overflow-hidden bg-cover bg-no-repeat"
+      className="relative overflow-hidden bg-cover bg-no-repeat mb-12"
       style={{
         backgroundPosition: "50%",
         backgroundImage: `url("${NewbackgroundImageUrl}")`,
