@@ -9,7 +9,7 @@ import ParagraphComponent from "./paragraghComponent";
 import ImageComponent from "./imageComponent";
 import BulletPointComponent from "./bulletPointComponent";
 import VideoComponent from "./videoComponent";
-
+import TeamComponent from "../teamComponents/teamComponent";
 type ContentComponentProps = {
   Contents: any[];
 };
@@ -51,6 +51,10 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             );
           case "video":
             return <VideoComponent videoContent={content} key={index} />;
+          case "team":
+            return (
+              <TeamComponent teamContent={content.teamSections} key={index} />
+            );
           default:
             return null;
         }
