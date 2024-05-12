@@ -11,6 +11,7 @@ import BulletPointComponent from "./bulletPointComponent";
 import VideoComponent from "./videoComponent";
 import CTAComponent from "../ctaComponent/cta";
 import CTAPatternComponent from "../ctaComponent/cta_pattern";
+import CTAHeroComponent from "../ctaComponent/cta_hero";
 
 type ContentComponentProps = {
   Contents: any[];
@@ -59,6 +60,8 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             return (
               <CTAPatternComponent ctaPatternContent={content} key={index} />
             );
+          case "CTAWithHero":
+            return <CTAHeroComponent ctaHeroContent={content} key={index} />;
 
           default:
             return null;

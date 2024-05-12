@@ -33,6 +33,7 @@ export const pageContent = defineType({
         { type: "video" },
         { type: "CTA_With_Text" },
         { type: "CTAWithBackgroundPattern" },
+        { type: "CTAWithHero" },
       ],
     }),
   ],

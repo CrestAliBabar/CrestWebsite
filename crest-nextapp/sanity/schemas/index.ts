@@ -41,12 +41,14 @@ import { featureFactsHyperlink } from "./Feature-Schemas/featureFactsHyperlink";
 import { featureHyperlink } from "./Feature-Schemas/featureHyperlinks";
 import { CTA_Text } from "./CTA-Schemas/CTA_Text";
 import { CTA_Pattern } from "./CTA-Schemas/CTA_Pattern";
+import { CTA_Hero } from "./CTA-Schemas/CTA_Hero";
 export const schemaTypes = [
   pageType,
   //CTA
   promotionType,
   CTA_Text,
   CTA_Pattern,
+  CTA_Hero,
 
   //Hero
   heroType,

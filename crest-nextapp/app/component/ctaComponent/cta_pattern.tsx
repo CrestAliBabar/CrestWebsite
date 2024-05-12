@@ -25,9 +25,6 @@ const CTAPatternComponent: React.FC<CTAPatternProps> = ({
                 style={{ color: TitleTextColor }}
                 className="mb-4 text-3xl font-semibold md:text-5xl"
               >
-                {/* <span className="bg-[url('https://assets.website-files.com/63904f663019b0d8edf8d57c/6391a5b04f2836ad87dcc3bc_Rectangle%20773.svg')] bg-cover bg-center px-4 text-white">
-                  Lightning Fast
-                </span> */}
                 {ctaPatternContent.CTA_Title}
               </h2>
               <div className="mx-auto max-w-[630px]">
