@@ -1,42 +1,46 @@
 // ./schemas/pageType.ts
 
-import {DocumentIcon} from '@sanity/icons'
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import { DocumentIcon } from "@sanity/icons";
+import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const pageType = defineType({
-  name: 'page',
-  type: 'document',
-  title: 'Page',
+  name: "page",
+  type: "document",
+  title: "Page",
   fields: [
-    defineField({name: 'title', type: 'string'}),
+    defineField({ name: "title", type: "string" }),
     {
-      name: 'pageBuilder',
-      type: 'array',
-      title: 'Page builder',
+      name: "pageBuilder",
+      type: "array",
+      title: "Page builder",
       of: [
         defineArrayMember({
-          name: 'hero',
-          type: 'hero',
+          name: "hero",
+          type: "hero",
         }),
         defineArrayMember({
-          name: 'feature',
-          type: 'feature',
+          name: "feature",
+          type: "feature",
         }),
         defineArrayMember({
-          name: 'content',
-          type: 'content',
+          name: "content",
+          type: "content",
         }),
         defineArrayMember({
-          name: 'form',
-          type: 'form',
+          name: "form",
+          type: "form",
         }),
         defineArrayMember({
-          name: 'video',
-          type: 'video',
+          name: "video",
+          type: "video",
+        }),
+        defineArrayMember({
+          name: "CTA_With_Text",
+          type: "CTA_With_Text",
         }),
         // etc...
       ],
     },
   ],
   icon: DocumentIcon,
-})
+});

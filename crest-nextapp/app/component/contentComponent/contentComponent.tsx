@@ -9,6 +9,8 @@ import ParagraphComponent from "./paragraghComponent";
 import ImageComponent from "./imageComponent";
 import BulletPointComponent from "./bulletPointComponent";
 import VideoComponent from "./videoComponent";
+import CTAComponent from "../ctaComponent/cta";
+import { Content } from "next/font/google";
 
 type ContentComponentProps = {
   Contents: any[];
@@ -51,6 +53,8 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             );
           case "video":
             return <VideoComponent videoContent={content} key={index} />;
+          case "CTA_With_Text":
+            return <CTAComponent ctaContent={content} key={index} />;
           default:
             return null;
         }

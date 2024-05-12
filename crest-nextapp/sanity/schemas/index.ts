@@ -30,7 +30,7 @@ import { heroWithImage } from "./Hero-Schemas/heroWithImage";
 import { heroHeading } from "./Hero-Schemas/heroHeading";
 import { heroWithoutButton } from "./Hero-Schemas/heroWithoutButton";
 import { featureHeading } from "./Feature-Schemas/featureHeading";
-import {  featureGridLayout } from "./Feature-Schemas/featureGridLayout";
+import { featureGridLayout } from "./Feature-Schemas/featureGridLayout";
 import { featureHeroFacts } from "./Feature-Schemas/featureHeroFacts";
 import { featureCard } from "./Feature-Schemas/featureCard";
 import { featureFact } from "./Feature-Schemas/featureFacts";
@@ -39,11 +39,13 @@ import { contentImageDescription } from "./Content-Schemas/contentImageDescripti
 import { contentHeading } from "./Content-Schemas/contentHeading";
 import { featureFactsHyperlink } from "./Feature-Schemas/featureFactsHyperlink";
 import { featureHyperlink } from "./Feature-Schemas/featureHyperlinks";
+import { CTA_Text } from "./CTA-Schemas/CTA_Text";
 
 export const schemaTypes = [
   pageType,
   //CTA
   promotionType,
+  CTA_Text,
 
   //Hero
   heroType,
