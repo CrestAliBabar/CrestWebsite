@@ -30,7 +30,7 @@ import { heroWithImage } from "./Hero-Schemas/heroWithImage";
 import { heroHeading } from "./Hero-Schemas/heroHeading";
 import { heroWithoutButton } from "./Hero-Schemas/heroWithoutButton";
 import { featureHeading } from "./Feature-Schemas/featureHeading";
-import {  featureGridLayout } from "./Feature-Schemas/featureGridLayout";
+import { featureGridLayout } from "./Feature-Schemas/featureGridLayout";
 import { featureHeroFacts } from "./Feature-Schemas/featureHeroFacts";
 import { featureCard } from "./Feature-Schemas/featureCard";
 import { featureFact } from "./Feature-Schemas/featureFacts";
@@ -43,6 +43,7 @@ import { teamWithIntroduction } from "./Team-Schemas/teamWithIntroduction";
 import { teamType } from "./Team-Schemas/teamType";
 import { teamMember } from "./Team-Schemas/teamMember";
 import { teamCardStandard } from "./Team-Schemas/teamCardStandard";
+import { contact } from "./Contact-Schemas/contact";
 
 export const schemaTypes = [
   pageType,
@@ -78,6 +79,8 @@ export const schemaTypes = [
   teamWithIntroduction,
   teamCardStandard,
 
+  // Contact
+  contact,
 
   imageGalleryType,
   formType,
