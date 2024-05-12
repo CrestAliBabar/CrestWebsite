@@ -52,7 +52,7 @@ const ContactComponent: React.FC<ContactProps> = ({ contactContent }) => {
   }
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+    <div className="mx-auto w-full max-w-4xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
       {/* Contact Component */}
       <div className="">
         {/* Contact Title */}
