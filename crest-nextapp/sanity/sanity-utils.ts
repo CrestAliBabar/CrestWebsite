@@ -81,3 +81,17 @@ export async function getHomePageContent(): Promise<any[]> {
     pageBuilder[]
   }`);
 }
+
+
+
+
+export async function getPageDetailForBotPress(
+  slug?: string,
+): Promise<any[]> {
+  return client.fetch(
+    groq`*[ _type == "navigationTitleSchema" && slug.current == "${slug}"] {
+      pages[]{_type,_key,text}
+    }`
+  );
+
+}
