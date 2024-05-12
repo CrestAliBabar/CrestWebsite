@@ -42,13 +42,10 @@ const ContactComponent: React.FC<ContactProps> = ({ contactContent }) => {
       }),
     }).then(() => {
       // Toast notification
-      toast.success(
-        "Thank you! Your email message has been sent successfully.",
-        {
-          duration: 5000,
-          //   icon: "👏",
-        }
-      );
+      toast.success("Thank you! Your message has been sent successfully.", {
+        duration: 5000,
+        //   icon: "👏",
+      });
     });
 
     reset();
@@ -129,7 +126,7 @@ const ContactComponent: React.FC<ContactProps> = ({ contactContent }) => {
             type="submit"
             className="mr-5 flex w-full items-center justify-center bg-[#276ef1] px-8 py-4 font-semibold text-white transition [box-shadow:rgb(171,_196,245)-8px_8px] hover:[box-shadow:rgb(171,_196,_245)_0px_0px] md:mr-6 lg:mr-8"
           >
-            <p className="mr-6 font-bold">Send us an email</p>
+            <p className="mr-6 font-bold">Leave a message</p>
             <svg
               fill="currentColor"
               viewBox="0 0 20 21"
