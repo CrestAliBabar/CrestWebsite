@@ -34,6 +34,10 @@ export const pageType = defineType({
           name: 'video',
           type: 'video',
         }),
+        defineArrayMember({
+          name: 'team',
+          type: 'team',
+        }),
         // etc...
       ],
     },

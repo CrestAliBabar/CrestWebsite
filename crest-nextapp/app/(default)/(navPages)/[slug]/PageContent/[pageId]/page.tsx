@@ -1,4 +1,4 @@
-import PageContentComponent from "@/app/component/PageContentComponent";
+import ContentComponent from "@/app/component/contentComponent/contentComponent";
 import { getNavigationTitle } from "@/sanity/sanity-utils";
 
 interface PageContentProps {
@@ -11,11 +11,8 @@ interface PageContentProps {
 export default async function PageContent({
   params: { slug, pageId },
 }: PageContentProps) {
-  const pageData = await getNavigationTitle(slug, pageId);
+  const pageContent = await getNavigationTitle(slug, pageId);
+  const pageBuilder = pageContent[0].pages[0].pageBuilder;
 
-  return (
-    <>
-      <PageContentComponent pageContent={pageData} />
-    </>
-  );
+  return <ContentComponent Contents={pageBuilder} />;
 }
