@@ -10,7 +10,7 @@ import ImageComponent from "./imageComponent";
 import BulletPointComponent from "./bulletPointComponent";
 import VideoComponent from "./videoComponent";
 import CTAComponent from "../ctaComponent/cta";
-import { Content } from "next/font/google";
+import CTAPatternComponent from "../ctaComponent/cta_pattern";
 
 type ContentComponentProps = {
   Contents: any[];
@@ -55,6 +55,11 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             return <VideoComponent videoContent={content} key={index} />;
           case "CTA_With_Text":
             return <CTAComponent ctaContent={content} key={index} />;
+          case "CTAWithBackgroundPattern":
+            return (
+              <CTAPatternComponent ctaPatternContent={content} key={index} />
+            );
+
           default:
             return null;
         }

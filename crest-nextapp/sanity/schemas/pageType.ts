@@ -38,6 +38,10 @@ export const pageType = defineType({
           name: "CTA_With_Text",
           type: "CTA_With_Text",
         }),
+        defineArrayMember({
+          name: "CTAWithBackgroundPattern",
+          type: "CTAWithBackgroundPattern",
+        }),
         // etc...
       ],
     },

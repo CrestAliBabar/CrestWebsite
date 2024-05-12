@@ -32,6 +32,7 @@ export const pageContent = defineType({
         { type: "bulletPoint" },
         { type: "video" },
         { type: "CTA_With_Text" },
+        { type: "CTAWithBackgroundPattern" },
       ],
     }),
   ],

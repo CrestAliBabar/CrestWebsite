@@ -1,19 +1,11 @@
 import { defineField, defineType } from "sanity";
 import colorList from "@/app/utils/colors";
 
-export const CTA_Text = defineType({
-  name: "CTA_With_Text",
+export const CTA_Pattern = defineType({
+  name: "CTAWithBackgroundPattern",
   type: "object",
-  title: "CTA With Text",
+  title: "CTA With Background Pattern",
   fields: [
-    {
-      name: "backGroundColor",
-      title: "Back Ground Color",
-      type: "simplerColor",
-      options: {
-        colorList: colorList,
-      },
-    },
     defineField({
       name: "CTA_Title",
       type: "string",
@@ -36,18 +28,6 @@ export const CTA_Text = defineType({
     {
       name: "DescriptionTextColor",
       title: "Description text color",
-      type: "simplerColor",
-      options: {
-        colorList: colorList,
-      },
-    },
-    defineField({
-      name: "Comment",
-      type: "string",
-    }),
-    {
-      name: "CommentTextColor",
-      title: "Comment text color",
       type: "simplerColor",
       options: {
         colorList: colorList,

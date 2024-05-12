@@ -1,5 +1,4 @@
 import React from "react";
-import { log } from "console";
 
 type CTAProps = {
   ctaContent?: any;
@@ -9,7 +8,6 @@ const CTAComponent: React.FC<CTAProps> = ({ ctaContent }) => {
   const backGroundColor = ctaContent.backGroundColor
     ? ctaContent.backGroundColor.value
     : "#ffffff";
-  console.log(ctaContent.backGroundColor);
   const TitleTextColor = ctaContent.TitleTextColor
     ? ctaContent.TitleTextColor.value
     : "#f2f2f7";

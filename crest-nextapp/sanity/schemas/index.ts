@@ -40,12 +40,13 @@ import { contentHeading } from "./Content-Schemas/contentHeading";
 import { featureFactsHyperlink } from "./Feature-Schemas/featureFactsHyperlink";
 import { featureHyperlink } from "./Feature-Schemas/featureHyperlinks";
 import { CTA_Text } from "./CTA-Schemas/CTA_Text";
-
+import { CTA_Pattern } from "./CTA-Schemas/CTA_Pattern";
 export const schemaTypes = [
   pageType,
   //CTA
   promotionType,
   CTA_Text,
+  CTA_Pattern,
 
   //Hero
   heroType,
