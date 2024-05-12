@@ -39,6 +39,11 @@ import { contentImageDescription } from "./Content-Schemas/contentImageDescripti
 import { contentHeading } from "./Content-Schemas/contentHeading";
 import { featureFactsHyperlink } from "./Feature-Schemas/featureFactsHyperlink";
 import { featureHyperlink } from "./Feature-Schemas/featureHyperlinks";
+import { teamWithIntroduction } from "./Team-Schemas/teamWithIntroduction";
+import { teamType } from "./Team-Schemas/teamType";
+import { teamMember } from "./Team-Schemas/teamMember";
+import { teamCardStandard } from "./Team-Schemas/teamCardStandard";
+
 import { CTA_Text } from "./CTA-Schemas/CTA_Text";
 import { CTA_Pattern } from "./CTA-Schemas/CTA_Pattern";
 import { CTA_Hero } from "./CTA-Schemas/CTA_Hero";
@@ -72,6 +77,13 @@ export const schemaTypes = [
   contentType,
   contentImageDescription,
   contentHeading,
+
+  //Teams
+  teamType,
+  teamMember,
+  teamWithIntroduction,
+  teamCardStandard,
+
 
   imageGalleryType,
   formType,

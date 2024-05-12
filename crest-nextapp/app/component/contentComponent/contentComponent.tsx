@@ -9,6 +9,7 @@ import ParagraphComponent from "./paragraghComponent";
 import ImageComponent from "./imageComponent";
 import BulletPointComponent from "./bulletPointComponent";
 import VideoComponent from "./videoComponent";
+import TeamComponent from "../teamComponents/teamComponent";
 import CTAComponent from "../ctaComponent/cta";
 import CTAPatternComponent from "../ctaComponent/cta_pattern";
 import CTAHeroComponent from "../ctaComponent/cta_hero";
@@ -54,6 +55,10 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             );
           case "video":
             return <VideoComponent videoContent={content} key={index} />;
+          case "team":
+            return (
+              <TeamComponent teamContent={content.teamSections} key={index} />
+            );
           case "CTA_With_Text":
             return <CTAComponent ctaContent={content} key={index} />;
           case "CTAWithBackgroundPattern":
