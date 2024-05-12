@@ -45,10 +45,16 @@ import { teamMember } from "./Team-Schemas/teamMember";
 import { teamCardStandard } from "./Team-Schemas/teamCardStandard";
 import { contact } from "./Contact-Schemas/contact";
 
+import { CTA_Text } from "./CTA-Schemas/CTA_Text";
+import { CTA_Pattern } from "./CTA-Schemas/CTA_Pattern";
+import { CTA_Hero } from "./CTA-Schemas/CTA_Hero";
 export const schemaTypes = [
   pageType,
   //CTA
   promotionType,
+  CTA_Text,
+  CTA_Pattern,
+  CTA_Hero,
 
   //Hero
   heroType,
