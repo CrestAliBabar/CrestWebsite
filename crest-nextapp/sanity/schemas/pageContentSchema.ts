@@ -31,7 +31,7 @@ export const pageContent = defineType({
         { type: "image" },
         { type: "bulletPoint" },
         { type: "video" },
-        { type: "team"}
+        { type: "team" },
         { type: "CTA_With_Text" },
         { type: "CTAWithBackgroundPattern" },
         { type: "CTAWithHero" },
