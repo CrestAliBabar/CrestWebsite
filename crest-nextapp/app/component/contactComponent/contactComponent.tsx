@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 type ContactProps = {
   contactContent: any;
@@ -42,7 +42,13 @@ const ContactComponent: React.FC<ContactProps> = ({ contactContent }) => {
       }),
     }).then(() => {
       // Toast notification
-      toast.success("Your email message has been sent successfully");
+      toast.success(
+        "Thank you! Your email message has been sent successfully.",
+        {
+          duration: 5000,
+          //   icon: "👏",
+        }
+      );
     });
 
     reset();
@@ -134,6 +140,7 @@ const ContactComponent: React.FC<ContactProps> = ({ contactContent }) => {
               <polygon points="16.172 9 10.101 2.929 11.515 1.515 20 10 19.293 10.707 11.515 18.485 10.101 17.071 16.172 11 0 11 0 9"></polygon>
             </svg>
           </button>
+          <Toaster />
         </form>
       </div>
     </div>
