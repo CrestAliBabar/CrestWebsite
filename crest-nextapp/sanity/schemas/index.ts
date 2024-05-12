@@ -39,6 +39,10 @@ import { contentImageDescription } from "./Content-Schemas/contentImageDescripti
 import { contentHeading } from "./Content-Schemas/contentHeading";
 import { featureFactsHyperlink } from "./Feature-Schemas/featureFactsHyperlink";
 import { featureHyperlink } from "./Feature-Schemas/featureHyperlinks";
+import { teamWithIntroduction } from "./Team-Schemas/teamWithIntroduction";
+import { teamType } from "./Team-Schemas/teamType";
+import { teamMember } from "./Team-Schemas/teamMember";
+import { teamCardStandard } from "./Team-Schemas/teamCardStandard";
 
 export const schemaTypes = [
   pageType,
@@ -67,6 +71,13 @@ export const schemaTypes = [
   contentType,
   contentImageDescription,
   contentHeading,
+
+  //Teams
+  teamType,
+  teamMember,
+  teamWithIntroduction,
+  teamCardStandard,
+
 
   imageGalleryType,
   formType,
