@@ -10,6 +10,9 @@ import ImageComponent from "./imageComponent";
 import BulletPointComponent from "./bulletPointComponent";
 import VideoComponent from "./videoComponent";
 import TeamComponent from "../teamComponents/teamComponent";
+import ContactComponent from "../contactComponent/contactComponent";
+import CTAComponents from "../ctaComponent/CTAComponents";
+
 type ContentComponentProps = {
   Contents: any[];
 };
@@ -55,6 +58,12 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             return (
               <TeamComponent teamContent={content.teamSections} key={index} />
             );
+          case "cta":
+            return (
+              <CTAComponents ctaContents={content.ctaSections} key={index} />
+            );
+          case "contact":
+            return <ContactComponent contactContent={content} key={index} />;
           default:
             return null;
         }

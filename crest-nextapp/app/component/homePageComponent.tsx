@@ -17,7 +17,7 @@ const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) =>
   return (
     <>
       {pageBuilder.map((content: any, index: number) => {
-        console.log(content)
+        // console.log(content)
         switch (content._type) {
           case "hero":
             return <HeroComponent heroContent={content.heroSections} key={index} />;
