@@ -2,6 +2,10 @@ import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 import MessageUsEmail from "@/app/component/contactComponent/emailMessage";
 
+// use Edge runtime and force dynamic on Vercel
+export const runtime = "edge";
+export const dynamic = "force-dynamic";
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
