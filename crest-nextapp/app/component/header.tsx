@@ -26,7 +26,7 @@ export default async function Header() {
           />
         </Link>
         <nav className="flex flex-wrap items-center text-base justify-between mx-auto z-50 mr-10">
-          <ul className="flex grow justify-start flex-wrap items-center ml-30 md:ml-25">
+          <ul className="flex grow justify-start flex-wrap items-center ml-30 md:ml-25 text-xl">
             {navTitles.map((title) => {
               return (
                 <Dropdown key={title._id} title={title.title}>
