@@ -12,6 +12,7 @@ const CTAPatternComponent: React.FC<CTAPatternProps> = ({
   const DescriptionTextColor = ctaPatternContent.DescriptionTextColor
     ? ctaPatternContent.DescriptionTextColor.value
     : "#647084";
+  const getStartLink = ctaPatternContent.getStartLink || "#";
   return (
     <header>
       {/* Container */}
@@ -35,7 +36,7 @@ const CTAPatternComponent: React.FC<CTAPatternProps> = ({
             </div>
             {/* CTA Button */}
             <a
-              href="#"
+              href={getStartLink}
               className="inline-block rounded-xl bg-black px-8 py-4 font-semibold text-white [box-shadow:rgb(255,_255,_255)_6px_6px]"
             >
               Get Started
