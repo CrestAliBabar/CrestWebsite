@@ -16,11 +16,13 @@ export async function GET(request: NextRequest) {
 
     const domainName = "http://" + request.headers.get("host");
 
+    const PageContent = "PageContent"
+
     // Construct the response array in the desired format
     const formattedPages = pageDetails[0].pages.map(
       (page: { text: any; _type: any; _key: any }) => ({
         PageTitle: page.text,
-        url: `${domainName}/${parameter}/${page._type}/${page._key}`,
+        url: `${domainName}/${parameter}/${PageContent}/${page._key}`,
       })
     );
 
