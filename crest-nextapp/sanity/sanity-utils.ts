@@ -12,18 +12,6 @@ const client = createClient({
   apiVersion: "2024-03-07",
 });
 
-export async function getTrainingCard(): Promise<TrainCard[]> {
-  return client.fetch(groq`*[_type == "trainCard"]`);
-}
-
-export async function getConsultingCard(): Promise<ConsultingCard[]> {
-  return client.fetch(groq`*[_type == "consultingCard"]`);
-}
-
-export async function getServiceCard(): Promise<ServiceCard[]> {
-  return client.fetch(groq`*[_type == "serviceCard"]`);
-}
-
 export async function getPageInfo(
   selectedTabName: string
 ): Promise<PageInfoType[]> {
@@ -33,7 +21,8 @@ export async function getPageInfo(
 }
 
 export async function getLayoutSettings(): Promise<LayoutType[]> {
-  return client.fetch(groq`*[_type == "layout-setting"] {
+  return client.fetch(
+    groq`*[_type == "layout-setting"] {
     _id,
     name,
     backgroundColor{
@@ -55,7 +44,10 @@ export async function getLayoutSettings(): Promise<LayoutType[]> {
   }
   }
 
-  }`);
+  }`,
+    {},
+    { cache: "no-store" }
+  );
 }
 
 export async function getNavigationTitle(
@@ -64,34 +56,38 @@ export async function getNavigationTitle(
 ): Promise<any[]> {
   if (pageId) {
     return client.fetch(
-      groq`*[_type == "navigationTitleSchema" && slug.current == "${slug}"]{_id, slug, title, pages[_key=="${pageId}"]}`
+      groq`*[_type == "navigationTitleSchema" && slug.current == "${slug}"]{_id, slug, title, pages[_key=="${pageId}"]}`,
+      {},
+      { cache: "no-store" }
     );
   } else {
     return client.fetch(
-      groq`*[_type == "navigationTitleSchema" && isDisplayed == true] | order(_createdAt){_id, slug, title, pages[isDisplayed == true]}`
+      groq`*[_type == "navigationTitleSchema" && isDisplayed == true] | order(_createdAt){_id, slug, title, pages[isDisplayed == true]}`,
+      {},
+      { cache: "no-store" }
     );
   }
 }
 
 export async function getHomePageContent(): Promise<any[]> {
-  return client.fetch(groq`*[_type == "page"] {
+  return client.fetch(
+    groq`*[_type == "page"] {
     _id,
     title,
     _type,
     pageBuilder[]
-  }`);
+  }`,
+    {},
+    { cache: "no-store" }
+  );
 }
 
-
-
-
-export async function getPageDetailForBotPress(
-  slug?: string,
-): Promise<any[]> {
+export async function getPageDetailForBotPress(slug?: string): Promise<any[]> {
   return client.fetch(
     groq`*[ _type == "navigationTitleSchema" && slug.current == "${slug}"] {
       pages[]{_type,_key,text}
-    }`
+    }`,
+    {},
+    { cache: "no-store" }
   );
-
 }

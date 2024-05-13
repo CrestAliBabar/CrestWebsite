@@ -7,11 +7,6 @@ import { pageType } from "./pageType";
 import { promotionType } from "./promotionType";
 import { featureType } from "./Feature-Schemas/featureType";
 import { videoType } from "./videoType";
-import { consulting, simpleText } from "./consulting";
-import { description } from "./consulting";
-import { trainCard } from "./trainCard";
-import { serviceCard } from "./serviceCard";
-import { consultingCard } from "./consultingCard";
 import { PageInfo } from "./pageInfo";
 import layoutChange from "./layout-change";
 import { navigationTitleSchema } from "./navigationTitleSchema";
@@ -93,14 +88,8 @@ export const schemaTypes = [
   imageGalleryType,
   formType,
   videoType,
-  consulting,
   pageTitle,
-  description,
   bulletPoint,
-  simpleText,
-  trainCard,
-  serviceCard,
-  consultingCard,
   PageInfo,
   layoutChange,
   pageSubtitle,
