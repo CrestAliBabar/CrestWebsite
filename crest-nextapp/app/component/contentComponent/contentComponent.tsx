@@ -10,9 +10,7 @@ import ImageComponent from "./imageComponent";
 import BulletPointComponent from "./bulletPointComponent";
 import VideoComponent from "./videoComponent";
 import TeamComponent from "../teamComponents/teamComponent";
-import CTAComponent from "../ctaComponent/cta";
-import CTAPatternComponent from "../ctaComponent/cta_pattern";
-import CTAHeroComponent from "../ctaComponent/cta_hero";
+import ContactComponent from "../contactComponent/contactComponent";
 import CTAComponents from "../ctaComponent/CTAComponents";
 
 type ContentComponentProps = {
@@ -64,6 +62,8 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             return (
               <CTAComponents ctaContents={content.ctaSections} key={index} />
             );
+          case "contact":
+            return <ContactComponent contactContent={content} key={index} />;
           default:
             return null;
         }

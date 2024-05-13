@@ -33,6 +33,7 @@ export const pageContent = defineType({
         { type: "video" },
         { type: "team" },
         { type: "cta" },
+        { type: "contact" },
       ],
     }),
   ],
