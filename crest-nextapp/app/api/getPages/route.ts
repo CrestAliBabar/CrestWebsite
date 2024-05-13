@@ -14,10 +14,10 @@ export async function GET(request: NextRequest) {
     }
 
     const parameter = request.nextUrl.searchParams.get("page");
-    console.log(parameter)
+    // console.log(parameter)
     const pageDetails = await getPageDetailForBotPress(parameter?.toString())
     
-    console.log(pageDetails[0])
+    // console.log(pageDetails[0])
 
 
     const domainName = "http://" + request.headers.get("host");
