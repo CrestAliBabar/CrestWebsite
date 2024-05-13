@@ -13,7 +13,7 @@ import TeamComponent from "../teamComponents/teamComponent";
 import CTAComponent from "../ctaComponent/cta";
 import CTAPatternComponent from "../ctaComponent/cta_pattern";
 import CTAHeroComponent from "../ctaComponent/cta_hero";
-import CTAComponents from "../ctaComponent/ctaComponents";
+import CTAComponents from "../ctaComponent/CTAComponents";
 
 type ContentComponentProps = {
   Contents: any[];
