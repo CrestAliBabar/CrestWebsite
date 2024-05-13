@@ -33,5 +33,11 @@ export const CTA_Pattern = defineType({
         colorList: colorList,
       },
     },
+    defineField({
+      name: "getStartLink",
+      type: "url",
+      title: "getStart Link",
+      description: "Optional URL for the Call to Action",
+    }),
   ],
 });
