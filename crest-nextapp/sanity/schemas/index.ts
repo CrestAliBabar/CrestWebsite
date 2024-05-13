@@ -43,6 +43,7 @@ import { teamWithIntroduction } from "./Team-Schemas/teamWithIntroduction";
 import { teamType } from "./Team-Schemas/teamType";
 import { teamMember } from "./Team-Schemas/teamMember";
 import { teamCardStandard } from "./Team-Schemas/teamCardStandard";
+import { contact } from "./Contact-Schemas/contact";
 
 import { CTA_Text } from "./CTA-Schemas/CTA_Text";
 import { CTA_Pattern } from "./CTA-Schemas/CTA_Pattern";
@@ -84,6 +85,8 @@ export const schemaTypes = [
   teamWithIntroduction,
   teamCardStandard,
 
+  // Contact
+  contact,
 
   imageGalleryType,
   formType,

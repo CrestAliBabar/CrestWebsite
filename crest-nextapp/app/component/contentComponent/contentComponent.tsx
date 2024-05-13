@@ -13,6 +13,7 @@ import TeamComponent from "../teamComponents/teamComponent";
 import CTAComponent from "../ctaComponent/cta";
 import CTAPatternComponent from "../ctaComponent/cta_pattern";
 import CTAHeroComponent from "../ctaComponent/cta_hero";
+import ContactComponent from "../contactComponent/contactComponent";
 
 type ContentComponentProps = {
   Contents: any[];
@@ -67,7 +68,8 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             );
           case "CTAWithHero":
             return <CTAHeroComponent ctaHeroContent={content} key={index} />;
-
+          case "contact":
+            return <ContactComponent contactContent={content} key={index} />;
           default:
             return null;
         }
