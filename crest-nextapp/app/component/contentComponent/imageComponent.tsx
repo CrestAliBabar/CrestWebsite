@@ -7,6 +7,10 @@ type ImageProps = {
 };
 
 const ImageComponent: React.FC<ImageProps> = ({ imageContent }) => {
+  // console.log("imageContent:", imageContent)
+  // const imageContentImageUrl = imageContent.asset._ref.split("-").slice(1).join("-").replace(/-([^-]*)$/, ".$1");
+  // console.log("imageContentImageUrl:", imageContentImageUrl)
+  // needed to be fixed, no {imageContent.asset.url}
   return (
     <div className="flex justify-center">
       <Image

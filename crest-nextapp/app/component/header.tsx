@@ -22,11 +22,11 @@ export default async function Header() {
           <img
             src={layoutSetting[0].image.asset.url}
             alt="Bayave Logo"
-            className=" h-32 lg:-mr-96 lg:ml-96 sm:mx-auto"
+            className=" h-32 lg:ml-20 sm:mx-auto sm:ml-10"
           />
         </Link>
-        <nav className="flex flex-wrap items-center text-base justify-center mx-auto z-50">
-          <ul className="flex grow justify-start flex-wrap items-center ml-30 md:ml-25">
+        <nav className="flex flex-wrap items-center text-base justify-between mx-auto z-50 mr-10">
+          <ul className="flex grow justify-start flex-wrap items-center ml-30 md:ml-25 text-xl">
             {navTitles.map((title) => {
               return (
                 <Dropdown key={title._id} title={title.title}>
