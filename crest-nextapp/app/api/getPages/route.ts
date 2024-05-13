@@ -14,9 +14,11 @@ export async function GET(request: NextRequest) {
     const parameter = request.nextUrl.searchParams.get("page");
     const pageDetails = await getPageDetailForBotPress(parameter?.toString());
 
-    const domainName = "http://" + request.headers.get("host");
+    // Extract protocol from request URL
+    const protocol = request.nextUrl.protocol.replace(":", "");
+    const domainName = `${protocol}://${request.headers.get("host")}`;
 
-    const PageContent = "PageContent"
+    const PageContent = "PageContent";
 
     // Construct the response array in the desired format
     const formattedPages = pageDetails[0].pages.map(
