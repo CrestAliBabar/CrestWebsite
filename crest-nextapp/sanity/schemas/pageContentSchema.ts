@@ -32,10 +32,9 @@ export const pageContent = defineType({
         { type: "bulletPoint" },
         { type: "video" },
         { type: "team" },
-        { type: "CTA_With_Text" },
-        { type: "CTAWithBackgroundPattern" },
-        { type: "CTAWithHero" },
-        { type: "work_flow"}
+        { type: "cta" },
+        { type: "contact" },
+        { type: "work_flow"},
       ],
     }),
   ],
@@ -109,7 +108,7 @@ export const imgUrl = defineType({
 
 export const bulletPoint = defineType({
   name: "bulletPoint",
-  type: "document",
+  type: "object",
   title: "Bullet Point",
   fields: [
     {

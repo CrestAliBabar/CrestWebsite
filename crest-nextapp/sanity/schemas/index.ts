@@ -7,11 +7,6 @@ import { pageType } from "./pageType";
 import { promotionType } from "./promotionType";
 import { featureType } from "./Feature-Schemas/featureType";
 import { videoType } from "./videoType";
-import { consulting, simpleText } from "./consulting";
-import { description } from "./consulting";
-import { trainCard } from "./trainCard";
-import { serviceCard } from "./serviceCard";
-import { consultingCard } from "./consultingCard";
 import { PageInfo } from "./pageInfo";
 import layoutChange from "./layout-change";
 import { navigationTitleSchema } from "./navigationTitleSchema";
@@ -43,10 +38,12 @@ import { teamWithIntroduction } from "./Team-Schemas/teamWithIntroduction";
 import { teamType } from "./Team-Schemas/teamType";
 import { teamMember } from "./Team-Schemas/teamMember";
 import { teamCardStandard } from "./Team-Schemas/teamCardStandard";
+import { contact } from "./Contact-Schemas/contact";
 
 import { CTA_Text } from "./CTA-Schemas/CTA_Text";
 import { CTA_Pattern } from "./CTA-Schemas/CTA_Pattern";
 import { CTA_Hero } from "./CTA-Schemas/CTA_Hero";
+import { ctaType } from "./CTA-Schemas/ctaType";
 
 import {workFlowType} from "./WorkFlow-Schemas/workFlowType";
 import {stepBlockRound} from "./WorkFlow-Schemas/stepBlockRound";
@@ -59,6 +56,7 @@ export const schemaTypes = [
   CTA_Text,
   CTA_Pattern,
   CTA_Hero,
+  ctaType,
 
   //Hero
   heroType,
@@ -94,18 +92,14 @@ export const schemaTypes = [
   stepBlockRound,
   stepBlockRectangle,
 
-  
+    // Contact
+  contact,
+
   imageGalleryType,
   formType,
   videoType,
-  consulting,
   pageTitle,
-  description,
   bulletPoint,
-  simpleText,
-  trainCard,
-  serviceCard,
-  consultingCard,
   PageInfo,
   layoutChange,
   pageSubtitle,

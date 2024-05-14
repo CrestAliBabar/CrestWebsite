@@ -91,5 +91,11 @@ export const CTA_Hero = defineType({
       title: "Image",
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: "getStartLink",
+      type: "url",
+      title: "getStart Link",
+      description: "Optional URL for the Call to Action",
+    }),
   ],
 });

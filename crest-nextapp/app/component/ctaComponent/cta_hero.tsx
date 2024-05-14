@@ -29,6 +29,7 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
       .slice(1)
       .join("-")
       .replace(/-([^-]*)$/, ".$1");
+  const getStartLink = ctaHeroContent.getStartLink || "#";
   return (
     <section>
       {/* Container */}
@@ -100,7 +101,7 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             {/* Divider */}
             <div className="mb-10 mt-10 w-full max-w-md border-b border-b-[#d9d9d9]"></div>
             <a
-              href="#"
+              href={getStartLink}
               className="inline-block rounded-xl bg-black px-8 py-4 font-semibold text-white [box-shadow:rgb(19,_83,_254)_6px_6px]"
             >
               Get started

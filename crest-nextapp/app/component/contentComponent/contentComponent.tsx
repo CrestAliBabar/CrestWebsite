@@ -10,9 +10,8 @@ import ImageComponent from "./imageComponent";
 import BulletPointComponent from "./bulletPointComponent";
 import VideoComponent from "./videoComponent";
 import TeamComponent from "../teamComponents/teamComponent";
-import CTAComponent from "../ctaComponent/cta";
-import CTAPatternComponent from "../ctaComponent/cta_pattern";
-import CTAHeroComponent from "../ctaComponent/cta_hero";
+import ContactComponent from "../contactComponent/contactComponent";
+import CTAComponents from "../ctaComponent/CTAComponents";
 
 import WorkFlowComponent from "../workFlowComponent/workFlowComponent";
 type ContentComponentProps = {
@@ -60,16 +59,14 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             return (
               <TeamComponent teamContent={content.teamSections} key={index} />
             );
-          case "CTA_With_Text":
-            return <CTAComponent ctaContent={content} key={index} />;
-          case "CTAWithBackgroundPattern":
+          case "cta":
             return (
-              <CTAPatternComponent ctaPatternContent={content} key={index} />
+              <CTAComponents ctaContents={content.ctaSections} key={index} />
             );
-          case "CTAWithHero":
-            return <CTAHeroComponent ctaHeroContent={content} key={index} />;
+          case "contact":
+            return <ContactComponent contactContent={content} key={index} />;
           case "work_flow":
-            return <WorkFlowComponent workFlowContent={content.workFlowSections} key={index} />;
+              return <WorkFlowComponent workFlowContent={content.workFlowSections} key={index} />;
           default:
             return null;
         }
