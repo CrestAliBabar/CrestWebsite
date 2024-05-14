@@ -273,6 +273,18 @@ const colorList = [
   { label: "blue-grey-700", value: "#455a64" },
   { label: "blue-grey-800", value: "#37474f" },
   { label: "blue-grey-900", value: "#263238" },
+  { label: "eastern-blue-50", value: "#f1f9fa" },
+  { label: "eastern-blue-100", value: "#dceef1" },
+  { label: "eastern-blue-200", value: "#bddee4" },
+  { label: "eastern-blue-300", value: "#90c6d0" },
+  { label: "eastern-blue-400", value: "#5ba4b5" },
+  { label: "eastern-blue-500", value: "#4390a3" },
+  { label: "eastern-blue-600", value: "#377083" },
+  { label: "eastern-blue-700", value: "#325c6c" },
+  { label: "eastern-blue-800", value: "#304e5a" },
+  { label: "eastern-blue-900", value: "#2b424e" },
+  { label: "eastern-blue-950", value: "#192b33" },
+  
 ];
 
 export default colorList;

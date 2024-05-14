@@ -1,46 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import Image from "next/image";
+import React from 'react'
 
-type HeroWithImageContentProps = {
-  heroWithImageContent: any;
-};
-
-const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
-  heroWithImageContent,
-}) => {
-  const subHeadingTextColor =
-    heroWithImageContent.Hero_Heading.subHeadingProp.subHeadingColor.value;
-  const HeadingTextColor =
-    heroWithImageContent.Hero_Heading.headingProp.headingColor.value;
-  const BackgroundColor = heroWithImageContent.backgroundColor.value;
-  const CTAButtonColor =
-    heroWithImageContent.promotion.buttonBackgroundColor.value;
-  const backgroundImageUrl = heroWithImageContent.image.asset._ref
-    .split("-")
-    .slice(1)
-    .join("-")
-    .replace(/-([^-]*)$/, ".$1");
-  const NewbackgroundImageUrl =
-    "https://cdn.sanity.io/images/7xkjaifb/production/" + backgroundImageUrl;
-
-  const headingStyle = {
-    color: HeadingTextColor,
-  };
-
-  const subHeadingStyle = {
-    color: subHeadingTextColor,
-  };
-
-  const buttonStyleOffHover = {
-    backgroundColor: CTAButtonColor,
-    color: "black",
-    boxShadow: "0 4px 9px -4px #3b71ca",
-    transition: "background-color 150ms ease-in-out",
-  };
-
-  const imageDirection = heroWithImageContent.imageDirection;
-
+const HeroStandard = () => {
   return (
 <section>
   {/* Container */}
@@ -70,7 +31,8 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
     </div>
   </div>
 </section>
-  );
-};
 
-export default HeroWithImage;
+  )
+}
+
+export default HeroStandard

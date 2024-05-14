@@ -1,4 +1,5 @@
 import { defineField, defineType, defineArrayMember } from "sanity";
+import { DocumentTextIcon } from "@sanity/icons";
 
 export const ctaType = defineType({
   name: "cta",
@@ -25,4 +26,18 @@ export const ctaType = defineType({
       ],
     }),
   ],
+  icon: DocumentTextIcon,
+  preview: {
+    select: {
+      title: "ctaSections[0]._type",
+      image: "ctaSections[0].image",
+    },
+    prepare({ title, image }) {
+      return {
+        title: title || "Untitled",
+        subtitle: "CTA",
+        media: image || DocumentTextIcon,
+      };
+    },
+  },
 });

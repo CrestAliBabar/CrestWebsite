@@ -35,18 +35,6 @@ export const pageType = defineType({
           type: "video",
         }),
         defineArrayMember({
-          name: "CTA_With_Text",
-          type: "CTA_With_Text",
-        }),
-        defineArrayMember({
-          name: "CTAWithBackgroundPattern",
-          type: "CTAWithBackgroundPattern",
-        }),
-        defineArrayMember({
-          name: "CTAWithHero",
-          type: "CTAWithHero",
-        }),
-        defineArrayMember({
           name: "team",
           type: "team",
         }),
