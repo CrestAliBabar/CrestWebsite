@@ -35,6 +35,7 @@ export const pageContent = defineType({
         { type: "CTA_With_Text" },
         { type: "CTAWithBackgroundPattern" },
         { type: "CTAWithHero" },
+        { type: "work_flow"}
       ],
     }),
   ],

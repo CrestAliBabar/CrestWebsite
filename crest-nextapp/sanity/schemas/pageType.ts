@@ -50,6 +50,10 @@ export const pageType = defineType({
           name: 'team',
           type: 'team',
         }),
+        defineArrayMember({
+          name: 'work_flow',
+          type: 'work_flow',
+        }),
         // etc...
       ],
     },

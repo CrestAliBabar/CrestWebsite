@@ -14,6 +14,7 @@ import CTAComponent from "../ctaComponent/cta";
 import CTAPatternComponent from "../ctaComponent/cta_pattern";
 import CTAHeroComponent from "../ctaComponent/cta_hero";
 
+import WorkFlowComponent from "../workFlowComponent/workFlowComponent";
 type ContentComponentProps = {
   Contents: any[];
 };
@@ -67,7 +68,8 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             );
           case "CTAWithHero":
             return <CTAHeroComponent ctaHeroContent={content} key={index} />;
-
+          case "work_flow":
+            return <WorkFlowComponent workFlowContent={content.workFlowSections} key={index} />;
           default:
             return null;
         }
