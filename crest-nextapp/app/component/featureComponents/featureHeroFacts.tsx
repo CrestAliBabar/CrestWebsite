@@ -76,7 +76,7 @@ const FeatureHeroFacts: React.FC<FeatureHeroFactsProps> = ({
             <div>
               <h2 className=" text-3xl font-semibold md:text-5xl">
                 <span
-                  className=" mb-4 bg-cover bg-center bg-no-repeat px-4"
+                  className=" mb-4 bg-cover bg-center bg-no-repeat text-white px-4"
                   style={headingStyle}
                 >
                   {HeadingText}

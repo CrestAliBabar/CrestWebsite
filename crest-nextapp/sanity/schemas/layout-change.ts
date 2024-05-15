@@ -8,7 +8,7 @@ const TransitionDirection = [
   { "title": "top-left to bottom-right", "value": "to bottom right"},
   { "title": "top-right to bottom-left", "value": "to bottom left"},
 ]
-
+import colorList from "@/app/utils/colors";
 
 const layoutChange = {
     name: "layout-setting",
@@ -23,9 +23,9 @@ const layoutChange = {
       {
         name: "backgroundColor",
         title: "Background Color with hex Format",
-        type: "simplerColor",
+        type: 'simplerColor',
         options: {
-          colorFormat: "hex",
+          colorList: colorList,
         },
       },
       {

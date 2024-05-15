@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
 
@@ -13,8 +14,12 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
   const HeadingTextColor =
     heroWithImageContent.Hero_Heading.headingProp.headingColor.value;
   const BackgroundColor = heroWithImageContent.backgroundColor.value;
-  const CTAButtonColor =
+  const DescriptionTextColor = heroWithImageContent.descriptionColor.value
+
+  const CTAOneButtonColor =
     heroWithImageContent.promotion.buttonBackgroundColor.value;
+  const CTATwoButtonColor = heroWithImageContent.promotionTwo.buttonBackgroundColor.value;
+
   const backgroundImageUrl = heroWithImageContent.image.asset._ref
     .split("-")
     .slice(1)
@@ -28,101 +33,98 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
   };
 
   const subHeadingStyle = {
-    color: subHeadingTextColor,
+    backgroundColor: subHeadingTextColor,
   };
 
-  const buttonStyleOffHover = {
-    backgroundColor: CTAButtonColor,
-    color: "black",
-    boxShadow: "0 4px 9px -4px #3b71ca",
-    transition: "background-color 150ms ease-in-out",
+  const descriptionStyle = {
+    color: DescriptionTextColor,
   };
 
+  const buttonOneStyleOffHover = {
+    backgroundColor: CTAOneButtonColor,
+    
+    
+  };
+
+  const buttonTwoStyleOffHover = {
+    backgroundColor: CTATwoButtonColor,
+  };
+  
   const imageDirection = heroWithImageContent.imageDirection;
 
+  const HeadingText = heroWithImageContent.Hero_Heading.headingProp.heading
+  const SubHeadingText =  heroWithImageContent.Hero_Heading.subHeadingProp.subHeading
+  const DescriptionText = heroWithImageContent.description
+
+  const CTAButtonOneLink = heroWithImageContent.promotion.link
+  const CTAButtonTwoLink = heroWithImageContent.promotionTwo.link
+  const CTAButtonOneText  = heroWithImageContent.promotion.title
+  const CTAButtonTwoText = heroWithImageContent.promotionTwo.title
+
+
   return (
-    <div
-      style={{ backgroundColor: BackgroundColor }}
-      className="px-6 py-12 text-center"
-    >
-      <div className="w-full mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {imageDirection === "right" ? (
-            <>
-              <div className="mt-12 lg:mt-0">
-                <h1
-                  style={headingStyle}
-                  className="mt-2 mb-10 font-bold tracking-tight md:text-6xl xl:text-7xl"
-                >
-                  {heroWithImageContent.Hero_Heading.headingProp.heading} <br />
-                </h1>
-                <h5 className="mb-10 tracking-tight md:text-1xl xl:text-2xl">
-                  <span style={subHeadingStyle}>
-                    {
-                      heroWithImageContent.Hero_Heading.subHeadingProp
-                        .subHeading
-                    }
-                  </span>
-                </h5>
-                <a
-                  style={buttonStyleOffHover}
-                  className="mb-2 inline-block rounded px-12 pt-4 pb-3.5 text-sm font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transform transition-transform duration-300 hover:scale-110"
-                  href={heroWithImageContent.promotion.link}
-                >
-                  {heroWithImageContent.promotion.title}
-                </a>
-              </div>
-              <div className="mb-12 lg:mb-0">
-                <Image
-                  src={NewbackgroundImageUrl}
-                  className="rounded-lg shadow-lg"
+    <section  style={{ backgroundColor: BackgroundColor }}>
+      {/* Container */}
+      <div
+        className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32"
+       
+      >
+        {/* Component */}
+        <div className="grid grid-cols-1 gap-12 sm:gap-20 lg:grid-cols-2">
+          {/* Heading Div */}
+          <div className="max-w-[720px] lg:max-w-[842px]">
+            <h1
+              className="mb-4 text-4xl font-semibold md:text-6xl"
+              style={headingStyle}
+            >
+              {HeadingText}{" "}
+              <span
+                className="bg-cover bg-center px-4 text-white"
+                style={subHeadingStyle}
+              >
+                {SubHeadingText}
+              </span>
+            </h1>
+            <div className="mb-6 max-w-[528px] md:mb-10 lg:mb-12">
+              <p className="text-xl" style={descriptionStyle}>
+                {DescriptionText}
+              </p>
+            </div>
+            {/* Button Wrap */}
+            <div className="flex">
+              <a
+                href={CTAButtonOneLink}
+                className="mr-5 inline-block rounded-xl px-8 py-4 text-center font-semibold md:mr-6 shadow-[3px_0px_0px_4px_#325c6c]"
+                style={buttonOneStyleOffHover}
+              >
+                {CTAButtonOneText}
+              </a>
+              <a
+                href={CTAButtonTwoLink}
+                className="flex max-w-full flex-row items-center rounded-xl shadow-[3px_0px_0px_4px_#325c6c] px-6 py-3 font-semibold"
+                style={buttonTwoStyleOffHover}
+              >
+                <img
+                  src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905a575ec39b6784fc687c_Play.svg"
                   alt=""
-                  width={400}
-                  height={400}
-                  layout="responsive"
+                  className="mr-2 inline-block w-6"
                 />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="mb-12 lg:mb-0">
-                <Image
-                  src={NewbackgroundImageUrl}
-                  className="rounded-lg shadow-lg"
-                  alt=""
-                  width={400}
-                  height={400}
-                  layout="responsive"
-                />
-              </div>
-              <div className="mt-12 lg:mt-0">
-                <h1
-                  style={headingStyle}
-                  className="mt-2 mb-16 font-bold tracking-tight md:text-6xl xl:text-7xl"
-                >
-                  {heroWithImageContent.Hero_Heading.headingProp.heading} <br />
-                </h1>
-                <h5 className="mb-10 tracking-tight md:text-1xl xl:text-2xl">
-                  <span style={subHeadingStyle}>
-                    {
-                      heroWithImageContent.Hero_Heading.subHeadingProp
-                        .subHeading
-                    }
-                  </span>
-                </h5>
-                <a
-                  style={buttonStyleOffHover}
-                  className="mb-2 inline-block rounded px-12 pt-4 pb-3.5 text-sm font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transform transition-transform duration-300 hover:scale-110"
-                  href={heroWithImageContent.promotion.link}
-                >
-                  {heroWithImageContent.promotion.title}
-                </a>
-              </div>
-            </>
-          )}
+                <p className="text-black">{CTAButtonTwoText}</p>
+              </a>
+            </div>
+          </div>
+          {/* Image Div */}
+          <div className="relative left-4 h-full max-h-[560px] w-[85%] lg:left-0 lg:w-full">
+            <img
+              src={NewbackgroundImageUrl}
+              alt=""
+              className="relative h-full w-full max-w-[800px] -rotate-[3.5deg] rounded-2xl object-cover"
+            />
+            <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 rounded-2xl bg-black"></div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
