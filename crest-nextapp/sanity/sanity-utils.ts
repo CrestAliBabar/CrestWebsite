@@ -1,8 +1,8 @@
 import { LayoutType } from "@/types/layoutType";
-import { TrainCard, ServiceCard, ConsultingCard } from "@/types/CardType";
 import { PageInfoType } from "@/types/PageInfoType";
 import { createClient } from "@sanity/client";
 import { groq } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url";
 
 const client = createClient({
   projectId: "7xkjaifb",
@@ -11,6 +11,12 @@ const client = createClient({
 
   apiVersion: "2024-03-07",
 });
+
+const builder = imageUrlBuilder(client);
+
+export function urlFor(source: any) {
+  return builder.image(source);
+}
 
 export async function getPageInfo(
   selectedTabName: string
