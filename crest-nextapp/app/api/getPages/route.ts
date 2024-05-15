@@ -4,7 +4,7 @@ import { type NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
   if (request.method === "GET") {
-    const requestHeaders = new Headers(request.headers);
+    
     const API_Key = process.env.API_key;
     const apiKey = request.headers.get("authorization")?.split(" ")[1];
     if (apiKey !== API_Key) {
@@ -13,6 +13,11 @@ export async function GET(request: NextRequest) {
 
     const parameter = request.nextUrl.searchParams.get("page");
     const pageDetails = await getPageDetailForBotPress(parameter?.toString());
+
+    if (!pageDetails || pageDetails.length === 0) {
+      // Return a "Not Found" response if page details are empty
+      return NextResponse.json({ message: "Page not found" }, { status: 404 });
+    }
 
     // Extract protocol from request URL
     const protocol = request.nextUrl.protocol.replace(":", "");

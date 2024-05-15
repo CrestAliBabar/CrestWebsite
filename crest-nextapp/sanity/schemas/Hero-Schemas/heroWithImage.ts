@@ -9,8 +9,24 @@ export const heroWithImage = defineType({
     defineField({
       name: "Hero_Heading",
       type: "Hero_Heading",
+      
       validation: (rule) => rule.required(), // Required
     }),
+    {
+      name: "description",
+      title: "Description",
+      type: "string",
+      validation: (rule) => rule.required(),
+    },
+    {
+      name: "descriptionColor",
+      title: "Description text color",
+      type: "simplerColor",
+      options: {
+        colorList: colorList,
+      },
+      validation: (rule) => rule.required(),
+    },
     {
       name: 'backgroundColor',
       title: 'Hero Background Color',
@@ -22,6 +38,11 @@ export const heroWithImage = defineType({
     },
     defineField({
       name: "promotion",
+      type: "promotion",
+      validation: (rule) => rule.required(), // Required
+    }),
+    defineField({
+      name: "promotionTwo",
       type: "promotion",
       validation: (rule) => rule.required(), // Required
     }),
