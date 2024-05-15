@@ -1,22 +1,21 @@
 import React from "react";
 
 import { Image } from "next-sanity/image";
+import { urlFor } from "@/sanity/sanity-utils";
 
 type ImageProps = {
   imageContent: any;
 };
 
 const ImageComponent: React.FC<ImageProps> = ({ imageContent }) => {
-  // console.log("imageContent:", imageContent)
-  // const imageContentImageUrl = imageContent.asset._ref.split("-").slice(1).join("-").replace(/-([^-]*)$/, ".$1");
-  // console.log("imageContentImageUrl:", imageContentImageUrl)
-  // needed to be fixed, no {imageContent.asset.url}
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center my-6 sm:mx-10 md:mx-20 lg:mx-40 2xl:mx-80">
       <Image
-        src={imageContent.asset.url}
+        src={urlFor(imageContent.asset).url()}
         alt=""
-        className="max-w-3/4 w-full h-auto rounded-lg ml-40 mr-40"
+        width={2000}
+        height={1200}
+        className="w-4/5 h-auto"
       />
     </div>
   );
