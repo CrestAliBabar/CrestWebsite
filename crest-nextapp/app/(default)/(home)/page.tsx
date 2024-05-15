@@ -12,7 +12,7 @@ export default async function Home() {
 
   return (
     <>
-    <HeroStandard/>
+
     <HomePageComponent pageBuilder ={homePageContent[0].pageBuilder} />
 
     </>
