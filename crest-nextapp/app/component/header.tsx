@@ -22,7 +22,7 @@ export default async function Header() {
           <img
             src={layoutSetting[0].image.asset.url}
             alt="Bayave Logo"
-            className=" h-32 lg:ml-20 sm:mx-auto sm:ml-10"
+            className=" h-28 lg:ml-20 sm:mx-auto sm:ml-10"
           />
         </Link>
         <nav className="flex flex-wrap items-center text-base justify-between mx-auto z-50 mr-10">
