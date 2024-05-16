@@ -12,6 +12,8 @@ import VideoComponent from "./videoComponent";
 import TeamComponent from "../teamComponents/teamComponent";
 import ContactComponent from "../contactComponent/contactComponent";
 import CTAComponents from "../ctaComponent/CTAComponents";
+import HeroComponent from "../heroComponents/heroComponent";
+import FeatureComponent from "../featureComponents/featureComponent";
 
 type ContentComponentProps = {
   Contents: any[];
@@ -22,20 +24,6 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
     <>
       {Contents.map((content: any, index: number) => {
         switch (content._type) {
-          case "Content_Image_Description":
-            return (
-              <ContentImageDescription
-                contentImageDescription={content}
-                key={index}
-              />
-            );
-          case "Hero_without_Button":
-            return (
-              <HeroWithoutButton
-                heroWithoutButtonContent={content}
-                key={index}
-              />
-            );
           case "pageTitle":
             return <TitleComponent titleContent={content} key={index} />;
           case "pageSubtitle":
@@ -64,6 +52,10 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             );
           case "contact":
             return <ContactComponent contactContent={content} key={index} />;
+            case "hero":
+              return <HeroComponent heroContent={content.heroSections} key={index} />;
+            case "feature":
+              return <FeatureComponent featureContent={content.featureSections}  key={index}  />  
           default:
             return null;
         }
