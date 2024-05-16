@@ -23,6 +23,10 @@ export const heroType = defineType({
           name: "Hero_with_image",
           type: "Hero_with_image",
         }),
+        defineArrayMember({
+          name: "Hero_without_Button",
+          type: "Hero_without_Button",
+        }),
       ],
     }),
   ],

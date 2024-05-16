@@ -24,6 +24,13 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
     <>
       {Contents.map((content: any, index: number) => {
         switch (content._type) {
+          case "Content_Image_Description":
+            return (
+              <ContentImageDescription
+                contentImageDescription={content}
+                key={index}
+              />
+            );
           case "pageTitle":
             return <TitleComponent titleContent={content} key={index} />;
           case "pageSubtitle":
