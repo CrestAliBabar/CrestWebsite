@@ -33,6 +33,7 @@ export const pageContent = defineType({
         { type: "team" },
         { type: "cta" },
         { type: "contact" },
+        { type: "work_flow"},
         { type: "hero"},
         {type: "feature"},
         
