@@ -14,7 +14,7 @@ const CTAPatternComponent: React.FC<CTAPatternProps> = ({
     : "#647084";
   const getStartLink = ctaPatternContent.getStartLink || "#";
   return (
-    <header>
+    <section>
       {/* Container */}
       <div className="px-3 py-16 md:px-40 md:py-24 lg:py-32">
         {/* Component */}
@@ -44,7 +44,7 @@ const CTAPatternComponent: React.FC<CTAPatternProps> = ({
           </div>
         </div>
       </div>
-    </header>
+    </section>
   );
 };
 export default CTAPatternComponent;

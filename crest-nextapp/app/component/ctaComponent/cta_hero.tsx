@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 type CTAHeroProps = {
@@ -30,8 +31,11 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
       .join("-")
       .replace(/-([^-]*)$/, ".$1");
   const getStartLink = ctaHeroContent.getStartLink || "#";
+
+  const BackgroundColor = ctaHeroContent.backGroundColor.value;
+
   return (
-    <section>
+    <section style={{ backgroundColor: BackgroundColor }}>
       {/* Container */}
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
         {/* Component */}
