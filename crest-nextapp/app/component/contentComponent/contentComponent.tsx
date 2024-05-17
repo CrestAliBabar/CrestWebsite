@@ -12,6 +12,8 @@ import VideoComponent from "./videoComponent";
 import TeamComponent from "../teamComponents/teamComponent";
 import ContactComponent from "../contactComponent/contactComponent";
 import CTAComponents from "../ctaComponent/CTAComponents";
+import HeroComponent from "../heroComponents/heroComponent";
+import FeatureComponent from "../featureComponents/featureComponent";
 
 import WorkFlowComponent from "../workFlowComponent/workFlowComponent";
 type ContentComponentProps = {
@@ -27,13 +29,6 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             return (
               <ContentImageDescription
                 contentImageDescription={content}
-                key={index}
-              />
-            );
-          case "Hero_without_Button":
-            return (
-              <HeroWithoutButton
-                heroWithoutButtonContent={content}
                 key={index}
               />
             );
@@ -67,6 +62,10 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             return <ContactComponent contactContent={content} key={index} />;
           case "work_flow":
               return <WorkFlowComponent workFlowContent={content.workFlowSections} key={index} />;
+            case "hero":
+              return <HeroComponent heroContent={content.heroSections} key={index} />;
+            case "feature":
+              return <FeatureComponent featureContent={content.featureSections}  key={index}  />  
           default:
             return null;
         }
