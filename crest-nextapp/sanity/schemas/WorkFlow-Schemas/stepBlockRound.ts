@@ -63,12 +63,18 @@ export const stepBlockRound = defineType({
     {
       name: "blockBackGroundColor",
       title: "Block Background Color",
-      type: "color",
+      type: "simplerColor",
+      options: {
+        colorList: colorList,
+      },
     },
     {
       name: "iconBackGroundColor",
       title: "Icon Background Color",
-      type: "color",
+      type: "simplerColor",
+      options: {
+        colorList: colorList,
+      },
     },
 
     {

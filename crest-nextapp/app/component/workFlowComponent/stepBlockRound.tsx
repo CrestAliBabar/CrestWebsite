@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 type StepBlockRoundProps = {
@@ -21,10 +22,10 @@ const StepBlockRound: React.FC<StepBlockRoundProps> = ({
     ? stepBlockRoundContent.backGroundColor.value
     : "#ffffff";
   const roundBoxBgColor = stepBlockRoundContent.blockBackGroundColor
-    ? stepBlockRoundContent.blockBackGroundColor.hex
+    ? stepBlockRoundContent.blockBackGroundColor.value
     : "#fffff";
   const roundBoxIconBgColor = stepBlockRoundContent.iconBackGroundColor
-    ? stepBlockRoundContent.iconBackGroundColor.hex
+    ? stepBlockRoundContent.iconBackGroundColor.value
     : "#c9fd02";
   const roundBoxTitleColor = stepBlockRoundContent.blockTitleColor
     ? stepBlockRoundContent.blockTitleColor.value

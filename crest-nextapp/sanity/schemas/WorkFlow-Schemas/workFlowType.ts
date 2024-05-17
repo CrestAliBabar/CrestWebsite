@@ -23,17 +23,17 @@ export const workFlowType = defineType({
     }),
   ],
   icon: DocumentTextIcon,
-  // preview: {
-  //   select: {
-  //     title: "heroSections[0]._type",
-  //     image: "heroSections[0].image",
-  //   },
-  //   prepare({ title, image }) {
-  //     return {
-  //       title: title || "Untitled",
-  //       subtitle: "Hero",
-  //       media: image || DocumentTextIcon,
-  //     };
-  //   },
-  // },
+   preview: {
+     select: {
+       title: "workFlowSections[0]._type",
+       image: "workFlowSections[0].image",
+     },
+     prepare({ title, image }) {
+       return {
+         title: title || "Untitled",
+         subtitle: "WorkFlow",
+         media: image || DocumentTextIcon,
+       };
+     },
+   },
 });

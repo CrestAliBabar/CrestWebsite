@@ -54,10 +54,9 @@ export const CTA_Text = defineType({
       },
     },
     defineField({
-      name: "getStartLink",
-      type: "url",
-      title: "getStart Link",
-      description: "Optional URL for the Call to Action",
+      name: "promotion",
+      type: "promotion",
+      validation: (rule) => rule.required(), // Required
     }),
   ],
 });

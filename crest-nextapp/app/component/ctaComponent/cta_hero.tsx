@@ -30,9 +30,20 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
       .slice(1)
       .join("-")
       .replace(/-([^-]*)$/, ".$1");
-  const getStartLink = ctaHeroContent.getStartLink || "#";
+ 
 
   const BackgroundColor = ctaHeroContent.backGroundColor.value;
+
+  const CTAButtonColor =
+  ctaHeroContent.promotion.buttonBackgroundColor.value;
+
+  const CTAButtonColorLink = ctaHeroContent.promotion.link
+
+  const CTAButtonText  = ctaHeroContent.promotion.title
+
+  const buttonStyle = {
+    backgroundColor: CTAButtonColor,
+  };
 
   return (
     <section style={{ backgroundColor: BackgroundColor }}>
@@ -105,10 +116,11 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             {/* Divider */}
             <div className="mb-10 mt-10 w-full max-w-md border-b border-b-[#d9d9d9]"></div>
             <a
-              href={getStartLink}
-              className="inline-block rounded-xl bg-black px-8 py-4 font-semibold text-white [box-shadow:rgb(19,_83,_254)_6px_6px]"
+              href={CTAButtonColorLink}
+              className="inline-block rounded-xl px-8 py-4 font-semibold  shadow-[3px_0px_0px_4px_#325c6c]"
+              style={buttonStyle}
             >
-              Get started
+              {CTAButtonText}
             </a>
           </div>
         </div>
