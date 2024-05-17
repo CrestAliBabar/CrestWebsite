@@ -43,6 +43,7 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
 
   const buttonStyle = {
     backgroundColor: CTAButtonColor,
+    
   };
 
   return (
@@ -117,7 +118,7 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             <div className="mb-10 mt-10 w-full max-w-md border-b border-b-[#d9d9d9]"></div>
             <a
               href={CTAButtonColorLink}
-              className="inline-block rounded-xl px-8 py-4 font-semibold  shadow-[3px_0px_0px_4px_#325c6c]"
+              className="inline-block rounded-xl px-8 py-4 font-semibold transition shadow-[9px_11px_6px_0px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c]"
               style={buttonStyle}
             >
               {CTAButtonText}

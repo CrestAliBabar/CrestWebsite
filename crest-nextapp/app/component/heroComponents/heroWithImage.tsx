@@ -94,14 +94,14 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
             <div className="flex">
               <a
                 href={CTAButtonOneLink}
-                className="mr-5 inline-block rounded-xl px-8 py-4 text-center font-semibold md:mr-6 shadow-[3px_0px_0px_4px_#325c6c]"
+                className="mr-5 inline-block rounded-xl px-8 py-4 text-center font-semibold md:mr-6 transition shadow-[9px_11px_6px_0px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c]"
                 style={buttonOneStyleOffHover}
               >
                 {CTAButtonOneText}
               </a>
               <a
                 href={CTAButtonTwoLink}
-                className="flex max-w-full flex-row items-center rounded-xl shadow-[3px_0px_0px_4px_#325c6c] px-6 py-3 font-semibold"
+                className="flex max-w-full flex-row items-center rounded-xl transition shadow-[3px_0px_0px_4px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c] px-6 py-3 font-semibold"
                 style={buttonTwoStyleOffHover}
               >
                 <img
