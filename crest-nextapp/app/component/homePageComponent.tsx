@@ -3,6 +3,7 @@ import HeroComponent from "./heroComponents/heroComponent";
 import FeatureComponent from "./featureComponents/featureComponent";
 import ContentComponent from "./contentComponent/contentComponent";
 import TeamComponent from "./teamComponents/teamComponent";
+import WorkFlowComponent from "./workFlowComponent/workFlowComponent";
 
 type HomePageComponentProps = {
   pageBuilder: any[];
@@ -27,11 +28,12 @@ const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) =>
             return <ContentComponent Contents ={content.contentSections}  key={index}  />
           case "team":
             return <TeamComponent teamContent ={content.teamSections}  key={index}  />
+          case "work_flow":
+              return <WorkFlowComponent workFlowContent={content.workFlowSections} key={index} />;
           default:
             return null; // Default case if component type is not recognized
         }
       })}
-
       
     </>
   );

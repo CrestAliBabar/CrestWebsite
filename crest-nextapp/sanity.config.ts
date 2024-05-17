@@ -4,6 +4,7 @@ import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
 import { simplerColorInput } from "sanity-plugin-simpler-color-input";
 import { iconPicker } from 'sanity-plugin-icon-picker';
+import {colorInput} from '@sanity/color-input'
 
 const config = defineConfig({
   projectId: "7xkjaifb",
@@ -28,6 +29,7 @@ const config = defineConfig({
 
     iconPicker(),
 
+    colorInput(),
   ],
 
   schema: { types: schemaTypes },

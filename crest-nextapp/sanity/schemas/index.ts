@@ -44,6 +44,11 @@ import { CTA_Text } from "./CTA-Schemas/CTA_Text";
 import { CTA_Pattern } from "./CTA-Schemas/CTA_Pattern";
 import { CTA_Hero } from "./CTA-Schemas/CTA_Hero";
 import { ctaType } from "./CTA-Schemas/ctaType";
+
+import {workFlowType} from "./WorkFlow-Schemas/workFlowType";
+import {stepBlockRound} from "./WorkFlow-Schemas/stepBlockRound";
+import {stepBlockRectangle} from "./WorkFlow-Schemas/stepBlockRectangle";
+
 export const schemaTypes = [
   pageType,
   //CTA
@@ -82,7 +87,12 @@ export const schemaTypes = [
   teamWithIntroduction,
   teamCardStandard,
 
-  // Contact
+  //WorkFlow
+  workFlowType,
+  stepBlockRound,
+  stepBlockRectangle,
+
+    // Contact
   contact,
 
   imageGalleryType,
