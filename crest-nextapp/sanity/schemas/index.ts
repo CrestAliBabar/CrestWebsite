@@ -49,6 +49,8 @@ import {workFlowType} from "./WorkFlow-Schemas/workFlowType";
 import {stepBlockRound} from "./WorkFlow-Schemas/stepBlockRound";
 import {stepBlockRectangle} from "./WorkFlow-Schemas/stepBlockRectangle";
 
+import {pageContentForNavPage} from "./pageContentForNavPage";
+
 export const schemaTypes = [
   pageType,
   //CTA
@@ -108,4 +110,6 @@ export const schemaTypes = [
   imgUrl,
   navigationTitleSchema,
   pageContent,
+
+  pageContentForNavPage
 ];

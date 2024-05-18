@@ -38,5 +38,15 @@ export const navigationTitleSchema = defineType({
       title: "Pages",
       of: [{ type: "pageContent" }],
     }),
+    defineField({
+      name: "navigationPages",
+      type: "array",
+      title: "Navigation Direct Related Page",
+      of: [{ type: "pageContentForNavPage" }],
+      validation: (Rule) => [
+        Rule.max(1).error("You can only add one navigation page"),
+        Rule.min(1).error("You must add at least one navigation page"),
+      ],
+    }),
   ],
 });
