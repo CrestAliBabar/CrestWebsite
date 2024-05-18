@@ -27,10 +27,14 @@ export default async function Header() {
           />
         </Link>
         <NavComponent>
-          <nav className="flex flex-wrap items-center text-base justify-between mx-auto z-50 mr-10">
+          <nav className="flex flex-wrap items-center text-base justify-between mx-auto mr-10">
             <ul className="flex flex-col md:flex-row grow justify-start md:justify-end items-start md:items-center md:ml-25 text-xl space-y-2 md:space-y-0 md:space-x-4">
               {navTitles.map((title) => (
-                <Dropdown key={title._id} title={title.title}>
+                <Dropdown
+                  key={title._id}
+                  title={title.title}
+                  titleSlug={title.slug.current}
+                >
                   <li>
                     {title.pages.map((page: page) => (
                       <Link
