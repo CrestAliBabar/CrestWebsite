@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 type CTAHeroProps = {
@@ -29,9 +30,24 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
       .slice(1)
       .join("-")
       .replace(/-([^-]*)$/, ".$1");
-  const getStartLink = ctaHeroContent.getStartLink || "#";
+ 
+
+  const BackgroundColor = ctaHeroContent.backGroundColor.value;
+
+  const CTAButtonColor =
+  ctaHeroContent.promotion.buttonBackgroundColor.value;
+
+  const CTAButtonColorLink = ctaHeroContent.promotion.link
+
+  const CTAButtonText  = ctaHeroContent.promotion.title
+
+  const buttonStyle = {
+    backgroundColor: CTAButtonColor,
+    
+  };
+
   return (
-    <section>
+    <section style={{ backgroundColor: BackgroundColor }}>
       {/* Container */}
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
         {/* Component */}
@@ -101,10 +117,11 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             {/* Divider */}
             <div className="mb-10 mt-10 w-full max-w-md border-b border-b-[#d9d9d9]"></div>
             <a
-              href={getStartLink}
-              className="inline-block rounded-xl bg-black px-8 py-4 font-semibold text-white [box-shadow:rgb(19,_83,_254)_6px_6px]"
+              href={CTAButtonColorLink}
+              className="inline-block rounded-xl px-8 py-4 font-semibold transition shadow-[9px_11px_6px_0px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c]"
+              style={buttonStyle}
             >
-              Get started
+              {CTAButtonText}
             </a>
           </div>
         </div>

@@ -112,7 +112,7 @@ const FeatureGridLayout: React.FC<FeatureGridLayoutProps> = ({featureGridLayoutC
               ) => (
                 <div
                   key={index}
-                  className="relative mb-8 flex flex-col rounded-2xl border border-solid border-black p-8 lg:mb-4 shadow-[3px_0px_0px_4px_#192b33]"
+                  className="relative mb-8 flex flex-col rounded-2xl border border-solid border-black p-8 lg:mb-4 cursor-pointer transition shadow-[3px_0px_0px_4px_#192b33] hover:shadow-[0px_0px_0px_0px_#325c6c]"
                   style={featureCardColorrStyle}
                 >
                   <div className="absolute -top-8 bottom-auto left-auto right-4 flex h-16 w-16 flex-col items-center justify-center rounded-full border border-solid border-[#9b9b9b] bg-white [box-shadow:rgb(0,_0,_0)_0px_5px] lg:right-8">
