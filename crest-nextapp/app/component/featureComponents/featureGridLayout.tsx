@@ -53,7 +53,7 @@ const FeatureGridLayout: React.FC<FeatureGridLayoutProps> = ({featureGridLayoutC
       <section style={{ backgroundColor: BackgroundColor }}>
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
           {/* Heading Div */}
-          <div className="mx-auto w-full max-w-3xl text-center">
+          <div className="mx-auto w-full max-w-3xl text-center" data-aos="fade-down" data-aos-delay="400">
             <h2 className="text-3xl font-semibold md:text-5xl">
               <span
                 className="bg-cover bg-center bg-no-repeat px-4 text-white"
@@ -67,7 +67,7 @@ const FeatureGridLayout: React.FC<FeatureGridLayoutProps> = ({featureGridLayoutC
             </div>
           </div>
           {/* Features Div */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 lg:gap-12 ">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 lg:gap-12 "  data-aos="fade-up" data-aos-delay="400">
             {/* Feature Item */}
             {featureGridLayoutContent.featureCards.map(
               (

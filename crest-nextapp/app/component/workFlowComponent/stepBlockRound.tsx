@@ -42,12 +42,12 @@ const StepBlockRound: React.FC<StepBlockRoundProps> = ({
         {/* Heading */}
         <h2
           style={{ color: headingStyleColor }}
-          className="mx-auto mb-12 max-w-3xl text-center text-3xl font-extrabold md:mb-20 md:text-5xl">
+          className="mx-auto mb-12 max-w-3xl text-center text-3xl font-extrabold md:mb-20 md:text-5xl"  data-aos="fade-down" data-aos-delay="400">
           {heading}
         </h2>
 
         {/* How it Works */}
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-6">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-6"  >
           {roundBoxes.map((roundBox: any, index: number) => {
             const roundBoxTitle = roundBox.title;
             const roundBoxDescription = roundBox.description;
@@ -58,7 +58,7 @@ const StepBlockRound: React.FC<StepBlockRoundProps> = ({
               <div
                 key={index}
                 style={{ backgroundColor: roundBoxBgColor }}
-                className="flex flex-row items-center gap-6 rounded-[60px] border border-solid border-[#ada790] px-6 py-4 transition hover:bg-[#eceae2]">
+                className="flex flex-row items-center gap-6 rounded-[60px] border border-solid border-[#ada790] px-6 py-4 transition hover:bg-[#eceae2]" data-aos="fade-up" data-aos-delay="400">
                 <div
                   style={{ backgroundColor: roundBoxIconBgColor }}
                   className="flex h-20 w-20 flex-none flex-col items-center justify-center rounded-full">

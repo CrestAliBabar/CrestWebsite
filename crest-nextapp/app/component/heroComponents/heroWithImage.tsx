@@ -72,9 +72,9 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
         {/* Component */}
         <div className="grid grid-cols-1 gap-12 sm:gap-20 lg:grid-cols-2">
           {/* Heading Div */}
-          <div className="max-w-[720px] lg:max-w-[842px]">
+          <div className="max-w-[720px] lg:max-w-[842px]" data-aos="fade-right" data-aos-delay="400">
             <h1
-              className="mb-4 text-4xl font-semibold md:text-6xl"
+              className="mb-4 text-4xl font-semibold md:text-6xl" 
               style={headingStyle}
             >
               {HeadingText}{" "}
@@ -114,7 +114,7 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
             </div>
           </div>
           {/* Image Div */}
-          <div className="relative left-4 h-full max-h-[560px] w-[85%] lg:left-0 lg:w-full">
+          <div className="relative left-4 h-full max-h-[560px] w-[85%] lg:left-0 lg:w-full" data-aos="fade-left" data-aos-delay="400"  >
             <img
               src={NewbackgroundImageUrl}
               alt=""
