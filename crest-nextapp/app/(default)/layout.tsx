@@ -1,5 +1,3 @@
-"use client"
-import { useEffect } from 'react'
 import Header from "../component/header";
 import Footer from "../component/footer";
 import { getLayoutSettings } from "@/sanity/sanity-utils";
