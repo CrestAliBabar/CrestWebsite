@@ -37,7 +37,7 @@ const CTAComponent: React.FC<CTAProps> = ({ ctaContent }) => {
         {/* CTA Content */}
         <div className="flex w-full flex-col items-center px-6 py-16 text-center md:py-24 lg:py-32">
           {/* CTA Title */}
-          <div className="mb-8 flex-col">
+          <div className="mb-8 flex-col" data-aos="fade-down" data-aos-delay="400">
             <h2
               style={{ color: TitleTextColor }}
               className="mb-4 text-3xl font-bold md:text-5xl"
@@ -52,10 +52,11 @@ const CTAComponent: React.FC<CTAProps> = ({ ctaContent }) => {
             </p>
           </div>
           {/* CTA Button */}
+          
           <a
             href={CTAButtonColorLink}
             className="mb-4 flex flex-row items-center px-8 py-4 font-semibold  transition shadow-[-9px_11px_6px_0px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c]"
-            style={buttonStyle}
+            style={buttonStyle} 
           >
             <p className="mr-6 font-bold">{CTAButtonText}</p>
             <svg
@@ -68,7 +69,7 @@ const CTAComponent: React.FC<CTAProps> = ({ ctaContent }) => {
               <polygon points="16.172 9 10.101 2.929 11.515 1.515 20 10 19.293 10.707 11.515 18.485 10.101 17.071 16.172 11 0 11 0 9"></polygon>
             </svg>
           </a>
-          <p style={{ color: CommentTextColor }} className="font-bold">
+          <p style={{ color: CommentTextColor }} className="font-bold" data-aos="fade-up" data-aos-delay="400">
             {ctaContent.Comment}
           </p>
         </div>

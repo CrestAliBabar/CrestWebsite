@@ -63,7 +63,7 @@ const FeatureHeroFacts: React.FC<FeatureHeroFactsProps> = ({
         {/* Component */}
         <div className="grid grid-cols-1 items-center gap-12 sm:gap-20 lg:grid-cols-2">
           {/* Image Div */}
-          <div className="relative left-4 h-full max-h-[560px] w-[85%] md:left-0 md:w-[95%] lg:w-full bg-black">
+          <div className="relative left-4 h-full max-h-[560px] w-[85%] md:left-0 md:w-[95%] lg:w-full bg-black" data-aos="fade-right" data-aos-delay="400" >
             <img
               src={NewbackgroundImageUrl}
               className="mx-auto block h-full w-full max-w-[800px] rotate-[5.0deg] rounded-2xl object-cover"
@@ -71,12 +71,12 @@ const FeatureHeroFacts: React.FC<FeatureHeroFactsProps> = ({
             />
           </div>
           {/* Heading Div */}
-          <div className="max-w-[720px] max-[991px]:[grid-area:1/1/2/2] lg:max-w-[842px]">
+          <div className="max-w-[720px] max-[991px]:[grid-area:1/1/2/2] lg:max-w-[842px]" data-aos="fade-left" data-aos-delay="400">
             {/* Heading Text */}
             <div>
               <h2 className=" text-3xl font-semibold md:text-5xl">
                 <span
-                  className=" mb-4 bg-cover bg-center bg-no-repeat text-white px-4"
+                  className="mb-4 bg-cover bg-center bg-no-repeat text-white px-4"
                   style={headingStyle}
                 >
                   {HeadingText}

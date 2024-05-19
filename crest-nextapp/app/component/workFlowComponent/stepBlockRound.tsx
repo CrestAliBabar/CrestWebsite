@@ -43,10 +43,10 @@ const StepBlockRound: React.FC<StepBlockRoundProps> = ({
       <div className="mx-auto w-full max-w-3xl px-5 py-12 md:px-10 md:py-16 lg:py-20">
         <h2
           style={{ color: headingStyleColor }}
-          className="mx-auto mb-12 max-w-3xl text-center text-3xl font-extrabold md:mb-20 md:text-5xl">
+          className="mx-auto mb-12 max-w-3xl text-center text-3xl font-extrabold md:mb-20 md:text-5xl" >
           {heading}
         </h2>
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-6">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-6"  data-aos="fade-down" data-aos-delay="400" >
           {roundBoxes.map((roundBox: any, index: number) => {
             const roundBoxTitle = roundBox.title;
             const roundBoxDescription = roundBox.description;
