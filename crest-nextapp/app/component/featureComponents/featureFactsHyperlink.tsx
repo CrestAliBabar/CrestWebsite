@@ -110,7 +110,7 @@ const FeatureFactsHyperlink : React.FC<FeatureFactsHyperlinkProps> = ({featureFa
               ))}
             </div>
             {/* Image */}
-            <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+            <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden" data-aos="slide-left" >
               <img
                 alt="feature"
                 className="object-cover object-center h-full w-full"

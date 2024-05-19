@@ -49,11 +49,12 @@ const FeatureGridLayout: React.FC<FeatureGridLayoutProps> = ({featureGridLayoutC
 
   return (
     <>
+      
       {/* Features Grid Layout */}
       <section style={{ backgroundColor: BackgroundColor }}>
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
           {/* Heading Div */}
-          <div className="mx-auto w-full max-w-3xl text-center">
+          <div className="mx-auto w-full max-w-3xl text-center" data-aos="fade-down" data-aos-delay="400">
             <h2 className="text-3xl font-semibold md:text-5xl">
               <span
                 className="bg-cover bg-center bg-no-repeat px-4 text-white"
@@ -67,7 +68,7 @@ const FeatureGridLayout: React.FC<FeatureGridLayoutProps> = ({featureGridLayoutC
             </div>
           </div>
           {/* Features Div */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 lg:gap-12 ">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 lg:gap-12 "  data-aos="fade-up" data-aos-delay="400">
             {/* Feature Item */}
             {featureGridLayoutContent.featureCards.map(
               (
@@ -112,7 +113,7 @@ const FeatureGridLayout: React.FC<FeatureGridLayoutProps> = ({featureGridLayoutC
               ) => (
                 <div
                   key={index}
-                  className="relative mb-8 flex flex-col rounded-2xl border border-solid border-black p-8 lg:mb-4 shadow-[3px_0px_0px_4px_#192b33]"
+                  className="relative mb-8 flex flex-col rounded-2xl border border-solid border-black p-8 lg:mb-4 cursor-pointer transition shadow-[3px_0px_0px_4px_#192b33] hover:shadow-[0px_0px_0px_0px_#325c6c]"
                   style={featureCardColorrStyle}
                 >
                   <div className="absolute -top-8 bottom-auto left-auto right-4 flex h-16 w-16 flex-col items-center justify-center rounded-full border border-solid border-[#9b9b9b] bg-white [box-shadow:rgb(0,_0,_0)_0px_5px] lg:right-8">

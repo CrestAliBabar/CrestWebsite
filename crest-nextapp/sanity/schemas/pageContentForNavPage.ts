@@ -1,23 +1,10 @@
 import { defineType, defineField } from "sanity";
 
-export const pageContent = defineType({
-  name: "pageContent",
+export const pageContentForNavPage = defineType({
+  name: "pageContentForNavPage",
   type: "object",
   title: "PageTitle",
   fields: [
-    defineField({
-      name: "text",
-      type: "string",
-      title: "Page Title",
-    }),
-    defineField({
-      title: "Display on Navigation Dropdown Menu",
-      name: "isDisplayed",
-      type: "boolean",
-      initialValue: false,
-      description:
-        "Check this box if you want this page to be displayed on the navigation dropdown menu.",
-    }),
     defineField({
       name: "pageBuilder",
       type: "array",

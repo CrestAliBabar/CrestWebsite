@@ -33,6 +33,14 @@ export const CTA_Pattern = defineType({
         colorList: colorList,
       },
     },
+    {
+      name: "backGroundColor",
+      title: "Back Ground Color",
+      type: "simplerColor",
+      options: {
+        colorList: colorList,
+      },
+    },
     defineField({
       name: "getStartLink",
       type: "url",

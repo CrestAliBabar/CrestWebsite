@@ -15,6 +15,7 @@ import CTAComponents from "../ctaComponent/CTAComponents";
 import HeroComponent from "../heroComponents/heroComponent";
 import FeatureComponent from "../featureComponents/featureComponent";
 
+import WorkFlowComponent from "../workFlowComponent/workFlowComponent";
 type ContentComponentProps = {
   Contents: any[];
 };
@@ -59,6 +60,8 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             );
           case "contact":
             return <ContactComponent contactContent={content} key={index} />;
+          case "work_flow":
+              return <WorkFlowComponent workFlowContent={content.workFlowSections} key={index} />;
             case "hero":
               return <HeroComponent heroContent={content.heroSections} key={index} />;
             case "feature":

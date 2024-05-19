@@ -72,9 +72,9 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
         {/* Component */}
         <div className="grid grid-cols-1 gap-12 sm:gap-20 lg:grid-cols-2">
           {/* Heading Div */}
-          <div className="max-w-[720px] lg:max-w-[842px]">
+          <div className="max-w-[720px] lg:max-w-[842px]" data-aos="fade-right" data-aos-delay="400">
             <h1
-              className="mb-4 text-4xl font-semibold md:text-6xl"
+              className="mb-4 text-4xl font-semibold md:text-6xl" 
               style={headingStyle}
             >
               {HeadingText}{" "}
@@ -94,14 +94,14 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
             <div className="flex">
               <a
                 href={CTAButtonOneLink}
-                className="mr-5 inline-block rounded-xl px-8 py-4 text-center font-semibold md:mr-6 shadow-[3px_0px_0px_4px_#325c6c]"
+                className="mr-5 inline-block rounded-xl px-8 py-4 text-center font-semibold md:mr-6 transition shadow-[9px_11px_6px_0px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c]"
                 style={buttonOneStyleOffHover}
               >
                 {CTAButtonOneText}
               </a>
               <a
                 href={CTAButtonTwoLink}
-                className="flex max-w-full flex-row items-center rounded-xl shadow-[3px_0px_0px_4px_#325c6c] px-6 py-3 font-semibold"
+                className="flex max-w-full flex-row items-center rounded-xl transition shadow-[3px_0px_0px_4px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c] px-6 py-3 font-semibold"
                 style={buttonTwoStyleOffHover}
               >
                 <img
@@ -114,7 +114,7 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
             </div>
           </div>
           {/* Image Div */}
-          <div className="relative left-4 h-full max-h-[560px] w-[85%] lg:left-0 lg:w-full">
+          <div className="relative left-4 h-full max-h-[560px] w-[85%] lg:left-0 lg:w-full" data-aos="fade-left" data-aos-delay="400"  >
             <img
               src={NewbackgroundImageUrl}
               alt=""

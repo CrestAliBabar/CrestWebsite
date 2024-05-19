@@ -53,7 +53,7 @@ const ContentImageDescription: React.FC<ContentImageDescriptionProps> = ({conten
       <div className="container mx-auto">
         <div className="flex flex-wrap items-center justify-between -mx-4">
           <div className="w-full px-4 lg:w-6/12">
-            <div className="flex items-center -mx-3 sm:-mx-4">
+            <div className="flex items-center mx-3 sm:mx-4" data-aos="fade-right" data-aos-delay="400">
               <div className="w-full px-3 sm:px-4 xl:w-1/2">
                 <div className="py-3 sm:py-4">
                   <img
@@ -644,8 +644,8 @@ const ContentImageDescription: React.FC<ContentImageDescriptionProps> = ({conten
               </div>
             </div>
           </div>
-          <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
-            <div className="mt-10 lg:mt-0">
+          <div className="w-full px-4 lg:w-1/2 xl:w-5/12" data-aos="fade-left" data-aos-delay="400">
+            <div className="mt-10 mr-4 ml-4 lg:mt-0 ">
               <span
                 className="block mb-4 text-lg font-semibold text-primary"
                 style={subHeadingStyle}
@@ -665,7 +665,7 @@ const ContentImageDescription: React.FC<ContentImageDescriptionProps> = ({conten
 
               <a
                 href={contentImageDescription.promotion.link}
-                className="inline-flex items-center justify-center py-3 text-base font-medium text-center border border-transparent rounded-md px-7 bg-primary hover:bg-opacity-90"
+                className="inline-flex items-center justify-center py-3 text-base font-medium text-center border border-transparent rounded-md px-7 transition shadow-[9px_11px_6px_0px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c] "
                 style={buttonStyleOffHover}
               >
                 {buttonText}

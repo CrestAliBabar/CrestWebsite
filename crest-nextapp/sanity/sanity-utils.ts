@@ -97,3 +97,11 @@ export async function getPageDetailForBotPress(slug?: string): Promise<any[]> {
     { cache: "no-store" }
   );
 }
+
+export async function getNavigationPageContent(slug: string): Promise<any[]> {
+  return client.fetch(
+    groq`*[_type == "navigationTitleSchema" && slug.current == "${slug}"]`,
+    {},
+    { cache: "no-store" }
+  );
+}

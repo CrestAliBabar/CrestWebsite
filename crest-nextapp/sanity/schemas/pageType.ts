@@ -42,6 +42,10 @@ export const pageType = defineType({
           name: "cta",
           type: "cta",
         }),
+        defineArrayMember({
+          name: 'work_flow',
+          type: 'work_flow',
+        }),
         // etc...
       ],
     },
