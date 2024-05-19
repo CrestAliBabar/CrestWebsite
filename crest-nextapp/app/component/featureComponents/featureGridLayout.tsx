@@ -1,6 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import AosComponent from "@/app/clientComponent/utils/aosComponent";
-import Script from "next/script";
 import React from "react";
 import * as Icons from "react-icons/fa";
 
@@ -51,7 +49,7 @@ const FeatureGridLayout: React.FC<FeatureGridLayoutProps> = ({featureGridLayoutC
 
   return (
     <>
-    <AosComponent/>
+      
       {/* Features Grid Layout */}
       <section style={{ backgroundColor: BackgroundColor }}>
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
