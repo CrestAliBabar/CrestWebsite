@@ -62,6 +62,10 @@ const FeatureCenteredGrid: React.FC<FeatureCenteredGridProps> = ({
               (feature: any, index: number) => {
                 const iconBackgroundColor = feature.iconBackgroundColor
                   ? feature.iconBackgroundColor.value
+                  : "#3ffff2";
+
+                const iconColor = feature.iconColor
+                  ? feature.iconColor.value
                   : "#4f46e5";
 
                 const cardTitleTextColor = feature.cardTitleTextColor
@@ -87,7 +91,10 @@ const FeatureCenteredGrid: React.FC<FeatureCenteredGridProps> = ({
                       className="text-base font-semibold leading-7">
                       <div
                         className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg "
-                        style={{ backgroundColor: iconBackgroundColor }}>
+                        style={{
+                          backgroundColor: iconBackgroundColor,
+                          color: iconColor,
+                        }}>
                         <DynamicFontAwesomeIcon
                           name={feature.icon.name}
                           iconSize={24}

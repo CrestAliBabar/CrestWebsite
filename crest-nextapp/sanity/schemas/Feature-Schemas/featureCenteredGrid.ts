@@ -108,6 +108,14 @@ export const featureCardForCenteredGrid = defineType({
       validation: (rule) => rule.required(),
     }),
     {
+      name: "iconColor",
+      title: "Icon Color",
+      type: "simplerColor",
+      options: {
+        colorList: colorList,
+      },
+    },
+    {
       name: "iconBackgroundColor",
       title: "Icon Background Color",
       type: "simplerColor",
