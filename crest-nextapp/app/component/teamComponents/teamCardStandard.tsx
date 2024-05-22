@@ -1,5 +1,6 @@
 import { log } from "console";
 import React from "react";
+import { getCroppedImageSrc, SanityImageQueryResult } from "@/sanity/schemas/cropping";
 
 type TeamCardStandardProps = {
   teamCardStandardContent: any;
@@ -61,13 +62,16 @@ const teamCardStandard: React.FC<TeamCardStandardProps> = ({
           {/* Item */}
           {teamCardStandardContent.Team_Members.map(
             (member: any, index: number) => {
-              const imageURl =
-                "https://cdn.sanity.io/images/7xkjaifb/production/" +
-                member.image.asset._ref
-                  .split("-")
-                  .slice(1)
-                  .join("-")
-                  .replace(/-([^-]*)$/, ".$1");
+              // const imageURl =
+              //   "https://cdn.sanity.io/images/7xkjaifb/production/" +
+              //   member.image.asset._ref
+              //     .split("-")
+              //     .slice(1)
+              //     .join("-")
+              //     .replace(/-([^-]*)$/, ".$1");
+
+              const imageURl = getCroppedImageSrc(member.image as SanityImageQueryResult);
+
               // console.log(member);
               return (
                 <div
