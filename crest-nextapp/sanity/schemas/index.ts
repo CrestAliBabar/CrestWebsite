@@ -24,11 +24,15 @@ import { heroWithBanner } from "./Hero-Schemas/heroWithBanner";
 import { heroWithImage } from "./Hero-Schemas/heroWithImage";
 import { heroHeading } from "./Hero-Schemas/heroHeading";
 import { heroWithoutButton } from "./Hero-Schemas/heroWithoutButton";
+
+// Feature Schemas
 import { featureHeading } from "./Feature-Schemas/featureHeading";
 import { featureGridLayout } from "./Feature-Schemas/featureGridLayout";
 import { featureHeroFacts } from "./Feature-Schemas/featureHeroFacts";
 import { featureCard } from "./Feature-Schemas/featureCard";
 import { featureFact } from "./Feature-Schemas/featureFacts";
+import {featureCenteredGrid, featureCardForCenteredGrid} from "./Feature-Schemas/featureCenteredGrid";
+
 import { contentType } from "./Content-Schemas/contentType";
 import { contentImageDescription } from "./Content-Schemas/contentImageDescription";
 import { contentHeading } from "./Content-Schemas/contentHeading";
@@ -77,6 +81,8 @@ export const schemaTypes = [
   featureCard,
   featureFact,
   featureHyperlink,
+  featureCardForCenteredGrid,
+  featureCenteredGrid,
 
   //Content
   contentType,
