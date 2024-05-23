@@ -23,6 +23,14 @@ export const featureType = defineType({
           name: "Feature_Facts_Hyperlink",
           type: "Feature_Facts_Hyperlink",
         }),
+        defineArrayMember({
+          name: "Feature_Centered_Grid",
+          type: "Feature_Centered_Grid",
+        }),
+        defineArrayMember({
+          name: "Feature_With_Large_Screen_Shot",
+          type: "Feature_With_Large_Screen_Shot",
+        }),
       ],
     }),
   ],
