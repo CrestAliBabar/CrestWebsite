@@ -11,18 +11,6 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
   const DescriptionTextColor = ctaHeroContent.DescriptionTextColor
     ? ctaHeroContent.DescriptionTextColor.value
     : "#647084";
-  const IconColor = ctaHeroContent.IconColor_1
-    ? ctaHeroContent.IconColor_1.value
-    : "#647084";
-  const IconColor_2 = ctaHeroContent.IconColor_2
-    ? ctaHeroContent.IconColor_2.value
-    : "#647084";
-  const IconColor_3 = ctaHeroContent.IconColor_3
-    ? ctaHeroContent.IconColor_3.value
-    : "#647084";
-  const IconColor_4 = ctaHeroContent.IconColor_4
-    ? ctaHeroContent.IconColor_4.value
-    : "#647084";
   const imageurl =
     "https://cdn.sanity.io/images/7xkjaifb/production/" +
     ctaHeroContent.image.asset._ref
@@ -30,20 +18,23 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
       .slice(1)
       .join("-")
       .replace(/-([^-]*)$/, ".$1");
- 
 
   const BackgroundColor = ctaHeroContent.backGroundColor.value;
 
-  const CTAButtonColor =
-  ctaHeroContent.promotion.buttonBackgroundColor.value;
+  const CTAButtonColor = ctaHeroContent.promotion.buttonBackgroundColor.value;
 
-  const CTAButtonColorLink = ctaHeroContent.promotion.link
+  const CTAButtonColorLink = ctaHeroContent.promotion.link;
 
-  const CTAButtonText  = ctaHeroContent.promotion.title
+  const CTAButtonText = ctaHeroContent.promotion.title;
+
+  const FeatureFactTitleColor = ctaHeroContent.featureFactColor.value;
+
+  const featureFactTitleColorStyle = {
+    color: FeatureFactTitleColor,
+  };
 
   const buttonStyle = {
     backgroundColor: CTAButtonColor,
-    
   };
 
   return (
@@ -53,17 +44,24 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
         {/* Component */}
         <div className="grid grid-cols-1 items-center justify-center gap-12 sm:gap-20 lg:grid-cols-2">
           {/* Image Div */}
-          <div className="relative h-full max-h-[560px] w-[85%] overflow-visible max-[991px]:left-4 md:w-[95%] lg:w-full" data-aos="fade-right" data-aos-delay="400">
+          <div
+            className="relative h-full max-h-[560px] w-[85%] overflow-visible max-[991px]:left-4 md:w-[95%] lg:w-full"
+            data-aos="fade-right"
+            data-aos-delay="400"
+          >
             <img
               src={imageurl}
               //   src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915d1cb654acd795a72b12_magicpattern-ixxjruC7Gg4-unsplash.jpg"
               alt=""
               className="mx-auto block h-full w-full max-w-[800px] rotate-[3.5deg] rounded-2xl object-cover"
             />
-          
           </div>
           {/* Content Div */}
-          <div className="max-w-[720px]" data-aos="fade-left" data-aos-delay="400">
+          <div
+            className="max-w-[720px]"
+            data-aos="fade-left"
+            data-aos-delay="400"
+          >
             <h2
               style={{ color: TitleTextColor }}
               className="mb-6 text-3xl font-semibold md:mb-10 md:text-5xl"
@@ -77,42 +75,41 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             </div>
             {/* Features */}
             <div className="grid max-w-[400px] grid-cols-2 gap-4">
-              {/* Feature Item */}
-              <div className="flex items-center">
-                <img
-                  src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915fec5d1aa12f6aedd68c_Vector%20(14).svg"
-                  alt=""
-                  className="mr-2 inline-block"
-                />
-                <p style={{ color: IconColor }}>{ctaHeroContent.Icon_1}</p>
-              </div>
-              {/* Feature Item */}
-              <div className="flex items-center">
-                <img
-                  src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915fec5d1aa12f6aedd68c_Vector%20(14).svg"
-                  alt=""
-                  className="mr-2 inline-block"
-                />
-                <p style={{ color: IconColor_2 }}>{ctaHeroContent.Icon_2}</p>
-              </div>
-              {/* Feature Item */}
-              <div className="flex items-center">
-                <img
-                  src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915fec5d1aa12f6aedd68c_Vector%20(14).svg"
-                  alt=""
-                  className="mr-2 inline-block"
-                />
-                <p style={{ color: IconColor_3 }}>{ctaHeroContent.Icon_3}</p>
-              </div>
-              {/* Feature Item */}
-              <div className="flex items-center">
-                <img
-                  src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915fec5d1aa12f6aedd68c_Vector%20(14).svg"
-                  alt=""
-                  className="mr-2 inline-block"
-                />
-                <p style={{ color: IconColor_4 }}>{ctaHeroContent.Icon_4}</p>
-              </div>
+              {ctaHeroContent.featureFacts.map(
+                (
+                  featureFact: {
+                    Fact:
+                      | string
+                      | number
+                      | boolean
+                      | React.ReactElement<
+                          any,
+                          string | React.JSXElementConstructor<any>
+                        >
+                      | Iterable<React.ReactNode>
+                      | React.ReactPortal
+                      | Promise<React.AwaitedReactNode>
+                      | Iterable<React.ReactNode>
+                      | null
+                      | undefined;
+                  },
+                  index: React.Key | null | undefined
+                ) => (
+                  <div key={index} className="mb-2 flex items-center">
+                    <img
+                      src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915fec5d1aa12f6aedd68c_Vector%20(14).svg"
+                      alt=""
+                      className="mr-2 inline-block"
+                    />
+                    <p
+                      className="ml-3 justify-end"
+                      style={featureFactTitleColorStyle}
+                    >
+                      {featureFact.Fact}
+                    </p>
+                  </div>
+                )
+              )}
             </div>
             {/* Divider */}
             <div className="mb-10 mt-10 w-full max-w-md border-b border-b-[#d9d9d9]"></div>

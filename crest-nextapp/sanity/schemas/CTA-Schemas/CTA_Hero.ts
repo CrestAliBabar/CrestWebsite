@@ -42,52 +42,21 @@ export const CTA_Hero = defineType({
       },
     },
     defineField({
-      name: "Icon_1",
-      type: "string",
-      validation: (rule) => rule.required(), // Required
+      name: "featureFacts",
+      title: "Feature Facts",
+      type: "array",
+      of: [{ type: "FeatureFact" }],
+      validation: (rule) =>
+        rule.min(2).custom((Facts) => {
+          if (!Facts || Facts.length < 2) {
+            return "Minimum 2 feature cards are required.";
+          }
+          return true;
+        }),
     }),
     {
-      name: "IconColor_1",
-      title: "Icon text color",
-      type: "simplerColor",
-      options: {
-        colorList: colorList,
-      },
-    },
-    defineField({
-      name: "Icon_2",
-      type: "string",
-      validation: (rule) => rule.required(), // Required
-    }),
-    {
-      name: "IconColor_2",
-      title: "Icon text color",
-      type: "simplerColor",
-      options: {
-        colorList: colorList,
-      },
-    },
-    defineField({
-      name: "Icon_3",
-      type: "string",
-      validation: (rule) => rule.required(), // Required
-    }),
-    {
-      name: "IconColor_3",
-      title: "Icon text color",
-      type: "simplerColor",
-      options: {
-        colorList: colorList,
-      },
-    },
-    defineField({
-      name: "Icon_4",
-      type: "string",
-      validation: (rule) => rule.required(), // Required
-    }),
-    {
-      name: "IconColor_4",
-      title: "Icon text color",
+      name: "featureFactColor",
+      title: "Feature Fact Title Color",
       type: "simplerColor",
       options: {
         colorList: colorList,
