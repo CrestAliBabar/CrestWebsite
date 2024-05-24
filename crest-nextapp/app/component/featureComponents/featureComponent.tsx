@@ -7,6 +7,7 @@ import FeatureHeroFacts from "./featureHeroFacts";
 import FeatureFactsHyperlink from "./featureFactsHyperlink";
 import FeatureCenteredGrid from "./featureCenteredGrid";
 import FeatureWithLargeScreenShot from "./featureWithLargeScreenShot";
+import FeatureWithSmIconLink  from "./featureWithSmIconLink";
 
 type FeatureComponentProps = {
   featureContent: any[];
@@ -27,6 +28,8 @@ const FeatureComponent : React.FC<FeatureComponentProps> = ({ featureContent }) 
             return <FeatureCenteredGrid featureCenteredGridContent = {content}  key={index}/>
           case "Feature_With_Large_Screen_Shot":
             return <FeatureWithLargeScreenShot featureWithLargeScreenShotContent = {content}  key={index}/>
+          case "Feature_With_Sm_Icon_Link":
+              return <FeatureWithSmIconLink featureWithSmIconLinkContent = {content}  key={index}/>
           default:
             return null;
         }

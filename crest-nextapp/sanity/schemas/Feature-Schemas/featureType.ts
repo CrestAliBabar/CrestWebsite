@@ -31,6 +31,10 @@ export const featureType = defineType({
           name: "Feature_With_Large_Screen_Shot",
           type: "Feature_With_Large_Screen_Shot",
         }),
+        defineArrayMember({
+          name: "Feature_With_Sm_Icon_Link",
+          type: "Feature_With_Sm_Icon_Link",
+        }),
       ],
     }),
   ],

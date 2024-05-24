@@ -33,6 +33,7 @@ import { featureCard } from "./Feature-Schemas/featureCard";
 import { featureFact } from "./Feature-Schemas/featureFacts";
 import {featureCenteredGrid, featureCardForCenteredGrid} from "./Feature-Schemas/featureCenteredGrid";
 import {featureWithLargeScreenShot} from "./Feature-Schemas/featureWithLargeScreenShot";
+import {featureWithSmIconLink, featureCardForSmIconLink} from "./Feature-Schemas/featureWithSmIconLink";
 
 import { contentType } from "./Content-Schemas/contentType";
 import { contentImageDescription } from "./Content-Schemas/contentImageDescription";
@@ -85,6 +86,8 @@ export const schemaTypes = [
   featureCardForCenteredGrid,
   featureCenteredGrid,
   featureWithLargeScreenShot,
+  featureWithSmIconLink,
+  featureCardForSmIconLink,
 
   //Content
   contentType,
