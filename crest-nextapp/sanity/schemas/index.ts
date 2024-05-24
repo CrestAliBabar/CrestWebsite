@@ -55,6 +55,11 @@ import {stepBlockRound} from "./WorkFlow-Schemas/stepBlockRound";
 import {stepBlockRectangle} from "./WorkFlow-Schemas/stepBlockRectangle";
 
 import {pageContentForNavPage} from "./pageContentForNavPage";
+import { logoCloudType } from "./LogoCloud-Schemas/logoCloudType";
+import { logoCloudUtlis } from "./LogoCloud-Schemas/logoCloudUtlis";
+
+import { logoGrid } from "./LogoCloud-Schemas/logoGrid";
+import { logoStandardText } from "./LogoCloud-Schemas/logoStandardText";
 
 export const schemaTypes = [
   pageType,
@@ -102,8 +107,14 @@ export const schemaTypes = [
   stepBlockRound,
   stepBlockRectangle,
 
-    // Contact
+  // Contact
   contact,
+
+  //LogoCloud
+  logoCloudType,
+  logoCloudUtlis,
+  logoStandardText,
+  logoGrid,
 
   imageGalleryType,
   formType,
