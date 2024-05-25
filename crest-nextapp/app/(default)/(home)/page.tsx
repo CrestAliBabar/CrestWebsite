@@ -1,5 +1,4 @@
 import HomePageComponent from "@/app/component/homePageComponent";
-import Step3Blocks from "@/app/component/workFlowComponent/step3Blocks";
 import { getHomePageContent } from "@/sanity/sanity-utils";
 
 
