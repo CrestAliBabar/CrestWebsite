@@ -134,12 +134,12 @@ export const featureCardForSmIconLink = defineType({
     defineField({
       name: "linkTitle",
       type: "string",
-      validation: (rule) => rule.required(), // Required
+      // validation: (rule) => rule.required(), // Required
     }),
     defineField({
       name: "linkHref",
       type: "string",
-      validation: (rule) => rule.required(), // Required
+      // validation: (rule) => rule.required(), // Required
     }),
   ],
 });
