@@ -14,6 +14,7 @@ import ContactComponent from "../contactComponent/contactComponent";
 import CTAComponents from "../ctaComponent/CTAComponents";
 import HeroComponent from "../heroComponents/heroComponent";
 import FeatureComponent from "../featureComponents/featureComponent";
+import LogoCloudComponent from "../logoCloudComponent/logoCloudComponent";
 import FAQsComponent from "../FAQsComponent/FAQsComponent";
 import WorkFlowComponent from "../workFlowComponent/workFlowComponent";
 
@@ -62,13 +63,34 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
           case "contact":
             return <ContactComponent contactContent={content} key={index} />;
           case "work_flow":
-              return <WorkFlowComponent workFlowContent={content.workFlowSections} key={index} />;
+            return (
+              <WorkFlowComponent
+                workFlowContent={content.workFlowSections}
+                key={index}
+              />
+            );
           case "hero":
-              return <HeroComponent heroContent={content.heroSections} key={index} />;
+            return (
+              <HeroComponent heroContent={content.heroSections} key={index} />
+            );
           case "feature":
-              return <FeatureComponent featureContent={content.featureSections}  key={index}  /> 
+            return (
+              <FeatureComponent
+                featureContent={content.featureSections}
+                key={index}
+              />
+            );
+          case "logoCloud":
+            return (
+              <LogoCloudComponent
+                logoCloudContent={content.logoCLoudSections}
+                key={index}
+              />
+            );
           case "FAQs":
-                return <FAQsComponent faqsContent={content.FAQsSections} key={index} />; 
+            return (
+              <FAQsComponent faqsContent={content.FAQsSections} key={index} />
+            );
           default:
             return null;
         }

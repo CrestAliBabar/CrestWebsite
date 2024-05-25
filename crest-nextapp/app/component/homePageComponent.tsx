@@ -4,6 +4,7 @@ import FeatureComponent from "./featureComponents/featureComponent";
 import ContentComponent from "./contentComponent/contentComponent";
 import TeamComponent from "./teamComponents/teamComponent";
 import WorkFlowComponent from "./workFlowComponent/workFlowComponent";
+import LogoCloudComponent from "./logoCloudComponent/logoCloudComponent";
 import FAQsComponent from "./FAQsComponent/FAQsComponent";
 
 type HomePageComponentProps = {
@@ -31,6 +32,8 @@ const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) =>
             return <TeamComponent teamContent ={content.teamSections}  key={index}  />
           case "work_flow":
               return <WorkFlowComponent workFlowContent={content.workFlowSections} key={index} />;
+          case "logoCloud":
+              return <LogoCloudComponent logoCloudContent={content.logoCLoudSections} key={index} />;
           case "FAQs":
                 return <FAQsComponent faqsContent={content.FAQsSections} key={index} />;
           default:
