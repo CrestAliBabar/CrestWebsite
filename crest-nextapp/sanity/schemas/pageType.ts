@@ -46,6 +46,14 @@ export const pageType = defineType({
           name: 'work_flow',
           type: 'work_flow',
         }),
+        defineArrayMember({
+          name: 'logoCloud',
+          type: 'logoCloud',
+        }),
+        defineArrayMember({
+          name: 'FAQs',
+          type: 'FAQs',
+        }),
         // etc...
       ],
     },
