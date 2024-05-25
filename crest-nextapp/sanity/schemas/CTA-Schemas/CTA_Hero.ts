@@ -42,8 +42,8 @@ export const CTA_Hero = defineType({
       },
     },
     defineField({
-      name: "featureFacts",
-      title: "Feature Facts",
+      name: "iconText",
+      title: "Icon Text",
       type: "array",
       of: [{ type: "FeatureFact" }],
       validation: (rule) =>
@@ -55,8 +55,8 @@ export const CTA_Hero = defineType({
         }),
     }),
     {
-      name: "featureFactColor",
-      title: "Feature Fact Title Color",
+      name: "iconTextColor",
+      title: "Icon Text Color",
       type: "simplerColor",
       options: {
         colorList: colorList,

@@ -27,10 +27,10 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
 
   const CTAButtonText = ctaHeroContent.promotion.title;
 
-  const FeatureFactTitleColor = ctaHeroContent.featureFactColor.value;
+  const IconTextColor = ctaHeroContent.iconTextColor.value;
 
-  const featureFactTitleColorStyle = {
-    color: FeatureFactTitleColor,
+  const IconColorStyle = {
+    color: IconTextColor,
   };
 
   const buttonStyle = {
@@ -75,7 +75,7 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             </div>
             {/* Features */}
             <div className="grid max-w-[400px] grid-cols-2 gap-4">
-              {ctaHeroContent.featureFacts.map(
+              {ctaHeroContent.iconText.map(
                 (
                   featureFact: {
                     Fact:
@@ -101,10 +101,7 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
                       alt=""
                       className="mr-2 inline-block"
                     />
-                    <p
-                      className="ml-3 justify-end"
-                      style={featureFactTitleColorStyle}
-                    >
+                    <p className="ml-3 justify-end" style={IconColorStyle}>
                       {featureFact.Fact}
                     </p>
                   </div>
