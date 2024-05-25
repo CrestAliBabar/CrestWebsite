@@ -47,5 +47,10 @@ export const CTA_Pattern = defineType({
       title: "getStart Link",
       description: "Optional URL for the Call to Action",
     }),
+    defineField({
+      name: "promotion",
+      type: "promotion",
+      validation: (rule) => rule.required(), // Required
+    }),
   ],
 });
