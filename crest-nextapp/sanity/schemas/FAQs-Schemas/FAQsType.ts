@@ -15,10 +15,14 @@ export const FAQsType = defineType({
           name: "FAQs_With_Supporting_Text",
           type: "FAQs_With_Supporting_Text",
         }),
-        // defineArrayMember({
-        //   name: "Step_Block_Rectangle",
-        //   type: "Step_Block_Rectangle",
-        // }),
+        defineArrayMember({
+          name: "FAQs_Two_Column",
+          type: "FAQs_Two_Column",
+        }),
+        defineArrayMember({
+          name: "FAQs_Three_Column_Centered",
+          type: "FAQs_Three_Column_Centered",
+        }),
       ],
     }),
   ],

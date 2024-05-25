@@ -60,6 +60,8 @@ import {pageContentForNavPage} from "./pageContentForNavPage";
 //FAQs
 import {FAQsType} from "./FAQs-Schemas/FAQsType";
 import {FAQsWithSupportingText} from "./FAQs-Schemas/FAQsWithSupportingText";
+import {FAQsTwoColumn} from "./FAQs-Schemas/FAQsTwoColumn";
+import {FAQsThreeColumnCentered} from "./FAQs-Schemas/FAQsThreeColumnCentered";
 
 export const schemaTypes = [
   pageType,
@@ -112,6 +114,8 @@ export const schemaTypes = [
   //FAQs
   FAQsType,
   FAQsWithSupportingText,
+  FAQsTwoColumn,
+  FAQsThreeColumnCentered,
 
     // Contact
   contact,

@@ -1,10 +1,10 @@
 import { defineField, defineType } from "sanity";
 import colorList from "@/app/utils/colors";
 
-export const FAQsWithSupportingText = defineType({
-  name: "FAQs_With_Supporting_Text",
+export const FAQsThreeColumnCentered = defineType({
+  name: "FAQs_Three_Column_Centered",
   type: "object",
-  title: "FAQs With Supporting Text",
+  title: "FAQs Three Column Centered",
   fields: [
     {
       name: "backGroundColor",

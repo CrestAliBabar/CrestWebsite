@@ -1,6 +1,7 @@
 import React from "react";
 import FAQsWithSupportingText from "./FAQsWithSupportingText";
-
+import FAQsTwoColumnProps from "./FAQsTwoColumn";
+import FAQsThreeColumnCentered from "./FAQsThreeColumnCentered";
 
 type FAQsComponentProps = {
   faqsContent: any[];
@@ -18,10 +19,19 @@ const FAQsComponent: React.FC<FAQsComponentProps> = ({ faqsContent }) => {
                 key={index}
               />
             );
-          case "FAQs_List": // Another FAQ component type
+          case "FAQs_Two_Column": // Another FAQ component type
             return (
-              // <FAQsList faqsListContent={content} key={index} />
-              <div></div>
+              <FAQsTwoColumnProps
+                faqsTwoColumnContent={content}
+                key={index}
+              />
+            );
+          case "FAQs_Three_Column_Centered": // Another FAQ component type
+            return (
+              <FAQsThreeColumnCentered
+                faqsThreeColumnContent={content}
+                key={index}
+              />
             );
           default:
             return null;
