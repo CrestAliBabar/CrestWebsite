@@ -2,7 +2,7 @@ import React from "react";
 import FAQsWithSupportingText from "./FAQsWithSupportingText";
 import FAQsTwoColumnProps from "./FAQsTwoColumn";
 import FAQsThreeColumnCentered from "./FAQsThreeColumnCentered";
-
+import FAQsSideBySide from "./FAQsSideBySide";
 type FAQsComponentProps = {
   faqsContent: any[];
 };
@@ -19,19 +19,20 @@ const FAQsComponent: React.FC<FAQsComponentProps> = ({ faqsContent }) => {
                 key={index}
               />
             );
-          case "FAQs_Two_Column": // Another FAQ component type
+          case "FAQs_Two_Column": 
             return (
-              <FAQsTwoColumnProps
-                faqsTwoColumnContent={content}
-                key={index}
-              />
+              <FAQsTwoColumnProps faqsTwoColumnContent={content} key={index} />
             );
-          case "FAQs_Three_Column_Centered": // Another FAQ component type
+          case "FAQs_Three_Column_Centered": 
             return (
               <FAQsThreeColumnCentered
                 faqsThreeColumnContent={content}
                 key={index}
               />
+            );
+          case "FAQs_Side_By_Side": 
+            return (
+              <FAQsSideBySide faqsSideBySideContent={content} key={index} />
             );
           default:
             return null;

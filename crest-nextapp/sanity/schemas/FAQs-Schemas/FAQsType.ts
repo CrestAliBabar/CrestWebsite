@@ -23,6 +23,10 @@ export const FAQsType = defineType({
           name: "FAQs_Three_Column_Centered",
           type: "FAQs_Three_Column_Centered",
         }),
+        defineArrayMember({
+          name: "FAQs_Side_By_Side",
+          type: "FAQs_Side_By_Side",
+        }),
       ],
     }),
   ],

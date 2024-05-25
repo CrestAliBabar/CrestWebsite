@@ -62,6 +62,7 @@ import {FAQsType} from "./FAQs-Schemas/FAQsType";
 import {FAQsWithSupportingText} from "./FAQs-Schemas/FAQsWithSupportingText";
 import {FAQsTwoColumn} from "./FAQs-Schemas/FAQsTwoColumn";
 import {FAQsThreeColumnCentered} from "./FAQs-Schemas/FAQsThreeColumnCentered";
+import {FAQsSideBySide} from "./FAQs-Schemas/FAQsSideBySide";
 
 export const schemaTypes = [
   pageType,
@@ -116,6 +117,7 @@ export const schemaTypes = [
   FAQsWithSupportingText,
   FAQsTwoColumn,
   FAQsThreeColumnCentered,
+  FAQsSideBySide,
 
     // Contact
   contact,
