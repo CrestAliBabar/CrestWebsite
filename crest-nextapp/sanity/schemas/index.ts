@@ -57,6 +57,10 @@ import {stepBlockRectangle} from "./WorkFlow-Schemas/stepBlockRectangle";
 
 import {pageContentForNavPage} from "./pageContentForNavPage";
 
+//FAQs
+import {FAQsType} from "./FAQs-Schemas/FAQsType";
+import {FAQsWithSupportingText} from "./FAQs-Schemas/FAQsWithSupportingText";
+
 export const schemaTypes = [
   pageType,
   //CTA
@@ -104,6 +108,10 @@ export const schemaTypes = [
   workFlowType,
   stepBlockRound,
   stepBlockRectangle,
+
+  //FAQs
+  FAQsType,
+  FAQsWithSupportingText,
 
     // Contact
   contact,
