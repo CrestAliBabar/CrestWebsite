@@ -37,6 +37,7 @@ export const pageContent = defineType({
         { type: "hero"},
         {type: "feature"},
         {type: "logoCloud"},
+        {type: "FAQs"}
         
       ],
     }),

@@ -12,13 +12,26 @@ const CTAPatternComponent: React.FC<CTAPatternProps> = ({
   const DescriptionTextColor = ctaPatternContent.DescriptionTextColor
     ? ctaPatternContent.DescriptionTextColor.value
     : "#647084";
-  const getStartLink = ctaPatternContent.getStartLink || "#";
+  const BackgroundColor = ctaPatternContent.backGroundColor.value;
+  const CTAButtonColor =
+    ctaPatternContent.promotion.buttonBackgroundColor.value;
+
+  const CTAButtonColorLink = ctaPatternContent.promotion.link;
+
+  const CTAButtonText = ctaPatternContent.promotion.title;
+
+  const buttonStyle = {
+    backgroundColor: CTAButtonColor,
+  };
   return (
     <section>
       {/* Container */}
       <div className="px-3 py-16 md:px-40 md:py-24 lg:py-32">
         {/* Component */}
-        <div className="mx-auto w-full max-w-7xl rounded-[48px] bg-[url('https://assets.website-files.com/63904f663019b0d8edf8d57c/6391a6daa19785eb51dd3666_CTA%20(2).svg')] bg-cover bg-center bg-no-repeat py-20 text-white [box-shadow:rgb(106,_218,_255)_9px_9px]">
+        <div
+          className="mx-auto w-full max-w-7xl rounded-[48px] bg-cover bg-center bg-no-repeat py-20 text-white "
+          style={{ backgroundColor: BackgroundColor }}
+        >
           <div className="mx-auto max-w-3xl text-center">
             {/* Heading Div */}
             <div className="mb-6 max-w-[720px] lg:mb-12">
@@ -36,10 +49,11 @@ const CTAPatternComponent: React.FC<CTAPatternProps> = ({
             </div>
             {/* CTA Button */}
             <a
-              href={getStartLink}
-              className="inline-block rounded-xl bg-black px-8 py-4 font-semibold text-white [box-shadow:rgb(255,_255,_255)_6px_6px]"
+              href={CTAButtonColorLink}
+              className="inline-block rounded-xl px-8 py-4 font-semibold transition shadow-[9px_11px_6px_0px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c]"
+              style={buttonStyle}
             >
-              Get Started
+              {CTAButtonText}
             </a>
           </div>
         </div>

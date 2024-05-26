@@ -50,6 +50,10 @@ export const pageType = defineType({
           name: 'logoCloud',
           type: 'logoCloud',
         }),
+        defineArrayMember({
+          name: 'FAQs',
+          type: 'FAQs',
+        }),
         // etc...
       ],
     },

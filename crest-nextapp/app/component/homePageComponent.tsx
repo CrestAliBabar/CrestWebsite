@@ -5,6 +5,7 @@ import ContentComponent from "./contentComponent/contentComponent";
 import TeamComponent from "./teamComponents/teamComponent";
 import WorkFlowComponent from "./workFlowComponent/workFlowComponent";
 import LogoCloudComponent from "./logoCloudComponent/logoCloudComponent";
+import FAQsComponent from "./FAQsComponent/FAQsComponent";
 
 type HomePageComponentProps = {
   pageBuilder: any[];
@@ -33,6 +34,8 @@ const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) =>
               return <WorkFlowComponent workFlowContent={content.workFlowSections} key={index} />;
           case "logoCloud":
               return <LogoCloudComponent logoCloudContent={content.logoCLoudSections} key={index} />;
+          case "FAQs":
+                return <FAQsComponent faqsContent={content.FAQsSections} key={index} />;
           default:
             return null; // Default case if component type is not recognized
         }
