@@ -133,7 +133,7 @@ const FeatureWithLargeScreenShot: React.FC<FeatureWithLargeScreenShotProps> = ({
                   <dd
                     style={{ color: cardDescriptionTextColor }}
                     className="block">
-                    {feature.cardDescription}
+                    {feature.cardDescription?feature.cardDescription:""}
                   </dd>
                 </div>
               );
