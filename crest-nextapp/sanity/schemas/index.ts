@@ -26,15 +26,21 @@ import { heroHeading } from './Hero-Schemas/heroHeading';
 import { heroWithoutButton } from './Hero-Schemas/heroWithoutButton';
 
 // Feature Schemas
-import { featureHeading } from "./Feature-Schemas/featureHeading";
-import { featureGridLayout } from "./Feature-Schemas/featureGridLayout";
-import { featureHeroFacts } from "./Feature-Schemas/featureHeroFacts";
-import { featureCard } from "./Feature-Schemas/featureCard";
-import { featureFact } from "./Feature-Schemas/featureFacts";
-import {featureCenteredGrid, featureCardForCenteredGrid} from "./Feature-Schemas/featureCenteredGrid";
-import {featureWithLargeScreenShot} from "./Feature-Schemas/featureWithLargeScreenShot";
-import {featureWithSmIconLink, featureCardForSmIconLink} from "./Feature-Schemas/featureWithSmIconLink";
-import {featureWithColumnLgIcon} from "./Feature-Schemas/featureWithColumnLgIcon";
+import { featureHeading } from './Feature-Schemas/featureHeading';
+import { featureGridLayout } from './Feature-Schemas/featureGridLayout';
+import { featureHeroFacts } from './Feature-Schemas/featureHeroFacts';
+import { featureCard } from './Feature-Schemas/featureCard';
+import { featureFact } from './Feature-Schemas/featureFacts';
+import {
+  featureCenteredGrid,
+  featureCardForCenteredGrid,
+} from './Feature-Schemas/featureCenteredGrid';
+import { featureWithLargeScreenShot } from './Feature-Schemas/featureWithLargeScreenShot';
+import {
+  featureWithSmIconLink,
+  featureCardForSmIconLink,
+} from './Feature-Schemas/featureWithSmIconLink';
+import { featureWithColumnLgIcon } from './Feature-Schemas/featureWithColumnLgIcon';
 
 import { contentType } from './Content-Schemas/contentType';
 import { contentImageDescription } from './Content-Schemas/contentImageDescription';
@@ -62,14 +68,18 @@ import { logoCloudUtlis } from './LogoCloud-Schemas/logoCloudUtlis';
 
 import { logoGrid } from './LogoCloud-Schemas/logoGrid';
 import { logoStandardText } from './LogoCloud-Schemas/logoStandardText';
-import { footerSchema, footerSectionContent } from './footerSchema';
+import {
+  footerPageContent,
+  footerSchema,
+  footerSectionContent,
+} from './footerSchema';
 
 //FAQs
-import {FAQsType} from "./FAQs-Schemas/FAQsType";
-import {FAQsWithSupportingText} from "./FAQs-Schemas/FAQsWithSupportingText";
-import {FAQsTwoColumn} from "./FAQs-Schemas/FAQsTwoColumn";
-import {FAQsThreeColumnCentered} from "./FAQs-Schemas/FAQsThreeColumnCentered";
-import {FAQsSideBySide} from "./FAQs-Schemas/FAQsSideBySide";
+import { FAQsType } from './FAQs-Schemas/FAQsType';
+import { FAQsWithSupportingText } from './FAQs-Schemas/FAQsWithSupportingText';
+import { FAQsTwoColumn } from './FAQs-Schemas/FAQsTwoColumn';
+import { FAQsThreeColumnCentered } from './FAQs-Schemas/FAQsThreeColumnCentered';
+import { FAQsSideBySide } from './FAQs-Schemas/FAQsSideBySide';
 
 export const schemaTypes = [
   pageType,
@@ -150,6 +160,9 @@ export const schemaTypes = [
   navigationTitleSchema,
   pageContent,
   pageContentForNavPage,
+
+  // Footer
   footerSchema,
   footerSectionContent,
+  footerPageContent,
 ];
