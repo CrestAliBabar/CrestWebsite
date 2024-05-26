@@ -10,5 +10,4 @@ export type LayoutType = {
       url: string;
     };
   };
-  footerSlogan: string;
 };
