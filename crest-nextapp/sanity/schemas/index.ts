@@ -1,15 +1,15 @@
 // ./schemas/index.ts
 
-import { formType } from "./formType";
-import { heroType } from "./Hero-Schemas/heroType";
-import { imageGalleryType } from "./imageGalleryType";
-import { pageType } from "./pageType";
-import { promotionType } from "./promotionType";
-import { featureType } from "./Feature-Schemas/featureType";
-import { videoType } from "./videoType";
-import { PageInfo } from "./pageInfo";
-import layoutChange from "./layout-change";
-import { navigationTitleSchema } from "./navigationTitleSchema";
+import { formType } from './formType';
+import { heroType } from './Hero-Schemas/heroType';
+import { imageGalleryType } from './imageGalleryType';
+import { pageType } from './pageType';
+import { promotionType } from './promotionType';
+import { featureType } from './Feature-Schemas/featureType';
+import { videoType } from './videoType';
+import { PageInfo } from './pageInfo';
+import layoutChange from './layout-change';
+import { navigationTitleSchema } from './navigationTitleSchema';
 import {
   bulletPoint,
   imgUrl,
@@ -18,12 +18,12 @@ import {
   pageSubtitle,
   pageTitle,
   paragraph,
-} from "./pageContentSchema";
-import { heroWithoutBanner } from "./Hero-Schemas/heroWithoutBanner";
-import { heroWithBanner } from "./Hero-Schemas/heroWithBanner";
-import { heroWithImage } from "./Hero-Schemas/heroWithImage";
-import { heroHeading } from "./Hero-Schemas/heroHeading";
-import { heroWithoutButton } from "./Hero-Schemas/heroWithoutButton";
+} from './pageContentSchema';
+import { heroWithoutBanner } from './Hero-Schemas/heroWithoutBanner';
+import { heroWithBanner } from './Hero-Schemas/heroWithBanner';
+import { heroWithImage } from './Hero-Schemas/heroWithImage';
+import { heroHeading } from './Hero-Schemas/heroHeading';
+import { heroWithoutButton } from './Hero-Schemas/heroWithoutButton';
 
 // Feature Schemas
 import { featureHeading } from "./Feature-Schemas/featureHeading";
@@ -36,32 +36,33 @@ import {featureWithLargeScreenShot} from "./Feature-Schemas/featureWithLargeScre
 import {featureWithSmIconLink, featureCardForSmIconLink} from "./Feature-Schemas/featureWithSmIconLink";
 import {featureWithColumnLgIcon} from "./Feature-Schemas/featureWithColumnLgIcon";
 
-import { contentType } from "./Content-Schemas/contentType";
-import { contentImageDescription } from "./Content-Schemas/contentImageDescription";
-import { contentHeading } from "./Content-Schemas/contentHeading";
-import { featureFactsHyperlink } from "./Feature-Schemas/featureFactsHyperlink";
-import { featureHyperlink } from "./Feature-Schemas/featureHyperlinks";
-import { teamWithIntroduction } from "./Team-Schemas/teamWithIntroduction";
-import { teamType } from "./Team-Schemas/teamType";
-import { teamMember } from "./Team-Schemas/teamMember";
-import { teamCardStandard } from "./Team-Schemas/teamCardStandard";
-import { contact } from "./Contact-Schemas/contact";
+import { contentType } from './Content-Schemas/contentType';
+import { contentImageDescription } from './Content-Schemas/contentImageDescription';
+import { contentHeading } from './Content-Schemas/contentHeading';
+import { featureFactsHyperlink } from './Feature-Schemas/featureFactsHyperlink';
+import { featureHyperlink } from './Feature-Schemas/featureHyperlinks';
+import { teamWithIntroduction } from './Team-Schemas/teamWithIntroduction';
+import { teamType } from './Team-Schemas/teamType';
+import { teamMember } from './Team-Schemas/teamMember';
+import { teamCardStandard } from './Team-Schemas/teamCardStandard';
+import { contact } from './Contact-Schemas/contact';
 
-import { CTA_Text } from "./CTA-Schemas/CTA_Text";
-import { CTA_Pattern } from "./CTA-Schemas/CTA_Pattern";
-import { CTA_Hero } from "./CTA-Schemas/CTA_Hero";
-import { ctaType } from "./CTA-Schemas/ctaType";
+import { CTA_Text } from './CTA-Schemas/CTA_Text';
+import { CTA_Pattern } from './CTA-Schemas/CTA_Pattern';
+import { CTA_Hero } from './CTA-Schemas/CTA_Hero';
+import { ctaType } from './CTA-Schemas/ctaType';
 
-import {workFlowType} from "./WorkFlow-Schemas/workFlowType";
-import {stepBlockRound} from "./WorkFlow-Schemas/stepBlockRound";
-import {stepBlockRectangle} from "./WorkFlow-Schemas/stepBlockRectangle";
+import { workFlowType } from './WorkFlow-Schemas/workFlowType';
+import { stepBlockRound } from './WorkFlow-Schemas/stepBlockRound';
+import { stepBlockRectangle } from './WorkFlow-Schemas/stepBlockRectangle';
 
-import {pageContentForNavPage} from "./pageContentForNavPage";
-import { logoCloudType } from "./LogoCloud-Schemas/logoCloudType";
-import { logoCloudUtlis } from "./LogoCloud-Schemas/logoCloudUtlis";
+import { pageContentForNavPage } from './pageContentForNavPage';
+import { logoCloudType } from './LogoCloud-Schemas/logoCloudType';
+import { logoCloudUtlis } from './LogoCloud-Schemas/logoCloudUtlis';
 
-import { logoGrid } from "./LogoCloud-Schemas/logoGrid";
-import { logoStandardText } from "./LogoCloud-Schemas/logoStandardText";
+import { logoGrid } from './LogoCloud-Schemas/logoGrid';
+import { logoStandardText } from './LogoCloud-Schemas/logoStandardText';
+import { footerSchema, footerSectionContent } from './footerSchema';
 
 //FAQs
 import {FAQsType} from "./FAQs-Schemas/FAQsType";
@@ -148,6 +149,7 @@ export const schemaTypes = [
   imgUrl,
   navigationTitleSchema,
   pageContent,
-
-  pageContentForNavPage
+  pageContentForNavPage,
+  footerSchema,
+  footerSectionContent,
 ];
