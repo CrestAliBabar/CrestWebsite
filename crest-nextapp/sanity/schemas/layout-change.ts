@@ -27,11 +27,6 @@ const layoutChange = {
         hotspot: true,
       },
     },
-    {
-      name: 'footerSlogan',
-      title: 'Footer Slogan',
-      type: 'text',
-    },
   ],
 };
 

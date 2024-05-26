@@ -96,3 +96,22 @@ export async function getNavigationPageContent(slug: string): Promise<any[]> {
     { cache: 'no-store' }
   );
 }
+
+export async function getFooter(
+  slug?: string,
+  pageId?: string
+): Promise<any[]> {
+  if (pageId) {
+    return client.fetch(
+      groq`*[_type == "footerSchema"]{_id, _type, footerTextSections[slug.current=="${slug}"]{pages[_key=="${pageId}"]}}`,
+      {},
+      { cache: 'no-store' }
+    );
+  } else {
+    return client.fetch(
+      groq`*[_type == "footerSchema"]`,
+      {},
+      { cache: 'no-store' }
+    );
+  }
+}
