@@ -19,15 +19,21 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
       .join("-")
       .replace(/-([^-]*)$/, ".$1");
 
-  const BackgroundColor = ctaHeroContent.backGroundColor.value;
+  const BackgroundColor = ctaHeroContent.backGroundColor
+    ? ctaHeroContent.backGroundColor.value
+    : "#647084";
 
-  const CTAButtonColor = ctaHeroContent.promotion.buttonBackgroundColor.value;
+  const CTAButtonColor = ctaHeroContent.promotion.buttonBackgroundColor
+    ? ctaHeroContent.promotion.buttonBackgroundColor.value
+    : "#647084";
 
   const CTAButtonColorLink = ctaHeroContent.promotion.link;
 
   const CTAButtonText = ctaHeroContent.promotion.title;
 
-  const IconTextColor = ctaHeroContent.iconTextColor.value;
+  const IconTextColor = ctaHeroContent.iconTextColor
+    ? ctaHeroContent.iconTextColor.value
+    : "#647084";
 
   const IconColorStyle = {
     color: IconTextColor,
