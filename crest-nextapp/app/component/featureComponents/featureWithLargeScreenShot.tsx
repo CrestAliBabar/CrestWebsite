@@ -78,6 +78,7 @@ const FeatureWithLargeScreenShot: React.FC<FeatureWithLargeScreenShotProps> = ({
             className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
             width={2432}
             height={1442}
+            data-aos="fade-up"
           />
           <div className="relative" aria-hidden="true">
             <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-white pt-[7%]" />
@@ -90,7 +91,7 @@ const FeatureWithLargeScreenShot: React.FC<FeatureWithLargeScreenShotProps> = ({
             (feature: any, index: number) => {
               const iconBackgroundColor = feature.iconBackgroundColor
                 ? feature.iconBackgroundColor.value
-                : "#ffffff";
+                : backgroundColor;
 
               const iconColor = feature.iconColor
                 ? feature.iconColor.value
@@ -131,8 +132,8 @@ const FeatureWithLargeScreenShot: React.FC<FeatureWithLargeScreenShotProps> = ({
                   </dt>
                   <dd
                     style={{ color: cardDescriptionTextColor }}
-                    className="inline">
-                    {feature.cardDescription}
+                    className="block">
+                    {feature.cardDescription?feature.cardDescription:""}
                   </dd>
                 </div>
               );
