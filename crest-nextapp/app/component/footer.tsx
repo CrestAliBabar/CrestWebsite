@@ -48,16 +48,28 @@ export default async function Footer() {
                     {section.sectionTitle}
                   </h3>
                   <ul role='list' className='mt-6 space-y-4'>
-                    {section.pages.map(({ _key, text, ...rest }: any) => (
-                      <li key={text}>
-                        <a
-                          href={`/${section.slug.current}/FooterContent/${_key}`}
-                          className='text-sm leading-6 text-gray-300 hover:text-white'
-                        >
-                          {text}
-                        </a>
-                      </li>
-                    ))}
+                    {section.pages.map(
+                      ({ _key, text, hasUrl, url, ...rest }: any) => (
+                        <li key={text}>
+                          {hasUrl && (
+                            <a
+                              href={`${url}`}
+                              className='text-sm leading-6 text-gray-300 hover:text-white'
+                            >
+                              {text}
+                            </a>
+                          )}
+                          {!hasUrl && (
+                            <a
+                              href={`/${section.slug.current}/FooterContent/${_key}`}
+                              className='text-sm leading-6 text-gray-300 hover:text-white'
+                            >
+                              {text}
+                            </a>
+                          )}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
               ))}

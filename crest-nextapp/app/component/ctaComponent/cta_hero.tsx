@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import * as Icons from "react-icons/fa";
 
 type CTAHeroProps = {
   ctaHeroContent?: any;
@@ -19,15 +20,21 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
       .join("-")
       .replace(/-([^-]*)$/, ".$1");
 
-  const BackgroundColor = ctaHeroContent.backGroundColor.value;
+  const BackgroundColor = ctaHeroContent.backGroundColor
+    ? ctaHeroContent.backGroundColor.value
+    : "#647084";
 
-  const CTAButtonColor = ctaHeroContent.promotion.buttonBackgroundColor.value;
+  const CTAButtonColor = ctaHeroContent.promotion.buttonBackgroundColor
+    ? ctaHeroContent.promotion.buttonBackgroundColor.value
+    : "#647084";
 
   const CTAButtonColorLink = ctaHeroContent.promotion.link;
 
   const CTAButtonText = ctaHeroContent.promotion.title;
 
-  const IconTextColor = ctaHeroContent.iconTextColor.value;
+  const IconTextColor = ctaHeroContent.iconTextColor
+    ? ctaHeroContent.iconTextColor.value
+    : "#647084";
 
   const IconColorStyle = {
     color: IconTextColor,
@@ -35,6 +42,24 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
 
   const buttonStyle = {
     backgroundColor: CTAButtonColor,
+  };
+  const headingStyle = {
+    backgroundColor: TitleTextColor,
+  };
+
+  type IconName = keyof typeof Icons;
+
+  type DynamicFontAwesomeIconProps = {
+    name: IconName;
+    iconSize?: number; // Optional prop for icon size
+  };
+
+  const DynamicFontAwesomeIcon: React.FC<DynamicFontAwesomeIconProps> = ({
+    name,
+    iconSize = 24,
+  }) => {
+    const Icon = Icons[name];
+    return <Icon size={iconSize} />;
   };
 
   return (
@@ -51,8 +76,6 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
           >
             <img
               src={imageurl}
-              //   src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915d1cb654acd795a72b12_magicpattern-ixxjruC7Gg4-unsplash.jpg"
-              alt=""
               className="mx-auto block h-full w-full max-w-[800px] rotate-[3.5deg] rounded-2xl object-cover"
             />
           </div>
@@ -63,12 +86,12 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             data-aos-delay="400"
           >
             <h2
-              style={{ color: TitleTextColor }}
-              className="mb-6 text-3xl font-semibold md:mb-10 md:text-5xl"
+              className="mb-6 text-3xl font-semibold md:mb-10 md:text-5xl text-white"
+              style={headingStyle}
             >
               {ctaHeroContent.CTA_Title}
             </h2>
-            <div className="mx-auto max-w-[630px] md:mb-10">
+            <div className="mx max-w-[630px] mb-10">
               <p style={{ color: DescriptionTextColor }}>
                 {ctaHeroContent.Description}
               </p>
@@ -78,6 +101,7 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
               {ctaHeroContent.iconText.map(
                 (
                   featureFact: {
+                    icon: { name: any };
                     Fact:
                       | string
                       | number
@@ -96,10 +120,9 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
                   index: React.Key | null | undefined
                 ) => (
                   <div key={index} className="mb-2 flex items-center">
-                    <img
-                      src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915fec5d1aa12f6aedd68c_Vector%20(14).svg"
-                      alt=""
-                      className="mr-2 inline-block"
+                    <DynamicFontAwesomeIcon
+                      name={featureFact.icon.name}
+                      iconSize={20}
                     />
                     <p className="ml-3 justify-end" style={IconColorStyle}>
                       {featureFact.Fact}
