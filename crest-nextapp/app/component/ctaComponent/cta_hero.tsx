@@ -88,11 +88,13 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             data-aos="fade-left"
             data-aos-delay="400"
           >
-            <h2
-              className="mb-6 text-3xl font-semibold md:mb-10 md:text-5xl text-white"
-              style={headingStyle}
-            >
-              {ctaHeroContent.CTA_Title}
+            <h2 className="mb-6 text-3xl font-semibold md:mb-10 md:text-5xl text-white">
+              <span
+                className="mb-4 bg-cover bg-center bg-no-repeat text-white px-4"
+                style={headingStyle}
+              >
+                {ctaHeroContent.CTA_Title}
+              </span>{" "}
             </h2>
             <div className="mx max-w-[630px] mb-10">
               <p style={{ color: DescriptionTextColor }}>
