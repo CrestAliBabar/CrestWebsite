@@ -58,7 +58,9 @@ const FAQsThreeColumnCentered: React.FC<FAQsThreeColumnCenteredProps> = ({
             {faqsThreeColumnContent.faqItems &&
             faqsThreeColumnContent.faqItems.length > 0 ? (
               faqsThreeColumnContent.faqItems.map((faq: any, index: number) => (
-                <div key={index}>
+                <div key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}>
                   <dt
                     className="text-base font-semibold leading-7 text-gray-900"
                     style={{
