@@ -2,20 +2,20 @@ import ContentComponent from '@/app/component/contentComponent/contentComponent'
 import { getFooter } from '@/sanity/sanity-utils';
 import { notFound } from 'next/navigation';
 
-interface PageContentProps {
+interface FooterContentProps {
   params: {
     slug: string;
     pageId: string;
   };
 }
 
-export default async function PageContent({
+export default async function FooterContent({
   params: { slug, pageId },
-}: PageContentProps) {
+}: FooterContentProps) {
   try {
-    const pageContent = await getFooter(slug, pageId);
+    const footerContent = await getFooter(slug, pageId);
     const pageBuilder =
-      pageContent[0].footerTextSections[0].pages[0].pageBuilder;
+      footerContent[0].footerTextSections[0].pages[0].pageBuilder;
 
     return <ContentComponent Contents={pageBuilder} />;
   } catch (e) {
