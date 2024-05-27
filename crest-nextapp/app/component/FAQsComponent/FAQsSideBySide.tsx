@@ -28,7 +28,7 @@ const FAQsSideBySide: React.FC<FAQsSideBySideProps> = ({
           {faqsSideBySideContent.faqItems &&
           faqsSideBySideContent.faqItems.length > 0 ? (
             faqsSideBySideContent.faqItems.map((faq: any, index: number) => (
-              <div key={index} className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
+              <div key={index} className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8" data-aos="fade-up" data-aos-delay={index * 100}>
                 <dt
                   className="text-base font-semibold leading-7 text-gray-900 lg:col-span-5"
                   style={{ color: faq.questionTextColor ? faq.questionTextColor.value : '#000000' }}
