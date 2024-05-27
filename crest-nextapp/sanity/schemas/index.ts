@@ -80,6 +80,8 @@ import { FAQsWithSupportingText } from './FAQs-Schemas/FAQsWithSupportingText';
 import { FAQsTwoColumn } from './FAQs-Schemas/FAQsTwoColumn';
 import { FAQsThreeColumnCentered } from './FAQs-Schemas/FAQsThreeColumnCentered';
 import { FAQsSideBySide } from './FAQs-Schemas/FAQsSideBySide';
+import { featurePageDetails } from './Feature-Schemas/featurePageDetails';
+import { featurePageDetialsFields } from './Feature-Schemas/featurePageDetialsFields';
 
 export const schemaTypes = [
   pageType,
@@ -113,6 +115,8 @@ export const schemaTypes = [
   featureWithSmIconLink,
   featureCardForSmIconLink,
   featureWithColumnLgIcon,
+  featurePageDetails,
+  featurePageDetialsFields,
 
   //Content
   contentType,

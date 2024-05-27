@@ -27,24 +27,24 @@ export const featureHeading = defineType({
       ],
     },
     {
-        name: "subHeadingProp",
-        title: "Sub Heading Property",
-        type: "object",
-        fields: [
-          {
-            name: "subHeading",
-            title: "Sub Heading",
-            type: "string",
+      name: "subHeadingProp",
+      title: "Sub Heading Property",
+      type: "object",
+      fields: [
+        {
+          name: "subHeading",
+          title: "Sub Heading",
+          type: "string",
+        },
+        {
+          name: "subHeadingColor",
+          title: "Sub Heading text color",
+          type: "simplerColor",
+          options: {
+            colorList: colorList,
           },
-          {
-            name: "subHeadingColor",
-            title: "Sub Heading text color",
-            type: "simplerColor",
-            options: {
-              colorList: colorList,
-            },
-          },
-        ],
-      },
+        },
+      ],
+    },
   ],
 });
