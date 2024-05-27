@@ -39,11 +39,15 @@ export const stepBlockRound = defineType({
           name: "roundBox",
           title: "Round Box",
           fields: [
-            {
-              name: "icon",
-              type: "url",
+            defineField({
               title: "Icon",
-            },
+              name: "icon",
+              type: "iconPicker",
+              options: {
+                providers: ["fa"],
+                outputFormat: "react",
+              },
+            }),
             {
               name: "title",
               type: "string",

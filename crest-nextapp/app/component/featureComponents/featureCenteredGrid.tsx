@@ -36,6 +36,7 @@ const FeatureCenteredGrid: React.FC<FeatureCenteredGridProps> = ({
     ? featureCenteredGridContent.subHeadingTextColor.value
     : "#4B5563";
 
+  
   return (
     <div className="py-24 sm:py-32" style={{ backgroundColor }}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -62,7 +63,7 @@ const FeatureCenteredGrid: React.FC<FeatureCenteredGridProps> = ({
               (feature: any, index: number) => {
                 const iconBackgroundColor = feature.iconBackgroundColor
                   ? feature.iconBackgroundColor.value
-                  : "#3ffff2";
+                  : backgroundColor;
 
                 const iconColor = feature.iconColor
                   ? feature.iconColor.value

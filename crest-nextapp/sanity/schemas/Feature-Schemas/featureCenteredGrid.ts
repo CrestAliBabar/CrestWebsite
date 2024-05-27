@@ -79,7 +79,7 @@ export const featureCardForCenteredGrid = defineType({
     defineField({
       name: "cardDescription",
       type: "string",
-      validation: (rule) => rule.required(), // Required
+      // validation: (rule) => rule.required(), // Required
     }),
     {
       name: "cardTitleTextColor",
