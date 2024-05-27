@@ -39,6 +39,10 @@ export const featureType = defineType({
           name: "Feature_With_Column_Lg_Icon",
           type: "Feature_With_Column_Lg_Icon",
         }),
+        defineArrayMember({
+          name: "Feature_Page_Details",
+          type: "Feature_Page_Details",
+        }),
       ],
     }),
   ],

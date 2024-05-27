@@ -9,6 +9,7 @@ import FeatureCenteredGrid from "./featureCenteredGrid";
 import FeatureWithLargeScreenShot from "./featureWithLargeScreenShot";
 import FeatureWithSmIconLink  from "./featureWithSmIconLink";
 import FeatureWithColumnLgIcon from "./featureWithColumnLgIcon";
+import FeaturePageDetails from "./featurePageDetails";
 
 type FeatureComponentProps = {
   featureContent: any[];
@@ -33,6 +34,8 @@ const FeatureComponent : React.FC<FeatureComponentProps> = ({ featureContent }) 
               return <FeatureWithSmIconLink featureWithSmIconLinkContent = {content}  key={index}/>
           case "Feature_With_Column_Lg_Icon":
               return <FeatureWithColumnLgIcon featureWithColumnLgIconContent = {content}  key={index}/>
+          case "Feature_Page_Details":
+                return <FeaturePageDetails featurePageDetailsContent = {content}  key={index}/>
           default:
             return null;
         }
