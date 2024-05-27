@@ -27,21 +27,28 @@ const FAQsThreeColumnCentered: React.FC<FAQsThreeColumnCenteredProps> = ({
 
   return (
     <div style={{ backgroundColor: backGroundColor }}>
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+      <div
+        className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
         <div className="mx-auto max-w-2xl text-center">
           <h2
             style={{ color: sectionTitleTextColor }}
-            className="text-2xl font-bold leading-10 tracking-tight text-gray-900">
+            className="text-2xl font-bold leading-10 tracking-tight text-gray-900"
+          >
             {faqsThreeColumnContent.sectionTitle}
           </h2>
           <p
             className="mt-6 text-base leading-7 text-gray-600"
-            style={{ color: supportingTextColor }}>
+            style={{ color: supportingTextColor }}
+          >
             {faqsThreeColumnContent.supportingText}
             <a
               href={faqsThreeColumnContent.supportingTextLink}
               style={{ color: supportingTextLinkColor }}
-              className="font-semibold hover:text-indigo-500">
+              className="font-semibold hover:text-indigo-500"
+            >
               {linkText}
             </a>
           </p>
@@ -58,7 +65,8 @@ const FAQsThreeColumnCentered: React.FC<FAQsThreeColumnCenteredProps> = ({
                       color: faq.questionTextColor
                         ? faq.questionTextColor.value
                         : "#000000",
-                    }}>
+                    }}
+                  >
                     {faq.question}
                   </dt>
                   <dd
@@ -67,7 +75,8 @@ const FAQsThreeColumnCentered: React.FC<FAQsThreeColumnCenteredProps> = ({
                       color: faq.answerTextColor
                         ? faq.answerTextColor.value
                         : "#636262",
-                    }}>
+                    }}
+                  >
                     {faq.answer}
                   </dd>
                 </div>
