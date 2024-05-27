@@ -43,6 +43,9 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
   const buttonStyle = {
     backgroundColor: CTAButtonColor,
   };
+  const headingStyle = {
+    backgroundColor: TitleTextColor,
+  };
 
   type IconName = keyof typeof Icons;
 
@@ -73,8 +76,6 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
           >
             <img
               src={imageurl}
-              //   src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915d1cb654acd795a72b12_magicpattern-ixxjruC7Gg4-unsplash.jpg"
-              alt=""
               className="mx-auto block h-full w-full max-w-[800px] rotate-[3.5deg] rounded-2xl object-cover"
             />
           </div>
@@ -85,8 +86,8 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             data-aos-delay="400"
           >
             <h2
-              style={{ color: TitleTextColor }}
-              className="mb-6 text-3xl font-semibold md:mb-10 md:text-5xl"
+              className="mb-6 text-3xl font-semibold md:mb-10 md:text-5xl text-white"
+              style={headingStyle}
             >
               {ctaHeroContent.CTA_Title}
             </h2>
