@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import * as Icons from "react-icons/fa";
 
 type CTAHeroProps = {
   ctaHeroContent?: any;
@@ -43,6 +44,21 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
     backgroundColor: CTAButtonColor,
   };
 
+  type IconName = keyof typeof Icons;
+
+  type DynamicFontAwesomeIconProps = {
+    name: IconName;
+    iconSize?: number; // Optional prop for icon size
+  };
+
+  const DynamicFontAwesomeIcon: React.FC<DynamicFontAwesomeIconProps> = ({
+    name,
+    iconSize = 24,
+  }) => {
+    const Icon = Icons[name];
+    return <Icon size={iconSize} />;
+  };
+
   return (
     <section style={{ backgroundColor: BackgroundColor }}>
       {/* Container */}
@@ -84,6 +100,7 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
               {ctaHeroContent.iconText.map(
                 (
                   featureFact: {
+                    icon: { name: any };
                     Fact:
                       | string
                       | number
@@ -102,10 +119,9 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
                   index: React.Key | null | undefined
                 ) => (
                   <div key={index} className="mb-2 flex items-center">
-                    <img
-                      src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63915fec5d1aa12f6aedd68c_Vector%20(14).svg"
-                      alt=""
-                      className="mr-2 inline-block"
+                    <DynamicFontAwesomeIcon
+                      name={featureFact.icon.name}
+                      iconSize={20}
                     />
                     <p className="ml-3 justify-end" style={IconColorStyle}>
                       {featureFact.Fact}
