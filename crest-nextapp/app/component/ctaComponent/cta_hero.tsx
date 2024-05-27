@@ -91,7 +91,7 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             >
               {ctaHeroContent.CTA_Title}
             </h2>
-            <div className="mx-auto max-w-[630px] md:mb-10">
+            <div className="mx max-w-[630px] mb-10">
               <p style={{ color: DescriptionTextColor }}>
                 {ctaHeroContent.Description}
               </p>
