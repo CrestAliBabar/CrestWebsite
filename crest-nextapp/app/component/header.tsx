@@ -35,7 +35,7 @@ export default async function Header() {
                   title={title.title}
                   titleSlug={title.slug.current}
                 >
-                  {title.pages.length > 0 && (
+                  {title.pages && (
                     <li>
                       {title.pages.map((page: page) => (
                         <Link
