@@ -14,8 +14,8 @@ export const pageContentForNavPage = defineType({
         { type: "pageSubtitle" },
         { type: "pageHeading" },
         { type: "paragraph" },
-        { type: "image" },
         { type: "bulletPoint" },
+        { type: "image" },
         { type: "video" },
         { type: "team" },
         { type: "cta" },
@@ -23,6 +23,8 @@ export const pageContentForNavPage = defineType({
         { type: "work_flow"},
         { type: "hero"},
         {type: "feature"},
+        {type: "logoCloud"},
+        {type: "FAQs"}
         
       ],
     }),
