@@ -1,6 +1,9 @@
 import { log } from "console";
 import React from "react";
-import { getCroppedImageSrc, SanityImageQueryResult } from "@/sanity/schemas/cropping";
+import {
+  getCroppedImageSrc,
+  SanityImageQueryResult,
+} from "@/sanity/schemas/cropping";
 
 type TeamCardStandardProps = {
   teamCardStandardContent: any;
@@ -41,16 +44,11 @@ const teamCardStandard: React.FC<TeamCardStandardProps> = ({
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
         {/* Heading Div */}
         <div className="text-center">
-          <h2
-            style={{ color: heandingColor }}
+          <span
+            style={{ color: heandingColor, backgroundColor: headingStyleColor }}
             className="text-3xl font-semibold md:text-5xl">
-            {teamCardStandardContent.Team_Heading + "'s"}{" "}
-            <span
-              style={{ backgroundColor: headingStyleColor }}
-              className="bg-cover bg-center px-4 text-white">
-              Members
-            </span>
-          </h2>
+            {teamCardStandardContent.Team_Heading}
+          </span>
           <p
             style={{ color: teamDescriptionTextColor }}
             className="mx-auto mb-8 mt-4 max-w-[528px]  md:mb-12 lg:mb-16">
@@ -70,7 +68,9 @@ const teamCardStandard: React.FC<TeamCardStandardProps> = ({
               //     .join("-")
               //     .replace(/-([^-]*)$/, ".$1");
 
-              const imageURl = getCroppedImageSrc(member.image as SanityImageQueryResult);
+              const imageURl = getCroppedImageSrc(
+                member.image as SanityImageQueryResult
+              );
 
               // console.log(member);
               return (
