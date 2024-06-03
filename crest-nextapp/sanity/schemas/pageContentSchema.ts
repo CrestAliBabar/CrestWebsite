@@ -1,4 +1,6 @@
 import { defineType, defineField } from "sanity";
+import {TextIcon} from '@sanity/icons'
+import {ImageIcon} from '@sanity/icons'
 
 export const pageContent = defineType({
   name: "pageContent",
@@ -9,6 +11,7 @@ export const pageContent = defineType({
       name: "text",
       type: "string",
       title: "Page Title",
+      icon: TextIcon,
     }),
     defineField({
       title: "Display on Navigation Dropdown Menu",
@@ -48,6 +51,7 @@ export const pageTitle = defineType({
   name: "pageTitle",
   type: "object",
   title: "PageTitle",
+  icon: TextIcon,
   fields: [
     defineField({
       name: "text",
@@ -62,6 +66,7 @@ export const pageSubtitle = defineType({
   name: "pageSubtitle",
   type: "object",
   title: "Page Subtitle",
+  icon: TextIcon,
   fields: [
     defineField({
       name: "text",
@@ -75,6 +80,7 @@ export const pageHeading = defineType({
   name: "pageHeading",
   type: "object",
   title: "Page Heading",
+  icon: TextIcon,
   fields: [
     defineField({
       name: "text",
@@ -88,6 +94,7 @@ export const paragraph = defineType({
   name: "paragraph",
   type: "object",
   title: "Paragraph",
+  icon: TextIcon,
   fields: [
     defineField({
       name: "text",
@@ -114,6 +121,7 @@ export const bulletPoint = defineType({
   name: "bulletPoint",
   type: "object",
   title: "Bullet Point",
+  icon: TextIcon,
   fields: [
     {
       title: "Bullet Point",
@@ -126,4 +134,5 @@ export const bulletPoint = defineType({
     },
     // Any other fields related to bullet points
   ],
+  
 });
