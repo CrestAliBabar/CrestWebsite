@@ -44,7 +44,7 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
             return (
               <ParagraphComponent paragraphContent={content} key={index} />
             );
-          case "image":
+          case "customImage":
             return <ImageComponent imageContent={content} key={index} />;
           case "bulletPoint":
             return (
