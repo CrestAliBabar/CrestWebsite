@@ -19,7 +19,7 @@ const ChatBoxComponent = () => {
             if (event.type === "TRIGGER") {
               if (event.value && event.value.action === "showCalendly")
                 window.Calendly.showPopupWidget(
-                  "https://calendly.com/crestalibabar?hide_gdpr_banner=1"
+                  "https://calendly.com/crestalibabar?hide_gdpr_banner=1&background_color=dceef1&text_color=192b33&primary_color=325c6c"
                 );
             }
           },
@@ -42,6 +42,7 @@ const ChatBoxComponent = () => {
         src="https://assets.calendly.com/assets/external/widget.js"
         type="text/javascript" async
       />
+      <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"></link>
     </>
   );
 };
