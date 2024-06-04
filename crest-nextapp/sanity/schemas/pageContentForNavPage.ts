@@ -15,7 +15,7 @@ export const pageContentForNavPage = defineType({
         { type: "pageHeading" },
         { type: "paragraph" },
         { type: "bulletPoint" },
-        { type: "image" },
+        { type: "customImage" },
         { type: "video" },
         { type: "team" },
         { type: "cta" },

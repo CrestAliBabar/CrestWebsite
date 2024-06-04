@@ -18,6 +18,7 @@ import {
   pageSubtitle,
   pageTitle,
   paragraph,
+  customImage
 } from './pageContentSchema';
 import { heroWithoutBanner } from './Hero-Schemas/heroWithoutBanner';
 import { heroWithBanner } from './Hero-Schemas/heroWithBanner';
@@ -161,6 +162,7 @@ export const schemaTypes = [
   pageHeading,
   paragraph,
   imgUrl,
+  customImage,
   navigationTitleSchema,
   pageContent,
   pageContentForNavPage,

@@ -31,7 +31,7 @@ export const pageContent = defineType({
         { type: "pageHeading" },
         { type: "paragraph" },
         { type: "bulletPoint" },
-        { type: "image" },
+        { type: "customImage" },
         { type: "video" },
         { type: "team" },
         { type: "cta" },
@@ -135,4 +135,25 @@ export const bulletPoint = defineType({
     // Any other fields related to bullet points
   ],
   
+});
+
+export const customImage = defineType({
+  name: "customImage",
+  type: "image",
+  title: "Custom Image",
+  icon: ImageIcon,
+  fields: [
+    defineField({
+      name: "altText",
+      type: "string",
+      title: "Alternative Text",
+      description: "A short description of the image for accessibility.",
+    }),
+    defineField({
+      name: "caption",
+      type: "string",
+      title: "Caption",
+      description: "Caption for the image.",
+    }),
+  ],
 });
