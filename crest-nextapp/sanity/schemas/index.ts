@@ -7,7 +7,7 @@ import { pageType } from './pageType';
 import { promotionType } from './promotionType';
 import { featureType } from './Feature-Schemas/featureType';
 import { videoType } from './videoType';
-import { PageInfo } from './pageInfo';
+//import { PageInfo } from './pageInfo';
 import layoutChange from './layout-change';
 import { navigationTitleSchema } from './navigationTitleSchema';
 import {
@@ -156,7 +156,7 @@ export const schemaTypes = [
   videoType,
   pageTitle,
   bulletPoint,
-  PageInfo,
+  // PageInfo,
   layoutChange,
   pageSubtitle,
   pageHeading,
