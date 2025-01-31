@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect } from "react";
 import * as Icons from "react-icons/fa";
 import { getCroppedImageSrc, SanityImageQueryResult } from "@/sanity/schemas/cropping";

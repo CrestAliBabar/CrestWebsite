@@ -284,7 +284,16 @@ const colorList = [
   { label: "eastern-blue-800", value: "#304e5a" },
   { label: "eastern-blue-900", value: "#2b424e" },
   { label: "eastern-blue-950", value: "#192b33" },
-  
+  {label:"Golden-Grass-50",value:"#fcfaea"},
+  {label:"Golden-Grass-100",value:"#faf4c7"},
+  {label:"Golden-Grass-200",value:"#f6e792"},
+  {label:"Golden-Grass-300",value:"#f0d254"},
+  {label:"Golden-Grass-400",value:"#d4a017"},
+  {label:"Golden-Grass-500",value:"#bc8012"},
+  {label:"Golden-Grass-600",value:"#965c12"},
+  {label:"Golden-Grass-700",value:"#7d4a16"},
+  {label:"Golden-Grass-800",value:"#6a3c19"},
+  {label:"Golden-Grass-900",value:"#fcfaea"},
 ];
 
 export default colorList;
