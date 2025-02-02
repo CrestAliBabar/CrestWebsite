@@ -43,6 +43,10 @@ export const featureType = defineType({
           name: "Feature_Page_Details",
           type: "Feature_Page_Details",
         }),
+        defineArrayMember({
+          name: "Feature_Dashboard",
+          type: "Feature_Dashboard",
+        }),
       ],
     }),
   ],

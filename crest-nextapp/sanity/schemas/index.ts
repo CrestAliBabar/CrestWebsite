@@ -83,6 +83,7 @@ import { FAQsThreeColumnCentered } from './FAQs-Schemas/FAQsThreeColumnCentered'
 import { FAQsSideBySide } from './FAQs-Schemas/FAQsSideBySide';
 import { featurePageDetails } from './Feature-Schemas/featurePageDetails';
 import { featurePageDetialsFields } from './Feature-Schemas/featurePageDetialsFields';
+import { featureDashboard } from './Feature-Schemas/featureDashboard';
 
 export const schemaTypes = [
   pageType,
@@ -118,6 +119,7 @@ export const schemaTypes = [
   featureWithColumnLgIcon,
   featurePageDetails,
   featurePageDetialsFields,
+  featureDashboard,
 
   //Content
   contentType,
