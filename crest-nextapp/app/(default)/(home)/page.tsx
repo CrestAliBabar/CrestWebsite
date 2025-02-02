@@ -1,9 +1,9 @@
 
 
 import HomePageComponent from "@/app/component/homePageComponent";
-import InteractiveDashboardComponent from "@/app/component/dashboardComponent/newInteractiveComponent";
 import { getHomePageContent } from "@/sanity/sanity-utils";
-import FeatureDashboardComponent from "@/app/component/featureComponents/featureDashboardComponent";
+import FeatureDashboard from "@/app/component/featureComponents/featureDashboard";
+import SvmDashboardComponent from "@/app/component/dashboards/svmDashboardComponent/svmDashboardComponent";
 
 
 
@@ -16,7 +16,7 @@ export default async function Home() {
     <>
 
     <HomePageComponent pageBuilder ={homePageContent[0].pageBuilder} />
-    <FeatureDashboardComponent/>
+
     
     </>
 

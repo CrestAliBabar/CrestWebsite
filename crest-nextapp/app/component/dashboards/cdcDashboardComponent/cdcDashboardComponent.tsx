@@ -31,7 +31,7 @@ const resourceData = {
   ],
 };
 
-export default function InteractiveDashboardComponent() {
+export default function CdcDashboardComponent() {
   const [runTour, setRunTour] = useState(false);
 
   useEffect(() => {

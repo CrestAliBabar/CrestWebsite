@@ -10,6 +10,7 @@ import FeatureWithLargeScreenShot from "./featureWithLargeScreenShot";
 import FeatureWithSmIconLink  from "./featureWithSmIconLink";
 import FeatureWithColumnLgIcon from "./featureWithColumnLgIcon";
 import FeaturePageDetails from "./featurePageDetails";
+import FeatureDashboard from "./featureDashboard";
 
 type FeatureComponentProps = {
   featureContent: any[];
@@ -36,6 +37,8 @@ const FeatureComponent : React.FC<FeatureComponentProps> = ({ featureContent }) 
               return <FeatureWithColumnLgIcon featureWithColumnLgIconContent = {content}  key={index}/>
           case "Feature_Page_Details":
                 return <FeaturePageDetails featurePageDetailsContent = {content}  key={index}/>
+          case "Feature_Dashboard":
+                return <FeatureDashboard featureDashboardContent = {content}  key={index}/>
           default:
             return null;
         }
