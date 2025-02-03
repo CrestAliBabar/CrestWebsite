@@ -7,6 +7,7 @@ import SvmDashboardComponent from "@/app/component/dashboards/svmDashboardCompon
 
 
 
+
 export default async function Home() {
 
   const homePageContent = await getHomePageContent()
@@ -14,10 +15,8 @@ export default async function Home() {
 
   return (
     <>
-
     <HomePageComponent pageBuilder ={homePageContent[0].pageBuilder} />
-
-    
+  
     </>
 
   );
