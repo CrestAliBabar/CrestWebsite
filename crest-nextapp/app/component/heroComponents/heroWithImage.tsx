@@ -1,13 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
+
 import React from "react";
+import GlowingDotButton from "@/app/clientComponent/glowingDotButton";
+import ElectricParticleWrapper from "@/app/clientComponent/electricPaticleButton";
+import ShimmerButtonWrapper from "@/app/clientComponent/shimmerButton";
 
 type HeroWithImageContentProps = {
   heroWithImageContent: any;
 };
 
+
 const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
   heroWithImageContent,
 }) => {
+  // ... (keeping all existing props and styles)
   const subHeadingTextColor =
     heroWithImageContent.Hero_Heading.subHeadingProp.subHeadingColor.value;
   const HeadingTextColor =
@@ -42,6 +48,7 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
 
   const buttonOneStyleOffHover = {
     backgroundColor: CTAOneButtonColor,
+    boxShadow: '0 0 20px rgba(212,160,23,0.5), inset 0 0 20px rgba(212,160,23,0.3)'
   };
 
   const buttonTwoStyleOffHover = {
@@ -61,13 +68,11 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
   const customCursorStyle = {
     cursor: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="transform: rotate(-30deg);" fill="%23325c6c"><path d="M12 2L2 22l3-3 7-3 7 3 3 3L12 2z"/></svg>') 16 16, pointer`
   };
+
   return (
     <section style={{ backgroundColor: BackgroundColor }}>
-      {/* Container */}
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-        {/* Component */}
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 sm:gap-20">
-          {/* Heading Div */}
           <div
             className="max-w-[720px] lg:max-w-[842px]"
             data-aos="fade-right"
@@ -92,16 +97,17 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
             </div>
             {/* Button Wrap */}
             <div className="flex flex-wrap gap-4">
-              <a
+              <ShimmerButtonWrapper
                 href={CTAButtonOneLink}
-                className="inline-block rounded-xl px-8 py-4 text-center font-semibold transition shadow-lg hover:shadow-none"
                 style={buttonOneStyleOffHover}
               >
                 {CTAButtonOneText}
-              </a>
+              </ShimmerButtonWrapper>
+
+              {/* Original button two styling */}
               <a
                 href={CTAButtonTwoLink}
-                className="flex max-w-full flex-row items-center rounded-xl transition shadow-md hover:shadow-none px-6 py-3 font-semibold"
+                className="flex max-w-full flex-row items-center rounded-xl transition shadow-[3px_0px_0px_4px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c] px-6 py-3 font-semibold"
                 style={buttonTwoStyleOffHover}
               >
                 <img
@@ -114,12 +120,11 @@ const HeroWithImage: React.FC<HeroWithImageContentProps> = ({
             </div>
           </div>
 
-          {/* Image Div with Hover Effect */}
           <div
             className="relative h-auto w-full max-w-[900px] flex justify-center items-center overflow-hidden cursor-all-scroll"
             data-aos="zoom-in"
             data-aos-delay="400"
-	    style={customCursorStyle}
+            style={customCursorStyle}
           >
             <img
               src={NewbackgroundImageUrl}
