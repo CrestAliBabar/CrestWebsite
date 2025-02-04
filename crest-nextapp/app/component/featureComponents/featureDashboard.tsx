@@ -57,7 +57,7 @@ const FeatureDashboard: React.FC<FeatureDashboardProps> = ({ featureDashboardCon
           data-aos-delay="400"
         >
           {/* Dashboard Card */}
-          <div className="relative rounded-3xl p-8 overflow-hidden bg-gradient-to-br from-[#f6e792] to-[#d4a017] transition-all duration-500 hover:shadow-xl">
+          <div className="relative rounded-3xl p-8 overflow-hidden bg-gradient-to-br from-[#d4a017] to-[#6a3c19] transition-all duration-500 hover:shadow-xl">
             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white opacity-10" />
             <div className="absolute inset-0 bg-gradient-to-l from-white via-transparent to-white opacity-10" />
             <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white opacity-10" />

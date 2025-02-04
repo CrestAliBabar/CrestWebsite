@@ -51,6 +51,20 @@ export const featureHeroFacts = defineType({
         colorList: colorList,
       },
     },
+    {
+      name: "imageDirection",
+      title: "Image Direction",
+      type: "string",
+      options: {
+        list: [
+          { title: "Image to right", value: "right" },
+          { title: "Image to left", value: "left" },
+        ],
+        layout: "radio",
+        direction: "horizontal",
+      },
+      validation: (rule) => rule.required(), // Required
+    },
   ],
 });
 

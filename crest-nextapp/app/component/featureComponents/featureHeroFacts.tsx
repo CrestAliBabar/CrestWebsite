@@ -11,14 +11,16 @@ type IconName = keyof typeof Icons;
 type DynamicFontAwesomeIconProps = {
   name: IconName;
   iconSize?: number; // Optional prop for icon size
+  className?: string;
 };
 
 const DynamicFontAwesomeIcon: React.FC<DynamicFontAwesomeIconProps> = ({
   name,
   iconSize = 24,
+  className,
 }) => {
   const Icon = Icons[name];
-  return <Icon size={iconSize} />;
+  return <Icon size={iconSize} className={className} />;
 };
 
 const FeatureHeroFacts: React.FC<FeatureHeroFactsProps> = ({
@@ -31,6 +33,8 @@ const FeatureHeroFacts: React.FC<FeatureHeroFactsProps> = ({
     featureHeroFactsContent.Feature_Heading.headingProp.headingColor.value;
   const BackgroundColor = featureHeroFactsContent.backGroundColor.value;
   const FeatureFactTitleColor = featureHeroFactsContent.featureFactColor.value;
+
+  // Convert sanity asset reference into a URL
   const backgroundImageUrl = featureHeroFactsContent.image.asset._ref
     .split("-")
     .slice(1)
@@ -56,81 +60,164 @@ const FeatureHeroFacts: React.FC<FeatureHeroFactsProps> = ({
   const SubHeadingText =
     featureHeroFactsContent.Feature_Heading.subHeadingProp.subHeading;
 
+  // Determine which side image should appear on
+  const ImageDirection = featureHeroFactsContent.imageDirection || "left";
+  // Optional: If the user doesn’t provide a value, default to "left"
+
+  // Dynamically control AOS animations
+  const imageAOS = ImageDirection === "left" ? "fade-right" : "fade-left";
+  const textAOS = ImageDirection === "left" ? "fade-left" : "fade-right";
+
+  // Custom cursor style
+  const customCursorStyle = {
+    cursor: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="transform: rotate(-30deg);" fill="%23d4a017"><path d="M12 2L2 22l3-3 7-3 7 3 3 3L12 2z"/></svg>') 16 16, pointer`,
+  };
+
   return (
     <section style={{ backgroundColor: BackgroundColor }}>
       {/* Container */}
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-        {/* Component */}
+        {/* Grid wrapper */}
         <div className="grid grid-cols-1 items-center gap-12 sm:gap-20 lg:grid-cols-2">
-          {/* Image Div */}
-          <div className="relative left-4 h-full max-h-[560px] w-[85%] md:left-0 md:w-[95%] lg:w-full bg-black" data-aos="fade-right" data-aos-delay="400" >
-            <img
-              src={NewbackgroundImageUrl}
-              className="mx-auto block h-full w-full max-w-[800px] rotate-[5.0deg] rounded-2xl object-cover"
-              alt=""
-            />
-          </div>
-          {/* Heading Div */}
-          <div className="max-w-[720px] max-[991px]:[grid-area:1/1/2/2] lg:max-w-[842px]" data-aos="fade-left" data-aos-delay="400">
-            {/* Heading Text */}
-            <div>
-              <h2 className=" text-3xl font-semibold md:text-5xl">
-                <span
-                  className="mb-4 bg-cover bg-center bg-no-repeat text-white px-4"
-                  style={headingStyle}
-                >
-                  {HeadingText}
-                </span>{" "}
-              </h2>
-              <p
-                className="mt-4 max-w-[480px] font-semibold"
-                style={subHeadingStyle}
+          {ImageDirection === "left" ? (
+            <>
+              {/* Image Div */}
+              <div
+                className="relative h-auto w-full max-w-[900px] flex justify-center items-center overflow-hidden cursor-all-scroll"
+                data-aos={imageAOS}
+                data-aos-delay="400"
+                style={customCursorStyle}
               >
-                {SubHeadingText}
-              </p>
-            </div>
-            {/* Divider */}
-            <div className="mb-12 mt-12 h-0 w-40 border"></div>
-            {/* Features */}
-            <div className="flex flex-col items-start">
-              {/* Item */}
-              {featureHeroFactsContent.featureFacts.map(
-                (
-                  featureFact: {
-                    icon: { name: any };
-                    Fact:
-                      | string
-                      | number
-                      | boolean
-                      | React.ReactElement<
-                          any,
-                          string | React.JSXElementConstructor<any>
-                        >
-                      | Iterable<React.ReactNode>
-                      | React.ReactPortal
-                      | Promise<React.AwaitedReactNode>
-                      | Iterable<React.ReactNode>
-                      | null
-                      | undefined;
-                  },
-                  index: React.Key | null | undefined
-                ) => (
-                  <div key={index} className="mb-2 flex items-center">
-                    <DynamicFontAwesomeIcon
-                      name={featureFact.icon.name}
-                      iconSize={20}
-                    />
-                    <p
-                      className="ml-3 justify-end"
-                      style={featureFactTitleColorStyle}
+                <img
+                  src={NewbackgroundImageUrl}
+                  alt="Hero Image"
+                  className="w-full h-auto max-w-[900px] rounded-2xl object-cover transform transition-all duration-500 hover:rotate-0 hover:scale-110 origin-bottom"
+                />
+              </div>
+
+              {/* Heading Div */}
+              <div
+                className="max-w-[720px] max-[991px]:[grid-area:1/1/2/2] lg:max-w-[842px]"
+                data-aos={textAOS}
+                data-aos-delay="400"
+              >
+                <div>
+                  <h2 className="text-3xl font-semibold md:text-5xl">
+                    <span
+                      className="mb-4 bg-cover bg-center bg-no-repeat text-white px-4"
+                      style={headingStyle}
                     >
-                      {featureFact.Fact}
-                    </p>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
+                      {HeadingText}
+                    </span>{" "}
+                  </h2>
+                  <p
+                    className="mt-4 max-w-[480px] font-semibold"
+                    style={subHeadingStyle}
+                  >
+                    {SubHeadingText}
+                  </p>
+                </div>
+                {/* Divider */}
+                <div className="mb-12 mt-12 h-0 w-40 border"></div>
+                {/* Features */}
+                <div className="flex flex-col items-start">
+                  {featureHeroFactsContent.featureFacts.map(
+                    (
+                      featureFact: {
+                        icon: { name: IconName };
+                        Fact: React.ReactNode;
+                      },
+                      index: React.Key
+                    ) => (
+                      <div key={index} className="mb-2 flex items-center">
+                        {/* Bouncing icon */}
+                        <DynamicFontAwesomeIcon
+                          name={featureFact.icon.name}
+                          iconSize={20}
+                          className="animate-bounce"
+                        />
+                        <p
+                          className="ml-3 justify-end"
+                          style={featureFactTitleColorStyle}
+                        >
+                          {featureFact.Fact}
+                        </p>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Heading Div */}
+              <div
+                className="max-w-[720px] max-[991px]:[grid-area:1/1/2/2] lg:max-w-[842px]"
+                data-aos={textAOS}
+                data-aos-delay="400"
+              >
+                <div>
+                  <h2 className="text-3xl font-semibold md:text-5xl">
+                    <span
+                      className="mb-4 bg-cover bg-center bg-no-repeat text-white px-4"
+                      style={headingStyle}
+                    >
+                      {HeadingText}
+                    </span>{" "}
+                  </h2>
+                  <p
+                    className="mt-4 max-w-[480px] font-semibold"
+                    style={subHeadingStyle}
+                  >
+                    {SubHeadingText}
+                  </p>
+                </div>
+                {/* Divider */}
+                <div className="mb-12 mt-12 h-0 w-40 border"></div>
+                {/* Features */}
+                <div className="flex flex-col items-start">
+                  {featureHeroFactsContent.featureFacts.map(
+                    (
+                      featureFact: {
+                        icon: { name: IconName };
+                        Fact: React.ReactNode;
+                      },
+                      index: React.Key
+                    ) => (
+                      <div key={index} className="mb-2 flex items-center">
+                        {/* Bouncing icon */}
+                        <DynamicFontAwesomeIcon
+                          name={featureFact.icon.name}
+                          iconSize={20}
+                          className="animate-bounce"
+                        />
+                        <p
+                          className="ml-3 justify-end"
+                          style={featureFactTitleColorStyle}
+                        >
+                          {featureFact.Fact}
+                        </p>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+
+              {/* Image Div */}
+              <div
+                className="relative h-auto w-full max-w-[900px] flex justify-center items-center overflow-hidden cursor-all-scroll"
+                data-aos={imageAOS}
+                data-aos-delay="400"
+                style={customCursorStyle}
+              >
+                <img
+                  src={NewbackgroundImageUrl}
+                  alt="Hero Image"
+                  className="w-full h-auto max-w-[900px] rounded-2xl object-cover transform transition-all duration-500 hover:rotate-0 hover:scale-110 origin-bottom"
+                />
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
