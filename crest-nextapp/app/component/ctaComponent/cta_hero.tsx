@@ -1,52 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
+import ShimmerButtonWrapper from "@/app/clientComponent/shimmerButton";
 import React from "react";
 import * as Icons from "react-icons/fa";
 
 type CTAHeroProps = {
   ctaHeroContent?: any;
 };
+
 const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
-  const TitleTextColor = ctaHeroContent.TitleTextColor
-    ? ctaHeroContent.TitleTextColor.value
-    : "#f2f2f7";
-  const DescriptionTextColor = ctaHeroContent.DescriptionTextColor
-    ? ctaHeroContent.DescriptionTextColor.value
-    : "#647084";
-  const imageurl =
-    "https://cdn.sanity.io/images/7xkjaifb/production/" +
-    ctaHeroContent.image.asset._ref
-      .split("-")
-      .slice(1)
-      .join("-")
-      .replace(/-([^-]*)$/, ".$1");
-
-  const BackgroundColor = ctaHeroContent.backGroundColor
-    ? ctaHeroContent.backGroundColor.value
-    : "#647084";
-
-  const CTAButtonColor = ctaHeroContent.promotion.buttonBackgroundColor
-    ? ctaHeroContent.promotion.buttonBackgroundColor.value
-    : "#647084";
-
-  const CTAButtonColorLink = ctaHeroContent.promotion.link;
-
-  const CTAButtonText = ctaHeroContent.promotion.title;
-
-  const IconTextColor = ctaHeroContent.iconTextColor
-    ? ctaHeroContent.iconTextColor.value
-    : "#647084";
-
-  const IconColorStyle = {
-    color: IconTextColor,
-  };
-
-  const buttonStyle = {
-    backgroundColor: CTAButtonColor,
-  };
-  const headingStyle = {
-    backgroundColor: TitleTextColor,
-  };
-
   type IconName = keyof typeof Icons;
 
   type DynamicFontAwesomeIconProps = {
@@ -62,6 +23,40 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
     return <Icon size={iconSize} />;
   };
 
+  // Safely handle missing fields
+  const TitleTextColor = ctaHeroContent?.TitleTextColor?.value || "#f2f2f7";
+  const DescriptionTextColor =
+    ctaHeroContent?.DescriptionTextColor?.value || "#647084";
+  const BackgroundColor = ctaHeroContent?.backGroundColor?.value || "#647084";
+
+  const imageRef = ctaHeroContent?.image?.asset?._ref || "";
+  const imageurl =
+    "https://cdn.sanity.io/images/7xkjaifb/production/" +
+    imageRef.split("-").slice(1).join("-").replace(/-([^-]*)$/, ".$1");
+
+  const CTAButtonColor =
+    ctaHeroContent?.promotion?.buttonBackgroundColor?.value || "#647084";
+  const CTAButtonColorLink = ctaHeroContent?.promotion?.link || "#";
+  const CTAButtonText = ctaHeroContent?.promotion?.title || "Click Here";
+  const IconTextColor = ctaHeroContent?.iconTextColor?.value || "#647084";
+
+  const IconColorStyle = {
+    color: IconTextColor,
+  };
+
+  const buttonStyle = {
+    backgroundColor: CTAButtonColor,
+  };
+
+  const headingStyle = {
+    backgroundColor: TitleTextColor,
+  };
+
+  // Custom cursor style
+  const customCursorStyle = {
+    cursor: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="transform: rotate(-30deg);" fill="%23d4a017"><path d="M12 2L2 22l3-3 7-3 7 3 3 3L12 2z"/></svg>') 16 16, pointer`,
+  };
+
   return (
     <section style={{ backgroundColor: BackgroundColor }}>
       {/* Container */}
@@ -73,15 +68,19 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
         <div className="grid grid-cols-1 items-center justify-center gap-12 sm:gap-20 lg:grid-cols-2">
           {/* Image Div */}
           <div
-            className="relative h-full max-h-[560px] w-[85%] overflow-visible max-[991px]:left-4 md:w-[95%] lg:w-full"
+            className="relative h-full max-h-[560px] w-[85%] overflow-hidden max-[991px]:left-4 md:w-[95%] lg:w-full"
             data-aos="fade-right"
             data-aos-delay="400"
+            style={customCursorStyle}
           >
             <img
               src={imageurl}
-              className="mx-auto block h-full w-full max-w-[800px] rotate-[3.5deg] rounded-2xl object-cover"
+              alt="Hero Image"
+              className="mx-auto block h-full w-full max-w-[800px] rounded-2xl object-cover 
+                         transform transition-all duration-500 hover:scale-110 origin-bottom"
             />
           </div>
+
           {/* Content Div */}
           <div
             className="max-w-[720px]"
@@ -93,36 +92,23 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
                 className="mb-4 bg-cover bg-center bg-no-repeat text-white px-4"
                 style={headingStyle}
               >
-                {ctaHeroContent.CTA_Title}
+                {ctaHeroContent?.CTA_Title}
               </span>{" "}
             </h2>
             <div className="mx max-w-[630px] mb-10">
               <p style={{ color: DescriptionTextColor }}>
-                {ctaHeroContent.Description}
+                {ctaHeroContent?.Description}
               </p>
             </div>
             {/* Features */}
             <div className="grid max-w-[400px] grid-cols-2 gap-4">
-              {ctaHeroContent.iconText.map(
+              {ctaHeroContent?.iconText?.map(
                 (
                   featureFact: {
-                    icon: { name: any };
-                    Fact:
-                      | string
-                      | number
-                      | boolean
-                      | React.ReactElement<
-                          any,
-                          string | React.JSXElementConstructor<any>
-                        >
-                      | Iterable<React.ReactNode>
-                      | React.ReactPortal
-                      | Promise<React.AwaitedReactNode>
-                      | Iterable<React.ReactNode>
-                      | null
-                      | undefined;
+                    icon: { name: IconName };
+                    Fact: React.ReactNode;
                   },
-                  index: React.Key | null | undefined
+                  index: React.Key
                 ) => (
                   <div key={index} className="mb-2 flex items-center">
                     <DynamicFontAwesomeIcon
@@ -138,17 +124,19 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
             </div>
             {/* Divider */}
             <div className="mb-10 mt-10 w-full max-w-md border-b border-b-[#d9d9d9]"></div>
-            <a
+            <ShimmerButtonWrapper
               href={CTAButtonColorLink}
-              className="inline-block rounded-xl px-8 py-4 font-semibold transition shadow-[9px_11px_6px_0px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c]"
+              className="inline-block rounded-xl px-8 py-4 font-semibold transition 
+                         shadow-[9px_11px_6px_0px_#325c6c] hover:shadow-[0px_0px_0px_0px_#325c6c]"
               style={buttonStyle}
             >
               {CTAButtonText}
-            </a>
+            </ShimmerButtonWrapper>
           </div>
         </div>
       </div>
     </section>
   );
 };
+
 export default CTAHeroComponent;
