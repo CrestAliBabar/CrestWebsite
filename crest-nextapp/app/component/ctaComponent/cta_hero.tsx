@@ -13,14 +13,17 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
   type DynamicFontAwesomeIconProps = {
     name: IconName;
     iconSize?: number; // Optional prop for icon size
+    className?: string;
   };
 
+  // Icon component that supports custom size and classes
   const DynamicFontAwesomeIcon: React.FC<DynamicFontAwesomeIconProps> = ({
     name,
     iconSize = 24,
+    className,
   }) => {
     const Icon = Icons[name];
-    return <Icon size={iconSize} />;
+    return <Icon size={iconSize} className={className} />;
   };
 
   // Safely handle missing fields
@@ -111,9 +114,14 @@ const CTAHeroComponent: React.FC<CTAHeroProps> = ({ ctaHeroContent }) => {
                   index: React.Key
                 ) => (
                   <div key={index} className="mb-2 flex items-center">
+                    {/* 
+                      Increase iconSize to 32 (instead of 24) 
+                      and add animate-bounce for a “waving/bouncing” effect 
+                    */}
                     <DynamicFontAwesomeIcon
                       name={featureFact.icon.name}
-                      iconSize={20}
+                      iconSize={32}
+                      className="animate-bounce"
                     />
                     <p className="ml-3 justify-end" style={IconColorStyle}>
                       {featureFact.Fact}
