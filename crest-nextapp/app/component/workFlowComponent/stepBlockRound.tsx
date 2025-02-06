@@ -16,12 +16,9 @@ type DynamicFontAwesomeIconProps = {
   iconSize?: number;
 };
 
-/** 
- * This always shows the Sanity-provided icon
- */
 const DynamicFontAwesomeIcon: React.FC<DynamicFontAwesomeIconProps> = ({
   name,
-  iconSize = 20, // ✅ Making the icon smaller
+  iconSize = 20,
 }) => {
   const Icon = Icons[name];
   return <Icon size={iconSize} />;
@@ -38,8 +35,6 @@ type RoundBoxProps = {
   iconBgColor: string;
   titleColor: string;
   descriptionColor: string;
-
-  // Roadmap-related
   index: number;
   isActive: boolean;
   isCompleted: boolean;
@@ -58,7 +53,6 @@ const RoundBox: React.FC<RoundBoxProps> = ({
   iconBgColor,
   titleColor,
   descriptionColor,
-
   index,
   isActive,
   isCompleted,
@@ -69,14 +63,14 @@ const RoundBox: React.FC<RoundBoxProps> = ({
 }) => {
   const [hover, setHover] = useState(false);
 
-  // For left/right alignment
+  // Responsive positions - center on mobile, left/right on larger screens
   const positions = {
-    left: "ml-12 mr-auto",
-    right: "mr-12 ml-auto",
+    left: "mx-auto md:ml-12 md:mr-auto",
+    right: "mx-auto md:mr-12 md:ml-auto",
     center: "mx-auto",
   };
 
-  // Dotted line path
+  // Responsive dotted line path
   const getPath = (i: number) =>
     i % 2 === 0
       ? "M0,50 C100,50 100,150 200,150"
@@ -84,10 +78,10 @@ const RoundBox: React.FC<RoundBoxProps> = ({
 
   return (
     <div className="relative w-full">
-      {/* Draw dotted line if not first step */}
+      {/* Draw dotted line if not first step - hidden on mobile */}
       {index > 0 && (
         <svg
-          className="absolute w-48 h-24 transform -translate-y-12"
+          className="absolute w-48 h-24 transform -translate-y-12 hidden md:block"
           style={{
             left: index % 2 === 0 ? "0" : "auto",
             right: index % 2 === 1 ? "0" : "auto",
@@ -104,7 +98,6 @@ const RoundBox: React.FC<RoundBoxProps> = ({
         </svg>
       )}
 
-      {/* Fade/slide the card in or out */}
       <div
         ref={cardRef}
         className={`
@@ -121,10 +114,10 @@ const RoundBox: React.FC<RoundBoxProps> = ({
           onMouseOver={() => setHover(true)}
           onMouseOut={() => setHover(false)}
           className={`
-            w-[28rem] ${positions[position]}  // ✅ Increased card width
-            flex flex-row items-center gap-6
-            rounded-[60px] border border-solid border-[#ada790]
-            px-6 py-4 transition cursor-pointer
+            w-full md:w-[28rem] ${positions[position]}
+            flex flex-row items-center gap-4 md:gap-6
+            rounded-[30px] md:rounded-[60px] border border-solid border-[#ada790]
+            px-4 md:px-6 py-3 md:py-4 transition cursor-pointer
             ${
               isActive
                 ? "bg-[#5ba4b5] shadow-lg scale-105"
@@ -135,25 +128,28 @@ const RoundBox: React.FC<RoundBoxProps> = ({
             ${isCompleted ? "border-2 border-green-500" : ""}
           `}
         >
-          {/* Icon Circle - Uses only Sanity Icon, made smaller */}
+          {/* Icon Circle - Smaller on mobile */}
           <div
             style={{ backgroundColor: iconBgColor }}
-            className="flex h-14 w-14 flex-none flex-col items-center justify-center rounded-full"
+            className="flex h-10 w-10 md:h-14 md:w-14 flex-none flex-col items-center justify-center rounded-full"
           >
-            <DynamicFontAwesomeIcon name={iconUrl} iconSize={16} />
+            <DynamicFontAwesomeIcon 
+              name={iconUrl} 
+              iconSize={window.innerWidth < 768 ? 14 : 16} 
+            />
           </div>
 
-          {/* Title & description */}
-          <div className="flex flex-col items-start gap-2.5">
+          {/* Title & description - Adjusted text sizes */}
+          <div className="flex flex-col items-start gap-1.5 md:gap-2.5">
             <h5
               style={{ color: titleColor }}
-              className="text-lg font-bold md:text-xl"
+              className="text-base md:text-lg font-bold md:text-xl"
             >
               {title}
             </h5>
             <p
               style={{ color: descriptionColor }}
-              className="text-gray-600 text-sm"
+              className="text-gray-600 text-xs md:text-sm"
             >
               {description}
             </p>
@@ -164,33 +160,19 @@ const RoundBox: React.FC<RoundBoxProps> = ({
   );
 };
 
-/** 
- * StepBlockRound - Integrating Roadmap & Sanity
- */
 const StepBlockRound: React.FC<StepBlockRoundProps> = ({
   stepBlockRoundContent,
 }) => {
-  // Get data from sanity
   const heading = stepBlockRoundContent?.heading ?? "";
-  const headingStyleColor =
-    stepBlockRoundContent?.headingTextColor?.value || "#000000";
+  const headingStyleColor = stepBlockRoundContent?.headingTextColor?.value || "#000000";
   const roundBoxes = stepBlockRoundContent?.roundBox || [];
+  const backgroundColor = stepBlockRoundContent?.backGroundColor?.value || "#ffffff";
+  const roundBoxBgColor = stepBlockRoundContent?.blockBackGroundColor?.value || "#ffffff";
+  const roundBoxHoverColor = stepBlockRoundContent?.blockHoverColor?.value || "#eceae2";
+  const roundBoxIconBgColor = stepBlockRoundContent?.iconBackGroundColor?.value || "#c9fd02";
+  const roundBoxTitleColor = stepBlockRoundContent?.blockTitleColor?.value || "#000000";
+  const roundBoxDescriptionColor = stepBlockRoundContent?.blockDescriptionTextColor?.value || "#636262";
 
-  // Colors
-  const backgroundColor =
-    stepBlockRoundContent?.backGroundColor?.value || "#ffffff";
-  const roundBoxBgColor =
-    stepBlockRoundContent?.blockBackGroundColor?.value || "#ffffff";
-  const roundBoxHoverColor =
-    stepBlockRoundContent?.blockHoverColor?.value || "#eceae2";
-  const roundBoxIconBgColor =
-    stepBlockRoundContent?.iconBackGroundColor?.value || "#c9fd02";
-  const roundBoxTitleColor =
-    stepBlockRoundContent?.blockTitleColor?.value || "#000000";
-  const roundBoxDescriptionColor =
-    stepBlockRoundContent?.blockDescriptionTextColor?.value || "#636262";
-
-  // Roadmap state
   const [activeStep, setActiveStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState(new Set<number>());
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
@@ -206,7 +188,6 @@ const StepBlockRound: React.FC<StepBlockRoundProps> = ({
       const nextStep = idx + 1;
       setActiveStep(nextStep);
   
-      // Auto-scroll next step into view (Safely check if element exists)
       setTimeout(() => {
         const nextCard = cardRefs.current[nextStep];
         if (nextCard && typeof nextCard.scrollIntoView === "function") {
@@ -219,25 +200,30 @@ const StepBlockRound: React.FC<StepBlockRoundProps> = ({
     }
   };
 
-  const getPosition = (i: number) => (i % 2 === 0 ? "left" : "right");
+  // Always return center for mobile, otherwise alternate left/right
+  const getPosition = (i: number): "left" | "right" | "center" => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      return "center";
+    }
+    return i % 2 === 0 ? "left" : "right";
+  };
 
   return (
     <section style={{ backgroundColor }}>
-      <div className="mx-auto w-full max-w-3xl px-5 py-12 md:px-10 md:py-16 lg:py-20">
+      <div className="mx-auto w-full max-w-3xl px-4 md:px-10 py-8 md:py-16 lg:py-20">
         <h2
           style={{ color: headingStyleColor }}
-          className="mx-auto mb-12 max-w-3xl text-center text-3xl font-extrabold md:mb-20 md:text-5xl"
+          className="mx-auto mb-8 md:mb-12 max-w-3xl text-center text-2xl md:text-3xl font-extrabold md:text-5xl"
         >
           {heading}
         </h2>
 
-        <div className="relative space-y-24">
+        <div className="relative space-y-12 md:space-y-24">
           {roundBoxes.map((roundBox: any, index: number) => {
             const title = roundBox.title;
             const description = roundBox.description;
             const iconUrl = roundBox.icon?.name || "FaAdn";
 
-            // Roadmap logic
             const isVisible = index <= activeStep;
             const isActive = index === activeStep;
             const isCompleted = completedSteps.has(index);
@@ -269,7 +255,5 @@ const StepBlockRound: React.FC<StepBlockRoundProps> = ({
     </section>
   );
 };
-
-
 
 export default StepBlockRound;
