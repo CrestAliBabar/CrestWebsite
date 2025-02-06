@@ -6,6 +6,8 @@ import TeamComponent from "./teamComponents/teamComponent";
 import WorkFlowComponent from "./workFlowComponent/workFlowComponent";
 import LogoCloudComponent from "./logoCloudComponent/logoCloudComponent";
 import FAQsComponent from "./FAQsComponent/FAQsComponent";
+import CTAComponent from "./ctaComponent/cta";
+import CTAComponents from "./ctaComponent/CTAComponents";
 
 type HomePageComponentProps = {
   pageBuilder: any[];
@@ -36,6 +38,9 @@ const HomePageComponent: React.FC<HomePageComponentProps> = ({ pageBuilder }) =>
               return <LogoCloudComponent logoCloudContent={content.logoCLoudSections} key={index} />;
           case "FAQs":
                 return <FAQsComponent faqsContent={content.FAQsSections} key={index} />;
+          case "cta":
+                return <CTAComponents ctaContents={content.ctaSections} key={index} />
+                  
           default:
             return null; // Default case if component type is not recognized
         }
