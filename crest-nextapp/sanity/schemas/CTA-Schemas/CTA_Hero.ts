@@ -68,6 +68,20 @@ export const CTA_Hero = defineType({
       title: "Image",
       validation: (rule) => rule.required(),
     }),
+    {
+      name: "imageDirection",
+      title: "Image Direction",
+      type: "string",
+      options: {
+        list: [
+          { title: "Image to right", value: "right" },
+          { title: "Image to left", value: "left" },
+        ],
+        layout: "radio",
+        direction: "horizontal",
+      },
+      validation: (rule) => rule.required(), // Required
+    },
     defineField({
       name: "promotion",
       type: "promotion",
