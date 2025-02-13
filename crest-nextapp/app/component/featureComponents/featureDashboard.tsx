@@ -8,7 +8,7 @@ type FeatureDashboardProps = {
 
 const FeatureDashboard: React.FC<FeatureDashboardProps> = ({ featureDashboardContent }) => {
   const headingColor = featureDashboardContent.Feature_Heading.headingProp.headingColor.value;
-  const subHeadingTextColor =featureDashboardContent.Feature_Heading.subHeadingProp.subHeadingColor.value;
+  const subHeadingTextColor = featureDashboardContent.Feature_Heading.subHeadingProp.subHeadingColor.value;
 
   const headingText = featureDashboardContent.Feature_Heading.headingProp.heading;
   const SubHeadingText = featureDashboardContent.Feature_Heading.subHeadingProp.subHeading;
@@ -18,6 +18,7 @@ const FeatureDashboard: React.FC<FeatureDashboardProps> = ({ featureDashboardCon
 
   const dashboard = featureDashboardContent.dashboardList;
 
+  // Custom cursor style
   const customCursorStyle = {
     cursor: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="transform: rotate(-30deg);" fill="%23eabc25"><path d="M12 2L2 22l3-3 7-3 7 3 3 3L12 2z"/></svg>') 16 16, pointer`
   };
@@ -35,6 +36,7 @@ const FeatureDashboard: React.FC<FeatureDashboardProps> = ({ featureDashboardCon
               {subText}
             </h2>
           )}
+
           {/* Heading */}
           <p
             className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl"
@@ -42,10 +44,18 @@ const FeatureDashboard: React.FC<FeatureDashboardProps> = ({ featureDashboardCon
           >
             {headingText}
           </p>
+
           {/* Subheading */}
-          <p className="mt-6 text-lg leading-8"
-           style={{ color: subHeadingTextColor }}>
+          <p
+            className="mt-6 text-lg leading-8"
+            style={{ color: subHeadingTextColor }}
+          >
             {SubHeadingText}
+          </p>
+
+          {/* Cool disclaimer text */}
+          <p className="mt-4 text-sm italic text-gray-600">
+            This is just a visual demo, not a real application.
           </p>
         </div>
       </div>
