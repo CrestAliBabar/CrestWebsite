@@ -1,6 +1,7 @@
 import React from "react";
 import StepBlockRectangle from "./stepBlockRectangle";
 import StepBlockRound from "./stepBlockRound";
+import StepHowItWorks from "./stepHowItWorks";
 
 type WorkFlowComponentProps = {
   workFlowContent: any[];
@@ -22,6 +23,10 @@ const WorkFlowComponent: React.FC<WorkFlowComponentProps> = ({ workFlowContent }
             return (
               <StepBlockRound stepBlockRoundContent={content} key={index} />
             );
+          case "Step_How_It_Works":
+              return (
+                <StepHowItWorks stepHowItWorksContent={content} key={index} />
+              );
           default:
             return null;
         }
