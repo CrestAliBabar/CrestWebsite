@@ -84,6 +84,7 @@ import { FAQsSideBySide } from './FAQs-Schemas/FAQsSideBySide';
 import { featurePageDetails } from './Feature-Schemas/featurePageDetails';
 import { featurePageDetialsFields } from './Feature-Schemas/featurePageDetialsFields';
 import { featureDashboard } from './Feature-Schemas/featureDashboard';
+import { stepHowItWorks } from './WorkFlow-Schemas/stepHowItWorks';
 
 export const schemaTypes = [
   pageType,
@@ -136,6 +137,7 @@ export const schemaTypes = [
   workFlowType,
   stepBlockRound,
   stepBlockRectangle,
+  stepHowItWorks,
 
   //FAQs
   FAQsType,

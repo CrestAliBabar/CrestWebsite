@@ -19,6 +19,10 @@ export const workFlowType = defineType({
           name: "Step_Block_Rectangle",
           type: "Step_Block_Rectangle",
         }),
+        defineArrayMember({
+          name: "Step_How_It_Works",
+          type: "Step_How_It_Works",
+        }),
       ],
     }),
   ],

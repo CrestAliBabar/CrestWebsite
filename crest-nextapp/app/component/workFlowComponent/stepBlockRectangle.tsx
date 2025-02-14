@@ -116,7 +116,7 @@ const StepBlockRectangle: React.FC<StepBlockRectangleProps> = ({
     : "#276ef1";
 
     return (
-    <section className="w-full bg-[#faf4c7] py-16 sm:py-24 md:py-32">
+    <section className="w-full bg-[#fcfaea] py-16 sm:py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" data-aos="fade-up">
         <div className="mb-12 text-center sm:mb-16 md:mb-20">
           <h2 className="inline-block text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl" data-aos="fade-up">
