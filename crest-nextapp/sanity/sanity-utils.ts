@@ -53,13 +53,13 @@ export async function getNavigationTitle(
 ): Promise<any[]> {
   if (pageId) {
     return client.fetch(
-      groq`*[_type == "navigationTitleSchema" && slug.current == "${slug}"]{_id, slug, title, pages[_key=="${pageId}"]}`,
+      groq`*[_type == "navigationTitleSchema" && slug.current == "${slug}"]{_id, slug, title,titleorder, pages[_key=="${pageId}"]}`,
       {},
       { cache: 'no-store' }
     );
   } else {
     return client.fetch(
-      groq`*[_type == "navigationTitleSchema" && isDisplayed == true] | order(_createdAt){_id, slug, title, pages[isDisplayed == true]}`,
+      groq`*[_type == "navigationTitleSchema" && isDisplayed == true] | order(_createdAt){_id, slug, title, titleorder, pages[isDisplayed == true]}`,
       {},
       { cache: 'no-store' }
     );
@@ -114,4 +114,36 @@ export async function getFooter(
       { cache: 'no-store' }
     );
   }
+}
+
+export async function getAllBlogs() {
+  const query = groq`*[_type == "blog"] | order(publishedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    "image": image.asset->url,
+    description,
+    body,
+    publishedAt,
+    _createdAt,
+    _updatedAt
+  }`;
+
+  return client.fetch(query, {}, { cache: "no-store" }); // No cache
+}
+
+export async function getBlogBySlug(slug: string) {
+  const query = groq`*[_type == "blog" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    "image": image.asset->url,
+    description,
+    body,
+    publishedAt,
+    _createdAt,
+    _updatedAt
+  }`;
+
+  return client.fetch(query, { slug }, { cache: "no-store" }); // No cache
 }

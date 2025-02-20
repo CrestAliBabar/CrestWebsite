@@ -17,6 +17,7 @@ import FeatureComponent from "../featureComponents/featureComponent";
 import LogoCloudComponent from "../logoCloudComponent/logoCloudComponent";
 import FAQsComponent from "../FAQsComponent/FAQsComponent";
 import WorkFlowComponent from "../workFlowComponent/workFlowComponent";
+import BlogListingComponent from "../blogListingComponent/blogListingComponent";
 
 type ContentComponentProps = {
   Contents: any[];
@@ -90,6 +91,13 @@ const ContentComponent: React.FC<ContentComponentProps> = ({ Contents }) => {
           case "FAQs":
             return (
               <FAQsComponent faqsContent={content.FAQsSections} key={index} />
+            );
+          case "blogListing":
+            return (
+              <BlogListingComponent
+                BlogListingContent={content.blogListingSections}
+                key={index}
+              />
             );
           default:
             return null;

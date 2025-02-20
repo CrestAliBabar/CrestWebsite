@@ -48,5 +48,10 @@ export const navigationTitleSchema = defineType({
         Rule.min(1).error("You must add at least one navigation page"),
       ],
     }),
+    defineField({
+      name: "titleorder",
+      type: "string",
+      title: "Navigation Title order",
+    }),
   ],
 });

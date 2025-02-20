@@ -86,6 +86,11 @@ import { featurePageDetialsFields } from './Feature-Schemas/featurePageDetialsFi
 import { featureDashboard } from './Feature-Schemas/featureDashboard';
 import { stepHowItWorks } from './WorkFlow-Schemas/stepHowItWorks';
 
+//blog
+import { blog } from './Blog-Schemas/blog';
+import { blogListingStyle1 } from './Blog-Schemas/blogListingStyle1';
+import { blogListingType } from './Blog-Schemas/blogListingType';
+
 export const schemaTypes = [
   pageType,
   //CTA
@@ -170,6 +175,12 @@ export const schemaTypes = [
   navigationTitleSchema,
   pageContent,
   pageContentForNavPage,
+
+  //
+  blog,
+  blogListingStyle1,
+  blogListingType,
+
 
   // Footer
   footerSchema,
