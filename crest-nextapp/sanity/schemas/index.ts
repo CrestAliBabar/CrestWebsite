@@ -91,6 +91,13 @@ import { blog } from './Blog-Schemas/blog';
 import { blogListingStyle1 } from './Blog-Schemas/blogListingStyle1';
 import { blogListingType } from './Blog-Schemas/blogListingType';
 
+
+
+//Case Study
+import { caseStudy } from './CaseStudy-Schema/caseStudy';
+import { caseStudyListingStyle1 } from './CaseStudy-Schema/caseStudyListingStyle1';
+import { caseStudyListingType } from './CaseStudy-Schema/caseStudyListingType';
+
 export const schemaTypes = [
   pageType,
   //CTA
@@ -176,11 +183,15 @@ export const schemaTypes = [
   pageContent,
   pageContentForNavPage,
 
-  //
+  //blog
   blog,
   blogListingStyle1,
   blogListingType,
 
+  //CaseStudy
+  caseStudy,
+  caseStudyListingStyle1,
+  caseStudyListingType,
 
   // Footer
   footerSchema,

@@ -147,3 +147,36 @@ export async function getBlogBySlug(slug: string) {
 
   return client.fetch(query, { slug }, { cache: "no-store" }); // No cache
 }
+
+
+export async function getAllCaseStudies() {
+  const query = groq`*[_type == "caseStudy"] | order(publishedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    "image": image.asset->url,
+    description,
+    body,
+    publishedAt,
+    _createdAt,
+    _updatedAt
+  }`;
+
+  return client.fetch(query, {}, { cache: "no-store" }); // No cache
+}
+
+export async function getCaseStudyBySlug(slug: string) {
+  const query = groq`*[_type == "caseStudy" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    "image": image.asset->url,
+    description,
+    body,
+    publishedAt,
+    _createdAt,
+    _updatedAt
+  }`;
+
+  return client.fetch(query, { slug }, { cache: "no-store" }); // No cache
+}

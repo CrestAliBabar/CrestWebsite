@@ -22,7 +22,7 @@ type BlogRef = {
 };
 
 type BlogListingStyle1Props = {
-  BlogListingHeroFactsContent: {
+  BlogListingStyle1Content: {
     title?: string;
     backGroundColor?: {
       value?: string;
@@ -35,9 +35,9 @@ type BlogListingStyle1Props = {
 // =========== Component ===========
 
 export default function BlogListingStyle1({
-  BlogListingHeroFactsContent,
+  BlogListingStyle1Content,
 }: BlogListingStyle1Props) {
-  const { title, backGroundColor, blogs } = BlogListingHeroFactsContent || {};
+  const { title, backGroundColor, blogs } = BlogListingStyle1Content || {};
 
   // 2. Local state for all fetched blogs & references
   const [allBlogs, setAllBlogs] = useState<BlogDoc[]>([]);

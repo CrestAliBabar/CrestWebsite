@@ -25,8 +25,8 @@ export const pageContentForNavPage = defineType({
         {type: "feature"},
         {type: "logoCloud"},
         {type: "FAQs"},
-        {type: "blogListing"}
-
+        {type: "blogListing"},
+        {type: "caseStudyListing"}
 
         
       ],
