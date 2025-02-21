@@ -41,8 +41,8 @@ export const pageContent = defineType({
         {type: "feature"},
         {type: "logoCloud"},
         {type: "FAQs"},
-        {type: "blogListing"}        
-        
+        {type: "blogListing"},        
+        {type: "caseStudyListing"}        
       ],
     }),
   ],

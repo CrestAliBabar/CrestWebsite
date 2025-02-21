@@ -13,7 +13,7 @@ const BlogListingComponent : React.FC<BlogListingComponentProps> = ({ BlogListin
       {BlogListingContent.map((content: any, index: number) => {
         switch (content._type) {
           case "blog_Listing_Style1":
-            return <BlogListingStyle1 BlogListingHeroFactsContent = {content}  key={index} />;
+            return <BlogListingStyle1 BlogListingStyle1Content = {content}  key={index} />;
           default:
             return null;
         }
